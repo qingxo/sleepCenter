@@ -43,6 +43,26 @@
       .menu-level-sec{
         background: #3F414C;
       }
+
+      .head-index{
+        padding: 0 16px;
+        font-size: 12px;
+        line-height: 42px;
+        height: 42px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        margin-left: 9px;
+        color:white;
+    i{
+          margin-right: 8px;
+    }
+
+      }
+
+      .head-index:hover,.home-choose{
+        color:#FF955F;
+      }
     }
 
     .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
@@ -57,13 +77,5 @@
       .ant-menu-submenu-title:hover,.ant-menu-item:hover{
         color:#FF955F!important;
       }
-
-      // .ant-menu-submenu-inline > .ant-menu-submenu-title:after:hover{
-      //   color:#FF955F!important;
-      //
-      // }
-
-
   }
-
 }

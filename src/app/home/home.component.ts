@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  homeShow:boolean = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleChoose(){
+    this.homeShow = !this.homeShow;
+    this.menuColorChange()
+  }
+
+  menuColorChange(){
+    if(this.homeShow){
+
+    }
   }
 
 }
