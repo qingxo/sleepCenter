@@ -1,0 +1,69 @@
+.fixed-ant-layout{
+  height:100%;
+
+   .logo {
+      width: 320px;
+      height: 40px;
+      border-radius: 6px;
+      float: left;
+      color:white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img{
+        border:1px solid black;
+        width:140px;
+        height:40px;
+      }
+      img,div{
+        display:inline-flex;
+        font-size: 16px;
+      }
+    }
+
+    .login{
+      float:right;
+      padding-right:30px;
+      color:white;
+    }
+
+
+  .ant-layout-header{
+    height:40px;
+    line-height: 40px;
+    background: #2E5EE9;
+    padding:0;
+  }
+
+  .ant-layout-sider{
+    ul{
+      background-color: #43495C;
+      color:white;
+      font-size: 14px;
+      .menu-level-sec{
+        background: #3F414C;
+      }
+    }
+
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+      background-color: inherit;
+      color:#FF955F;
+    }
+
+    .ant-menu-inline .ant-menu-item:after, .ant-menu-vertical .ant-menu-item:after{
+      border-right: 3px solid #FF955F;
+    }
+
+      .ant-menu-submenu-title:hover,.ant-menu-item:hover{
+        color:#FF955F!important;
+      }
+
+      // .ant-menu-submenu-inline > .ant-menu-submenu-title:after:hover{
+      //   color:#FF955F!important;
+      //
+      // }
+
+
+  }
+
+}
