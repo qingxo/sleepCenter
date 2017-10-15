@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoComponent implements OnInit {
 
+  count:number = 0;
   constructor() { }
 
   ngOnInit() {
+    console.log("init demo")
+  }
+
+  clickCount(ev){
+    this.count++;
   }
 
 }

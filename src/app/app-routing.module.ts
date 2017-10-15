@@ -1,5 +1,5 @@
 import { NgModule }              from '@angular/core';
-import { RouterModule, Routes }  from '@angular/router';
+import { RouterModule, Routes,PreloadAllModules  }  from '@angular/router';
 import { LoginComponent }   from './login';
 import { NotFoundComponent } from './not-found';
 
@@ -14,7 +14,9 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
+      { enableTracing: false
+        //  preloadingStrategy: PreloadAllModules
+       } // <-- debugging purposes only
     )
   ],
   exports: [

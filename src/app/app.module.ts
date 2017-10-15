@@ -8,7 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {AppRoutingModule} from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {RouteReuseStrategy} from '@angular/router';
+import {CustomReuseStrategy} from './shared/custom-reuse-strategy';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ {provide: RouteReuseStrategy, useClass: CustomReuseStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

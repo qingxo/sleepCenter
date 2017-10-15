@@ -20,14 +20,14 @@
             <li nz-submenu>
               <span title><i class="anticon anticon-user"></i>患者档案</span>
               <ul class="menu-level-sec">
-                <li nz-menu-item (click)="toggleChoose(2,$event)">患者查询</li>
-                <li nz-menu-item (click)="toggleChoose(2,$event)">患者主索引</li>
+                <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/patients">患者查询</li>
+                <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/sleepanalysis">患者主索引</li>
               </ul>
             </li>
             <li nz-submenu>
               <span title><i class="anticon anticon-laptop"></i>健康监测</span>
               <ul>
-                <li nz-menu-item (click)="toggleChoose(2,$event)">床用体征监测</li>
+                <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/demo">床用体征监测</li>
                 <li nz-menu-item (click)="toggleChoose(2,$event)">多体征监测</li>
               </ul>
             </li>
@@ -57,8 +57,9 @@
             </li>
           </ul>
         </nz-sider>
-        <nz-layout style="padding: 24px 24px">
-          <nz-content style="background:#fff; padding: 24px; min-height: 280px;">
+        <nz-layout style="padding: 20px;background-color:#EBEDF3;">
+          <nz-content style=" min-height: 280px;">
+            <app-tabs [activePage] = "activePageName"></app-tabs>
             <router-outlet></router-outlet>
 
           </nz-content>

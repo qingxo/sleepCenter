@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ActivatedRoute, Params} from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,7 +9,9 @@ export class HomeComponent implements OnInit {
 
   homeShow:boolean = true;
   otherShow:any ;
-  constructor() { }
+  activePageName:string = '';
+  activePageUrl:string='';
+  constructor(public route:ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -22,7 +24,10 @@ export class HomeComponent implements OnInit {
       this.otherShow = ev;
       this.homeShow = false;
     }
-    console.log(this.otherShow)
+
+    this.activePageName  =ev.target.innerText;
+
+    console.log(this.route.snapshot)
   }
 
   test(){
