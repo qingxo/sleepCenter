@@ -26,8 +26,14 @@ export class HomeComponent implements OnInit {
     }
 
     this.activePageName  =ev.target.innerText;
+    setTimeout(()=>{
+      this.activePageUrl =this.route['_futureSnapshot']['_routerState'].url
+    },1)
 
-    console.log(this.route.snapshot)
+  }
+
+  menuChange(info){
+    console.log("the home component info:",info);
   }
 
   test(){
