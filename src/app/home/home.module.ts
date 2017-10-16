@@ -7,12 +7,13 @@ import {HomeComponent} from './home.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { PatientsComponent } from './patients/patients.component';
 import { SleepAnalysisComponent } from './sleep-analysis/sleep-analysis.component';
+import { TtsComponent } from './tts/tts.component';
 @NgModule({
   imports: [
     CommonModule,
     NgZorroAntdModule,
     HomeRoutingModule
   ],
-  declarations: [HomeComponent,DemoComponent, TabsComponent, PatientsComponent, SleepAnalysisComponent]
+  declarations: [HomeComponent,DemoComponent, TabsComponent, PatientsComponent, SleepAnalysisComponent, TtsComponent]
 })
 export class HomeModule { }

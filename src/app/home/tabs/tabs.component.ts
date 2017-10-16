@@ -10,12 +10,13 @@ export class TabsComponent implements OnInit,OnChanges {
 
 @Input() activePage:string = '';
 @Input() activeUrl:string='';
-@Output() fired:EventEmitter<any> = new EventEmitter<any>()
-indexPage:object = {
-  name:'我的首页',
-  url:'/home/patients'
-};
+@Output() fired:EventEmitter<any> = new EventEmitter<any>();
+@Output() tabLen:EventEmitter<number> = new EventEmitter<number>();
     tabs = [
+      {
+        name:'我的首页',
+        url:'/home/patients'
+      }
   ];
 indexPageName:string = '我的首页';
 btnIndex:number = 0;
@@ -33,9 +34,6 @@ btnIndex:number = 0;
   }
 
   tabsOperate(){
-    if(this.tabs.length==0){
-      this.tabs.push(this.indexPage);
-    }
     let addFlag = true;
     for(let i =0;i<this.tabs.length;i++){
       if(this.tabs[i].url === this.activeUrl){
@@ -46,6 +44,8 @@ btnIndex:number = 0;
     if(addFlag){
         this.tabs.push({name:this.activePage,url:this.activeUrl})
     }
+
+    this.tabLen.emit(this.tabs.length);
   }
 
   activeTab(){
@@ -90,7 +90,7 @@ btnIndex:number = 0;
       this.goTabPages(this.tabs[this.btnIndex].url)
 
     }
-
+    this.tabLen.emit(this.tabs.length);
 
   };
 

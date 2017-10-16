@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   otherShow:any ;
   activePageName:string = '';
   activePageUrl:string='';
+  tabLength:number =1;
   constructor(public route:ActivatedRoute) { }
 
   ngOnInit() {
@@ -41,5 +42,9 @@ export class HomeComponent implements OnInit {
 
       }
     })
+  }
+
+  tabLengh(num){
+    this.tabLength = num;
   }
 }

@@ -57,11 +57,19 @@
             </li>
           </ul>
         </nz-sider>
-        <nz-layout style="padding: 20px;background-color:#EBEDF3;">
+        <nz-layout style="background-color:#EBEDF3;">
           <nz-content style=" min-height: 280px;">
-            <app-tabs [activePage] = "activePageName" [activeUrl]="activePageUrl" (fired)="menuChange($event)"></app-tabs>
-            <router-outlet></router-outlet>
+            <div class="">
 
+              <div class="tt" [class.noTabs]="tabLength==1"  style="padding:10px 10px 0 10px">
+                <app-tabs [activePage] = "activePageName" [activeUrl]="activePageUrl" (fired)="menuChange($event)" (tabLen)="tabLengh($event)"></app-tabs>
+
+              </div>
+              <div class="" style="padding: 0 20px;">
+                <router-outlet></router-outlet>
+
+              </div>
+            </div>
           </nz-content>
         </nz-layout>
       </nz-layout>
