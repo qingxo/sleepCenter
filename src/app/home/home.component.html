@@ -15,7 +15,7 @@
         <nz-sider [nzWidth]="140" >
           <ul nz-menu [nzMode]="'inline'" style="height:100%">
             <li >
-              <a title class="head-index"  [class.home-choose]='homeShow'  (click)="toggleChoose(1,$event)" ><i class="anticon anticon-home"></i>我的首页</a>
+              <a title class="head-index ant-menu-item"  [class.ant-menu-item-selected]='homeShow'  (click)="toggleChoose(1,$event)" ><i class="anticon anticon-home"></i>我的首页</a>
             </li>
             <li nz-submenu>
               <span title><i class="anticon anticon-user"></i>患者档案</span>

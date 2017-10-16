@@ -51,37 +51,47 @@ btnIndex:number = 0;
   activeTab(){
     setTimeout(()=>{
       if(this.activeUrl!=null){
-        let tmp = 0
         for(let i =0;i<this.tabs.length;i++){
           if(this.tabs[i].url === this.activeUrl){
-            tmp = i;
+            this.btnIndex = i;
             break;
           }
         }
         $('.ant-tabs-tab').removeClass('ant-tabs-tab-active');
-        $('.ant-tabs-tab').eq(tmp).addClass('ant-tabs-tab-active');
-        $('.ant-tabs-bar').attr('ng-reflect-selected-index',tmp);
-        for(let j=0;j<this.tabs.length;j++){
-          $('.ant-tabs-tabpan').addClass('ant-tabs-tabpane-inactive')
-        }
-        $('.ant-tabs-tabpan').eq(tmp).removeClass('ant-tabs-tabpane-inactive').addClass('ant-tabs-tabpane-active')
-
+        $('.ant-tabs-tab').eq(this.btnIndex).addClass('ant-tabs-tab-active');
       }
     },1)
 
   }
 
-  showTpl(info){
-    this.router.navigate([info.url]);
-    // this.fired.emit(info);
-    console.log()
+  showTpl(info,index){
+    this.fired.emit(info);
+    this.btnIndex = index;
+    this.activeUrl = info.url;
+    this.activeTab()
+    this.goTabPages(info.url);
+  }
+
+  goTabPages(url){
+    this.router.navigate([url]);
   }
 
   ngOnInit() {
-    console.log("init tabs")
   }
-  closeTab(tab) {
-    this.tabs.splice(this.tabs.indexOf(tab), 1);
+  closeTab(tab,index) {
+    if(this.btnIndex !== index){ //关闭的页面，不是当前展示的页面时
+      this.tabs.splice(this.tabs.indexOf(tab), 1);
+    }else{
+      this.tabs.splice(this.tabs.indexOf(tab), 1);
+      let len = this.tabs.length-1;
+      index > len?this.btnIndex = len:this.btnIndex = index;
+      this.activeUrl = this.tabs[this.btnIndex].url;
+      this.activeTab()
+      this.goTabPages(this.tabs[this.btnIndex].url)
+
+    }
+
+
   };
 
 

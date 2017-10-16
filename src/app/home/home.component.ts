@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -33,12 +34,12 @@ export class HomeComponent implements OnInit {
   }
 
   menuChange(info){
-    console.log("the home component info:",info);
+    $(".ant-menu-item").removeClass('ant-menu-item-selected');
+    $('.ant-menu-item').each((index,el)=>{
+      if($(el).attr('routerlink')===info.url){
+        $(el).addClass('ant-menu-item-selected');
+
+      }
+    })
   }
-
-  test(){
-    console.log("test")
-  }
-
-
 }
