@@ -58,7 +58,7 @@
       </ul>
     </nz-sider>
     <nz-layout style="background-color:#EBEDF3;">
-      <nz-content style=" min-height: 280px;background-color:white">
+      <nz-content style=" min-height: 280px;" class="bodyBG-white" [class.bodyBG]='activePageName=="我的首页"'>
         <div class="">
 
           <div class="tt" [class.noTabs]="tabLength==1" style="">
