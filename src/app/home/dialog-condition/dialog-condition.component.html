@@ -1,0 +1,33 @@
+<nz-modal [nzWidth]="420" [nzVisible]="isVisible" [nzTitle]="'更多筛选条件'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)" class="d-condition">
+  <ng-template #modalContent>
+    <div class="">
+      <form class="" method="post">
+        <div class="line">
+          <label for="">患者姓名:</label>
+          <input type="text" name="" value="">
+        </div>
+        <div class="line">
+          <label for="">门诊号:</label>
+          <input type="text" name="" value="">
+        </div>
+        <div class="line">
+          <label for="">联系方式:</label>
+          <input type="text" name="" value="">
+        </div>
+        <div class="line">
+          <label for="">就诊日期:</label>
+          <nz-datepicker style="width: 38%;" (ngModelChange)="_startDate=$event;_startValueChange()" [nzDisabledDate]=" _disabledStartDate " [nzShowTime]="true " [nzFormat]=" 'YYYY-MM-DD HH:mm:ss' " [nzPlaceHolder]=" 'Start date' "></nz-datepicker>
+          <nz-datepicker style="width: 38%; " (ngModelChange)="_endDate=$event;_endValueChange() " [nzDisabledDate]="_disabledEndDate " [nzShowTime]="_endTime " [nzFormat]=" 'YYYY-MM-DD HH:mm:ss' " [nzPlaceHolder]=" 'End date' "></nz-datepicker>
+        </div>
+        <div class="line ">
+          <label for=" ">就诊科室:</label>
+          <input type="text " name=" " value=" ">
+        </div>
+        <div class="line ">
+          <label for=" ">就诊医生:</label>
+          <input type="text " name=" " value=" ">
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</nz-modal>

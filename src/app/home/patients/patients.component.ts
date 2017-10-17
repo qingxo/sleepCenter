@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
+import { DialogConditionComponent } from '../dialog-condition'
 @Component({
   selector: 'app-patients',
   templateUrl: './patients.component.html',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef) { }
 
   ngOnInit() {
+
+  }
+
+  showModal() {
+    const componentFatory = this.componentFactoryResolver.resolveComponentFactory(DialogConditionComponent);
+    const containerRef = this.viewContainerRef;
+    containerRef.clear();
+    const dd = <DialogConditionComponent>containerRef.createComponent(componentFatory).instance;
   }
 
 }
