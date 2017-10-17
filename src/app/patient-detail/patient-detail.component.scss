@@ -1,0 +1,48 @@
+.patient-detail {
+  width: 100%;
+  height: 100%;
+  background: #EBEDF3;
+
+  .left-detail {
+    width: 180px;
+    height: 100%;
+    float: left;
+    background-color: white;
+    box-shadow: 0 0 10px 0 #DBDFE9;
+
+    .left-content {
+      display: block;
+      margin: 15px 0;
+      text-align: center;
+
+      .left-name {
+        font-size: 18px;
+        margin: 5px 0;
+        color: #333333;
+      }
+
+      .left-info {
+        font-size: 14px;
+        color: #a5a5a5;
+      }
+
+      .left-tel {
+        font-size: 14px;
+        color: #333333;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .right-detail {
+    height: 100%;
+
+    .right-tabs {
+      background-color: white;
+    }
+
+    .right-content {
+      padding: 10px 10px 10px 190px;
+    }
+  }
+}

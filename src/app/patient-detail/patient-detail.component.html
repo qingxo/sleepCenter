@@ -1,0 +1,31 @@
+<app-head-layout></app-head-layout>
+<div class="patient-detail">
+  <div class="left-detail">
+    <div class="left-content">
+      <nz-avatar nzSize="large" nzIcon="user"></nz-avatar>
+      <div class="left-name">
+        张无忌
+      </div>
+      <div class="left-info">
+        <span>男 | 40岁</span>
+      </div>
+      <div class="left-tel">
+        13555559484
+      </div>
+    </div>
+  </div>
+  <div class="right-detail">
+    <div class="right-tabs">
+      <nz-tabset>
+        <nz-tab *ngFor="let tab of tabs">
+          <ng-template #nzTabHeading>
+            {{tab.name}}
+          </ng-template>
+        </nz-tab>
+      </nz-tabset>
+    </div>
+    <div class="right-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

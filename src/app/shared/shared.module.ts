@@ -7,7 +7,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { LineBtnComponent } from "./line-btn";
 import { SearchLineComponent } from './search-line';
-import { HeadLayoutComponent } from './head-layout/head-layout.component';
+import { HeadLayoutComponent } from './head-layout';
 @NgModule({
   imports: [
     CommonModule,
