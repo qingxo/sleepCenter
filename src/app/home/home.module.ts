@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DemoComponent } from './demo/demo.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { SharedModule } from '../shared';
+
 import { HomeComponent } from './home.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { PatientsComponent } from './patients/patients.component';
@@ -12,7 +14,8 @@ import { MainPageComponent } from './main-page/main-page.component';
   imports: [
     CommonModule,
     NgZorroAntdModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ],
   declarations: [HomeComponent,
     DemoComponent,

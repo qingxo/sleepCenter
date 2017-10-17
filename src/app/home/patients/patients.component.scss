@@ -1,0 +1,32 @@
+.patients-info {
+  background-color: white;
+  padding: 8px 20px;
+
+  .top-line {
+    height: 30px;
+    margin-bottom: 8px;
+
+    .lf {
+      float: left;
+    }
+
+    .rf {
+      float: right;
+
+      .more-opt {
+        color: white;
+        background-color: #3d80e4;
+        font-size: 12px;
+        line-height: 30px;
+        padding: 0 14px;
+        height: 30px;
+        display: inline-block;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .top-line:after {
+    clear: both;
+  }
+}
