@@ -1,27 +1,25 @@
 # SleepCenter
+智慧养老管理服务
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7.
+#技术架构
+angular +  ant-design
 
-## Development server
+#开发环境准备
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1、node v7.10.1
+2、typescript ，npm install -g typescript，版本2.0以上
+3、angular-cli ，npm install -g @angular/cli，版本1.0以上
+4、下载IDE，安装editconfig插件
+5、pm2 安装，版本在2.0以上
 
-## Code scaffolding
+#开发
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+npm start
 
-## Build
+#代码规范
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+npm run lint
 
-## Running unit tests
+#部署
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+npm run build
