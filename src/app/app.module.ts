@@ -15,11 +15,13 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouteReuseStrategy } from '@angular/router';
 import { CustomReuseStrategy } from './shared/custom-reuse-strategy';
+import { HeadLayoutComponent } from './head-layout/head-layout.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HeadLayoutComponent
   ],
   imports: [
     FormsModule,
