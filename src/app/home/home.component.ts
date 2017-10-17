@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   homeShow: boolean = true;
   otherShow: any;
-  activePageName: string = '';
+  activePageName: string = '我的首页';
   activePageUrl: string = '';
   tabLength: number = 1;
   constructor(public route: ActivatedRoute) { }
