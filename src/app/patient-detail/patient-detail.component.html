@@ -17,15 +17,32 @@
   <div class="right-detail">
     <div class="right-tabs">
       <nz-tabset>
-        <nz-tab *ngFor="let tab of tabs">
+        <nz-tab *ngFor="let tab of tabs;let index=index">
           <ng-template #nzTabHeading>
-            {{tab.name}}
+            <div class="" (click)="tabShow(tab,index)">
+              {{tab.name}}
+            </div>
+
           </ng-template>
         </nz-tab>
       </nz-tabset>
     </div>
     <div class="right-content">
-      <router-outlet></router-outlet>
+      <ng-container *ngIf="showIndex==0">
+        <app-patient-info></app-patient-info>
+      </ng-container>
+      <ng-container *ngIf="showIndex==1">
+        <app-clinic-info></app-clinic-info>
+      </ng-container>
+      <ng-container *ngIf="showIndex==2">
+        <app-sign-monitor></app-sign-monitor>
+      </ng-container>
+      <ng-container *ngIf="showIndex==3">
+        <app-sleep-monitor></app-sleep-monitor>
+      </ng-container>
+      <ng-container *ngIf="showIndex==4">
+        <app-sleep-report></app-sleep-report>
+      </ng-container>
     </div>
   </div>
 </div>

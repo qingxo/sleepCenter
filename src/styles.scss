@@ -46,3 +46,63 @@ li {
     }
   }
 }
+
+.box-info {
+  .box-head {
+    padding: 8px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.70);
+    box-shadow: 0 1px 0 0 #DEE3E9;
+
+    i {
+      display: inline-block;
+      background: #2E5EE9;
+      width: 5px;
+      height: 5px;
+      vertical-align: middle;
+      border-radius: 40px;
+      margin-right: 5px;
+    }
+  }
+
+  .box-body {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-height: 150px;
+  }
+}
+
+.table-detail {
+  table {
+    border-top: 1px solid rgba(222,227,233,0.70);
+    border-left: 1px solid rgba(222,227,233,0.70);
+    width: 100%;
+
+    tbody {
+      tr {
+        td {
+          border-right: 1px solid rgba(222,227,233,0.70);
+          border-bottom: 1px solid rgba(222,227,233,0.70);
+        }
+
+        span {
+          font-size: 14px;
+          color: #666666;
+          padding: 8px 5px;
+          text-align: left;
+          display: block;
+        }
+
+        td:nth-child(odd) {
+          width: 88px;
+        }
+
+        span.tle {
+          width: 100%;
+          text-align: right;
+          background: rgba(241,245,249,0.50);
+        }
+      }
+    }
+  }
+}

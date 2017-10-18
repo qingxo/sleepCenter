@@ -16,12 +16,22 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RouteReuseStrategy } from '@angular/router';
 import { CustomReuseStrategy } from './shared/custom-reuse-strategy';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
+import { PatientInfoComponent } from './patient-info/patient-info.component';
+import { ClinicInfoComponent } from './clinic-info/clinic-info.component';
+import { SignMonitorComponent } from './sign-monitor/sign-monitor.component';
+import { SleepMonitorComponent } from './sleep-monitor/sleep-monitor.component';
+import { SleepReportComponent } from './sleep-report/sleep-report.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NotFoundComponent,
-    PatientDetailComponent
+    PatientDetailComponent,
+    PatientInfoComponent,
+    ClinicInfoComponent,
+    SignMonitorComponent,
+    SleepMonitorComponent,
+    SleepReportComponent
   ],
   imports: [
     FormsModule,
