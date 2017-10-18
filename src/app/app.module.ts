@@ -6,6 +6,7 @@ import { Http, HttpModule, XHRBackend, RequestOptions } from '@angular/http';
 import { HomeModule } from './home';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared'
+import { EchartsNg2Module } from 'echarts-ng2';
 
 import { InterceptedHttp, httpFactory } from './shared/base.http.interceptor';
 import { LoginGuard } from './guard/LoginGuard';
@@ -39,6 +40,7 @@ import { SleepReportComponent } from './sleep-report/sleep-report.component';
     BrowserModule,
     SharedModule,
     HomeModule,
+    EchartsNg2Module,
     NgZorroAntdModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule

@@ -1,0 +1,25 @@
+.circles {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: white;
+
+  .circles-head {
+    background: #FFFFFF;
+    box-shadow: 0 1px 0 0 #DEE3E9;
+    font-size: 16px;
+    color: #555555;
+    height: 40px;
+    line-height: 40px;
+
+    img,
+    span {
+      display: inline-block;
+      padding-left: 10px;
+    }
+  }
+
+  .lines {
+    text-align: center;
+  }
+}

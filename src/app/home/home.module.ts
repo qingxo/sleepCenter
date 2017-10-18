@@ -4,6 +4,7 @@ import { DemoComponent } from './demo/demo.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { SharedModule } from '../shared';
+import { EchartsNg2Module } from 'echarts-ng2';
 
 import { HomeComponent } from './home.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -13,12 +14,14 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { DialogConditionComponent } from './dialog-condition';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewPatientsComponent } from './new-patients/new-patients.component';
+import { CirclesComponent } from './circles';
 
 @NgModule({
   imports: [
     CommonModule,
     NgZorroAntdModule,
     HomeRoutingModule,
+    EchartsNg2Module,
     FormsModule,
     ReactiveFormsModule,
     SharedModule
@@ -32,7 +35,8 @@ import { NewPatientsComponent } from './new-patients/new-patients.component';
     SleepAnalysisComponent,
     MainPageComponent,
     DialogConditionComponent,
-    NewPatientsComponent
+    NewPatientsComponent,
+    CirclesComponent
   ]
 })
 export class HomeModule { }

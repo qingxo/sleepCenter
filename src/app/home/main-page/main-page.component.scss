@@ -10,6 +10,7 @@
   .new-patient-info {
     width: 100%;
     margin: 10px 0;
+    overflow: hidden;
 
     & > div {
       float: left;
@@ -25,6 +26,34 @@
     }
 
     div:nth-child(2):after {
+      clear: both;
+    }
+  }
+
+  .circle-lines {
+    width: 100%;
+    overflow: hidden;
+
+    & > div {
+      float: left;
+      width: 33.33%;
+      overflow: hidden;
+    }
+
+    div:nth-child(1) {
+      padding-right: 5px;
+    }
+
+    div:nth-child(2) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    div:nth-child(3) {
+      padding-left: 5px;
+    }
+
+    div:nth-child(3):after {
       clear: both;
     }
   }
