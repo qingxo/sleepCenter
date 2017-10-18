@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="28px" viewBox="0 0 24 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>待随访</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-1.4%" y="-5.7%" width="102.7%" height="110.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.858823529   0 0 0 0 0.874509804   0 0 0 0 0.91372549  0 0 0 0.7 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M1.23913043,7.28016763 L13.0108696,7.28016763 C13.0108696,7.28016763 12.2082512,16.7937877 7.125,16.7937877 C2.04174881,16.7937877 1.23913043,7.28016763 1.23913043,7.28016763 Z" id="path-2"></path>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.699999988">
+        <g id="01首页---" transform="translate(-772.000000, -188.000000)">
+            <g id="Group-12-Copy-5" filter="url(#filter-1)" transform="translate(715.000000, 90.000000)">
+                <g id="Group-11" transform="translate(62.000000, 59.000000)">
+                    <g id="Group-34" transform="translate(0.000000, 44.000000)">
+                        <g id="待随访">
+                            <path d="M1.52309783,0.0503726962 L12.7269022,0.0503726962 C12.7269022,0.0503726962 12.1003736,8.50136039 7.19870924,8.50136039 C2.29704484,8.50136039 1.52309783,0.0503726962 1.52309783,0.0503726962 Z" id="Rectangle-203" fill="#8390A3"></path>
+                            <g id="Rectangle-203" transform="translate(7.125000, 12.036978) rotate(-180.000000) translate(-7.125000, -12.036978) ">
+                                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                                <path stroke="#8390A3" stroke-width="2" d="M2.37680733,8.28016763 C2.39313725,8.38296766 2.41060875,8.48825567 2.42925944,8.59580367 C2.61378716,9.65987085 2.87378233,10.7225543 3.21925589,11.7053486 C4.1391853,14.3223404 5.44264446,15.7937877 7.125,15.7937877 C8.80735554,15.7937877 10.1108147,14.3223404 11.0307441,11.7053486 C11.3762177,10.7225543 11.6362128,9.65987085 11.8207406,8.59580367 C11.8393912,8.48825567 11.8568627,8.38296766 11.8731927,8.28016763 L2.37680733,8.28016763 Z"></path>
+                            </g>
+                            <path d="M2.47826087,13.622581 C2.47826087,13.622581 3.7173913,11.719857 5.88586957,12.3540984 C7.07430359,12.7016942 8.05434783,13.622581 9.29347826,13.622581 C10.5326087,13.622581 11.1521739,13.3054604 11.1521739,13.3054604 L12.3913043,15.8424257 L11.4619565,17.1109084 L1.23913043,16.7937877 L2.47826087,13.622581 Z" id="Path-225" fill="#8390A3"></path>
+                            <rect id="Rectangle-201" fill="#8390A3" x="0" y="0" width="14.25" height="1.54285714" rx="0.771428571"></rect>
+                            <rect id="Rectangle-201" fill="#8390A3" x="0" y="16.1595464" width="14.25" height="1.54285714" rx="0.771428571"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

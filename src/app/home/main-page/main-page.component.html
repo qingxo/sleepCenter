@@ -1,3 +1,17 @@
 <div class="index-page">
-  <app-line-btn [totalBtn]="['今日','本周','本月','本年']"></app-line-btn>
+  <div class="day-choose">
+    <app-line-btn [totalBtn]="['今日','本周','本月','本年']"></app-line-btn>
+
+  </div>
+  <div class="new-patient-info">
+    <div class="">
+      <app-new-patients></app-new-patients>
+
+    </div>
+    <div class="">
+      <app-new-patients [imageType]=1></app-new-patients>
+
+    </div>
+
+  </div>
 </div>

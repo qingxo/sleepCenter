@@ -1,0 +1,54 @@
+.new-patients {
+  background-color: white;
+
+  .new-patients-head {
+    font-size: 16px;
+    color: #555555;
+    padding: 9px;
+    border-bottom: 1px solid #dee3e9;
+
+    span {
+      display: inlien-block;
+      vertical-align: top;
+      line-height: 21px;
+      margin-left: 5px;
+    }
+  }
+
+  .new-patients-body {
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+
+    .p-block {
+      display: inline-block;
+      width: 33.33%;
+      text-align: center;
+      float: left;
+      height: 120px;
+      padding-top: 15px;
+      background-color: white;
+
+      .p-num {
+        color: #6f7B91;
+        font-size: 36px;
+      }
+
+      .p-detail {
+        color: #8390A3;
+        font-size: 12px;
+
+        img {
+          display: inline-block;
+          margin-right: 4px;
+        }
+
+        span {
+          display: inline-block;
+          line-height: 29px;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
