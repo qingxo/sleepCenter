@@ -8,6 +8,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { LineBtnComponent } from "./line-btn";
 import { SearchLineComponent } from './search-line';
 import { HeadLayoutComponent } from './head-layout';
+import { TimesComponent } from './times/times.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,12 +19,14 @@ import { HeadLayoutComponent } from './head-layout';
   declarations: [
     LineBtnComponent,
     SearchLineComponent,
-    HeadLayoutComponent
+    HeadLayoutComponent,
+    TimesComponent
   ],
   exports: [
     LineBtnComponent,
     SearchLineComponent,
-    HeadLayoutComponent
+    HeadLayoutComponent,
+    TimesComponent
   ]
 })
 export class SharedModule { }

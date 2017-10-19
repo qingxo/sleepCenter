@@ -22,6 +22,8 @@ import { ClinicInfoComponent } from './clinic-info/clinic-info.component';
 import { SignMonitorComponent } from './sign-monitor/sign-monitor.component';
 import { SleepMonitorComponent } from './sleep-monitor/sleep-monitor.component';
 import { SleepReportComponent } from './sleep-report/sleep-report.component';
+import { MedicalDetailComponent } from './medical-detail/medical-detail.component';
+import { PersonInfoComponent } from './person-info/person-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import { SleepReportComponent } from './sleep-report/sleep-report.component';
     ClinicInfoComponent,
     SignMonitorComponent,
     SleepMonitorComponent,
-    SleepReportComponent
+    SleepReportComponent,
+    MedicalDetailComponent,
+    PersonInfoComponent
   ],
   imports: [
     FormsModule,

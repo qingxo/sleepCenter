@@ -1,0 +1,41 @@
+.medical-detail {
+  width: 100%;
+  background: #EBEDF3;
+
+  .head-zoom {
+    margin-top: 10px;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+
+  .medical-content {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 10px;
+
+    .time-zoom {
+      float: right;
+      margin-right: 20px;
+    }
+
+    .left-content {
+      float: left;
+      width: 65%;
+      padding-right: 10px;
+
+      .tabs-info {
+        background: #F5F9FC;
+        box-shadow: 0 1px 0 0 #E0E2E4;
+      }
+    }
+
+    .right-content {
+      float: left;
+      width: 35%;
+    }
+
+    .right-content:after {
+      clear: both;
+    }
+  }
+}

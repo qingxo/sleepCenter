@@ -1,0 +1,58 @@
+<div class="medical-detail">
+  <app-head-layout></app-head-layout>
+  <div class="head-zoom">
+    <app-person-info></app-person-info>
+  </div>
+  <div class="medical-content">
+    <div class="left-content">
+      <div class="box-info">
+        <div class="box-head">
+          <i></i><span>监测报告</span>
+          <div class="time-zoom">
+            <app-times [name]="['监测时间:']" (fired)="getReportTime($event)"></app-times>
+          </div>
+        </div>
+        <div class="box-body" style="padding:0 ;">
+          <div class="tabs-info">
+            <nz-tabset>
+              <nz-tab *ngFor="let tab of tabs;let index=index">
+                <ng-template #nzTabHeading>
+                  <div class="" (click)="showTpl(index)">
+                    {{tab.name}}
+                  </div>
+
+                </ng-template>
+              </nz-tab>
+            </nz-tabset>
+          </div>
+          <div class="">
+            <ng-container *ngIf="tabsIndex==0">
+              000
+            </ng-container>
+
+            <ng-container *ngIf="tabsIndex==1">
+              111
+            </ng-container>
+
+            <ng-container *ngIf="tabsIndex==2">
+              xxx222
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-content">
+      <div class="box-info">
+        <div class="box-head">
+          <i></i><span>诊断记录</span>
+          <div class="time-zoom">
+            <app-times></app-times>
+          </div>
+        </div>
+        <div class="box-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
