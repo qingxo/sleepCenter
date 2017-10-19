@@ -1,0 +1,124 @@
+<div class="page-privileges">
+  <div class="top-line">
+    <div class="lf">
+      <app-line-btn [totalBtn]="['系统管理员','医护人员']"></app-line-btn>
+    </div>
+    <div class="panel">
+      <div class="title">权限详情</div>  
+      <div class="panel-bd">
+        <!-- <div class="treeview">
+          <div class="level-1 unfold">
+            <i class="icon-folder"></i>
+            <label class="beauty-checkbox">
+              <input type="checkbox"/>
+              <span class="icon-check"></span>
+              <span>我的工作</span>
+            </label>
+            <div class="level-2 fold">
+              <i class="icon-folder"></i>
+              <label class="beauty-checkbox">
+                <input type="checkbox"/>
+                <span class="icon-check"></span>
+                <span>待处理异常</span>
+              </label>
+              <div class="level-3 unfold last-level">
+                <i class="icon-folder"></i>
+                <label class="beauty-checkbox">
+                  <input type="checkbox"/>
+                  <span class="icon-check"></span>
+                  <span>处理1</span>
+                </label>
+              </div>
+              <div class="level-3 unfold last-level">
+                <i class="icon-folder"></i>
+                <label class="beauty-checkbox">
+                  <input type="checkbox"/>
+                  <span class="icon-check"></span>
+                  <span>处理2</span>
+                </label>
+              </div>
+            </div>
+            <div class="level-2 unfold">
+              <i class="icon-folder"></i>
+              <label class="beauty-checkbox">
+                <input type="checkbox"/>
+                <span class="icon-check"></span>
+                <span>数据上传提醒</span>
+              </label>
+              <div class="level-3 unfold last-level">
+                <i class="icon-folder"></i>
+                <label class="beauty-checkbox">
+                  <input type="checkbox"/>
+                  <span class="icon-check"></span>
+                  <span>详情</span>
+                </label>
+              </div>
+            </div>
+            <div class="level-2 unfold last-level">
+              <i class="icon-folder"></i>
+              <label class="beauty-checkbox">
+                <input type="checkbox"/>
+                <span class="icon-check"></span>
+                <span>生日提醒</span>
+              </label>
+            </div>
+          </div>
+          <div class="level-1">
+            <i class="icon-folder"></i>
+            <label class="beauty-checkbox">
+              <input type="checkbox"/>
+              <span class="icon-check"></span>
+              <span>异常监控</span>
+            </label>
+          </div>
+          <div class="level-1">
+            <i class="icon-folder"></i>
+            <label class="beauty-checkbox">
+              <input type="checkbox"/>
+              <span class="icon-check"></span>
+              <span>居民管理</span>
+            </label>
+          </div>
+          <div class="level-1">
+            <i class="icon-folder"></i>
+            <label class="beauty-checkbox">
+              <input type="checkbox"/>
+              <span class="icon-check"></span>
+              <span>体验模版</span>
+            </label>
+          </div>
+        </div> -->
+        <div class="treeview">
+          <div class="level-1 unfold" *ngFor="let item of tree;let index = index">
+            <i class="icon-folder" (click)="toggleLevel($event)"></i>
+            <label class="beauty-checkbox">
+              <input type="checkbox" [(ngModel)]="item.checked" (change)="changeCheckItem(item)"/>
+              <span class="icon-check"></span>
+              <span>{{item.text}}</span>
+            </label>
+            <div class="level-2 unfold" [class.last-level]="!child.children" *ngFor="let child of item.children;let index = index">
+              <i class="icon-folder" (click)="toggleLevel($event)"></i>
+              <label class="beauty-checkbox">
+                <input type="checkbox" [(ngModel)]="child.checked" (change)="changeCheckItem(child)"/>
+                <span class="icon-check"></span>
+                <span>{{child.text}}</span>
+              </label>
+              <div class="level-3 unfold" [class.last-level]="!grandChild.children" *ngFor="let grandChild of child.children;let index = index">
+                <i class="icon-folder"></i>
+                <label class="beauty-checkbox">
+                  <input type="checkbox" [(ngModel)]="grandChild.checked"/>
+                  <span class="icon-check"></span>
+                  <span>{{grandChild.text}}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  
+
+</div>

@@ -1,0 +1,83 @@
+.d-condition {
+  background-color: grey;
+  .clearfix:after{
+    content: '';
+    display:table;
+    clear: both; 
+  }
+  .line {
+    display: block;
+    font-size: 14px;
+    color: #555555;
+    padding-left: 20px;
+    margin: 15px 0;
+    &.required i{
+      color: red;
+    }
+    label {
+      padding-right: 5px;
+      width: 70px;
+      line-height: 30px;
+      text-align: right;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .input{
+      width: 210px;
+      height: 30px;
+      border: 1px solid #DBE0E9;
+      border-radius: 2px;
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #ccc;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: #ccc;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: #ccc;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        color: #ccc;
+      }
+    }
+    textarea.input{
+      height: 60px;
+      resize: none;
+    }
+    .input-address{
+      display: inline-block;
+      width: 182px;
+      .selects{
+        width: auto;
+        margin-bottom: 10px;
+        border: 1px solid #DBE0E9;
+        border-radius: 2px;
+      }
+      select{
+        float: left;
+        display: block;
+        width: 90px;
+        height: 30px;
+        border: none;
+        background-color: transparent;
+        
+      }
+      span{
+        float: left;
+        display: block;
+      }
+      span:last-child{
+        margin-left: -1px;
+        border-left: 1px solid #DBE0E9;
+      }
+    }
+  }
+}
+.beauty-radio{
+  display: inline-block;
+  line-height: 30px;
+  &+.beauty-radio{
+    margin-left: 20px;
+  }
+}

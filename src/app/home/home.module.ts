@@ -16,6 +16,9 @@ import { NewPatientsComponent } from './new-patients/new-patients.component';
 import { CirclesComponent } from './circles';
 import { SleepMedicalComponent } from './sleep-medical/sleep-medical.component';
 import { PatientSubjectComponent } from './patient-subject/patient-subject.component';
+import { AccountsComponent } from './accounts';
+import { PrivilegesComponent } from './privileges';
+import { DialogAccountComponent } from './dialog-account';
 
 @NgModule({
   imports: [
@@ -27,7 +30,7 @@ import { PatientSubjectComponent } from './patient-subject/patient-subject.compo
     ReactiveFormsModule,
     SharedModule
   ],
-  entryComponents: [DialogConditionComponent],
+  entryComponents: [DialogConditionComponent, DialogAccountComponent],
 
   declarations: [HomeComponent,
     DemoComponent,
@@ -38,7 +41,10 @@ import { PatientSubjectComponent } from './patient-subject/patient-subject.compo
     NewPatientsComponent,
     CirclesComponent,
     SleepMedicalComponent,
-    PatientSubjectComponent
+    PatientSubjectComponent,
+    AccountsComponent,
+    PrivilegesComponent,
+    DialogAccountComponent
   ]
 })
 export class HomeModule { }

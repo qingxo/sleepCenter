@@ -1,0 +1,69 @@
+<nz-modal [nzWidth]="420" [nzVisible]="isVisible" [nzTitle]="'新增账号'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)" class="d-condition">
+  <ng-template #modalContent>
+    <div class="">
+      <form class="" method="post">
+        <div class="line required">
+          <label for=""><i>*</i>角色:</label>
+          <div class="beauty-radio">
+              <input type="radio" name="role" value="0" [(ngModel)]="role">
+              <span>系统管理员</span>
+          </div>
+          <div class="beauty-radio">
+              <input type="radio" name="role" value="1" [(ngModel)]="role">
+              <span>医护人员</span>
+          </div>
+        </div>
+        <div class="line required">
+          <label for=""><i>*</i>姓名:</label>
+          <input class="input" type="text" name="" value="">
+        </div>
+        <div class="line required">
+          <label for=""><i>*</i>用户名:</label>
+          <input class="input" type="text" name="" value="">
+        </div>
+        <div class="line required">
+          <label for=""><i>*</i>手机号:</label>
+          <input class="input" type="text" name="" value="">
+        </div>
+        <div class="line">
+          <label for="">性别:</label>
+          <div class="beauty-radio">
+            <input type="radio" name="sex" value="F" [(ngModel)]="sex">
+            <span>男</span>
+          </div>
+          <div class="beauty-radio">
+            <input type="radio" name="sex" value="M" [(ngModel)]="sex">
+            <span>女</span>
+          </div>
+        </div>
+        <div class="line">
+          <label for="">邮箱:</label>
+          <input class="input" type="text" name="" value="">
+        </div>
+        <div class="line">
+          <label for="">生日:</label>
+          <nz-datepicker (ngModelChange)="_startDate=$event;_startValueChange()" [nzDisabledDate]=" _disabledStartDate " [nzShowTime]="true " [nzFormat]=" 'YYYY-MM-DD' " [nzPlaceHolder]=" '' "></nz-datepicker>          
+        </div>
+        <div class="line">
+          <label for="">住址:</label>
+          <div class="input-address">
+            <div class="selects clearfix">
+              <span>
+                <select name="" id=""></select>
+              </span>
+              <span>
+                <select name="" id=""></select>
+              </span>
+            </div>         
+            <input class="input" type="text" name="" value="" placeholder="填写具体地址">
+          </div>
+          
+        </div>
+        <div class="line ">
+          <label for=" ">备注:</label>
+          <textarea class="input" name=""></textarea>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</nz-modal>
