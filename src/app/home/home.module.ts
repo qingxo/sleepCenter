@@ -15,6 +15,7 @@ import { DialogConditionComponent } from './dialog-condition';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewPatientsComponent } from './new-patients/new-patients.component';
 import { CirclesComponent } from './circles';
+import { SleepMedicalComponent } from './sleep-medical/sleep-medical.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { CirclesComponent } from './circles';
     MainPageComponent,
     DialogConditionComponent,
     NewPatientsComponent,
-    CirclesComponent
+    CirclesComponent,
+    SleepMedicalComponent
   ]
 })
 export class HomeModule { }

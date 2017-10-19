@@ -1,0 +1,39 @@
+.sleep-medical-info {
+  width: 100%;
+  padding: 10px;
+
+  .search-line {
+    width: 100%;
+    margin-bottom: 10px;
+
+    & > div {
+      display: inline-block;
+    }
+
+    .date-zoom {
+      width: 300px;
+      margin-right: 10px;
+    }
+
+    .btn {
+      float: right;
+
+      span {
+        width: 70px;
+        height: 30px;
+        display: inline-block;
+        font-size: 12px;
+        color: white;
+        line-height: 30px;
+        background-color: #3D70E4;
+        border-radius: 2px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+
+    .btn:after {
+      clear: both;
+    }
+  }
+}

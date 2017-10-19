@@ -1,21 +1,24 @@
-import { NgModule }              from '@angular/core';
-import { RouterModule, Routes }  from '@angular/router';
-import {DemoComponent} from './demo';
-import {HomeComponent} from './home.component';
-import {TabsComponent} from './tabs';
-import {PatientsComponent} from './patients';
-import {SleepAnalysisComponent} from './sleep-analysis';
-import {MainPageComponent} from './main-page'
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { DemoComponent } from './demo';
+import { HomeComponent } from './home.component';
+import { TabsComponent } from './tabs';
+import { PatientsComponent } from './patients';
+import { SleepAnalysisComponent } from './sleep-analysis';
+import { MainPageComponent } from './main-page'
+import { SleepMedicalComponent } from './sleep-medical';
 const homeRoutes: Routes = [
-  { path: '', component: HomeComponent,
-    children:[
+  {
+    path: '', component: HomeComponent,
+    children: [
       { path: '', redirectTo: '/home/main', pathMatch: 'full' },
-      {path:'main',component:MainPageComponent},
-      {path:'demo',component:DemoComponent},
-      {path:'patients',component:PatientsComponent},
-      {path:'sleepanalysis',component:SleepAnalysisComponent}
+      { path: 'main', component: MainPageComponent },
+      { path: 'demo', component: DemoComponent },
+      { path: 'patients', component: PatientsComponent },
+      { path: 'sleepanalysis', component: SleepAnalysisComponent },
+      { path: 'sleepmedical', component: SleepMedicalComponent }
     ]
- },
+  },
 
 ];
 
@@ -29,4 +32,4 @@ const homeRoutes: Routes = [
     RouterModule
   ]
 })
-export class HomeRoutingModule {}
+export class HomeRoutingModule { }
