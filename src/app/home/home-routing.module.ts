@@ -4,7 +4,6 @@ import { DemoComponent } from './demo';
 import { HomeComponent } from './home.component';
 import { TabsComponent } from './tabs';
 import { PatientsComponent } from './patients';
-import { SleepAnalysisComponent } from './sleep-analysis';
 import { MainPageComponent } from './main-page'
 import { SleepMedicalComponent } from './sleep-medical';
 const homeRoutes: Routes = [
@@ -15,7 +14,6 @@ const homeRoutes: Routes = [
       { path: 'main', component: MainPageComponent },
       { path: 'demo', component: DemoComponent },
       { path: 'patients', component: PatientsComponent },
-      { path: 'sleepanalysis', component: SleepAnalysisComponent },
       { path: 'sleepmedical', component: SleepMedicalComponent }
     ]
   },
