@@ -9,6 +9,7 @@ import { SleepMedicalComponent } from './sleep-medical';
 import { PatientSubjectComponent } from './patient-subject';
 import { AccountsComponent } from './accounts';
 import { PrivilegesComponent } from './privileges';
+import { EvaluationsComponent } from './evaluations';
 const homeRoutes: Routes = [
   {
     path: '', component: HomeComponent,
@@ -19,8 +20,9 @@ const homeRoutes: Routes = [
       { path: 'patients', component: PatientsComponent },
       { path: 'patientsubject', component: PatientSubjectComponent },
       { path: 'sleepmedical', component: SleepMedicalComponent },
-      { path:'accounts', component:AccountsComponent },
-      { path:'privileges', component:PrivilegesComponent }
+      { path: 'accounts', component: AccountsComponent },
+      { path: 'privileges', component: PrivilegesComponent },
+      { path: 'evaluations', component: EvaluationsComponent }
     ]
   },
 

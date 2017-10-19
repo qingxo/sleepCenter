@@ -19,6 +19,7 @@ import { PatientSubjectComponent } from './patient-subject/patient-subject.compo
 import { AccountsComponent } from './accounts';
 import { PrivilegesComponent } from './privileges';
 import { DialogAccountComponent } from './dialog-account';
+import { EvaluationsComponent } from './evaluations';
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { DialogAccountComponent } from './dialog-account';
     PatientSubjectComponent,
     AccountsComponent,
     PrivilegesComponent,
-    DialogAccountComponent
+    DialogAccountComponent,
+    EvaluationsComponent
   ]
 })
 export class HomeModule { }
