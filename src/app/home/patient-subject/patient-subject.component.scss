@@ -1,0 +1,94 @@
+.patient-subject-info {
+  width: 100%;
+
+  .search-line {
+    margin: 10px;
+
+    input {
+      height: 30px;
+      width: 160px;
+      margin: 0 20px 0 5px;
+    }
+
+    span {
+      float: right;
+      margin-right: 10px;
+      background: #3D70E4;
+      border-radius: 2px;
+      color: white;
+      font-size: 12px;
+      display: inline-block;
+      padding: 6px 24px;
+      cursor: pointer;
+    }
+
+    span:after {
+      clear: both;
+    }
+  }
+
+  .dot {
+    padding-left: 25px;
+    cursor: pointer;
+  }
+
+  .icons-plus {
+    background: url('/assets/images/plus.png') 0 10px no-repeat;
+    background-size: 16px auto;
+  }
+
+  .icons-minus {
+    background: url('/assets/images/minus.png') 0 10px no-repeat;
+    background-size: 16px auto;
+  }
+
+  .table-in {
+    margin: 10px 60px 20px;
+
+    table {
+      background: #E9EDF7;
+      border: 1px solid #DEE4E9;
+
+      thead {
+        tr {
+          background: #E9EDF7;
+          border: 1px solid #DEE4E9;
+
+          td span {
+            font-size: 14px;
+            color: #666666;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          background: #F5F9FC;
+          border: 1px solid #DEE4E9;
+
+          td span {
+            color: #333333;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .btn {
+      margin-top: 10px;
+      text-align: center;
+
+      span {
+        cursor: pointer;
+        background: #3D70E4;
+        border-radius: 2px;
+        width: 80px;
+        font-size: 14px;
+        color: white;
+        display: inline-block;
+        vertical-align: top;
+        padding: 5px 0;
+      }
+    }
+  }
+}

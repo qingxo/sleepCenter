@@ -6,6 +6,7 @@ import { TabsComponent } from './tabs';
 import { PatientsComponent } from './patients';
 import { MainPageComponent } from './main-page'
 import { SleepMedicalComponent } from './sleep-medical';
+import { PatientSubjectComponent } from './patient-subject';
 const homeRoutes: Routes = [
   {
     path: '', component: HomeComponent,
@@ -14,6 +15,7 @@ const homeRoutes: Routes = [
       { path: 'main', component: MainPageComponent },
       { path: 'demo', component: DemoComponent },
       { path: 'patients', component: PatientsComponent },
+      { path: 'patientsubject', component: PatientSubjectComponent },
       { path: 'sleepmedical', component: SleepMedicalComponent }
     ]
   },

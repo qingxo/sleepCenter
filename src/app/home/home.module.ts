@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewPatientsComponent } from './new-patients/new-patients.component';
 import { CirclesComponent } from './circles';
 import { SleepMedicalComponent } from './sleep-medical/sleep-medical.component';
+import { PatientSubjectComponent } from './patient-subject/patient-subject.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { SleepMedicalComponent } from './sleep-medical/sleep-medical.component';
     DialogConditionComponent,
     NewPatientsComponent,
     CirclesComponent,
-    SleepMedicalComponent
+    SleepMedicalComponent,
+    PatientSubjectComponent
   ]
 })
 export class HomeModule { }
