@@ -19,10 +19,16 @@ export class PatientSubjectComponent implements OnInit {
     console.log(a, b)
     if (b == 'icons-plus') {
       $(e.target).removeClass('icons-plus').addClass('icons-minus')
+      this.showInnerTable(false, e.target)
     } else {
       $(e.target).addClass('icons-plus').removeClass('icons-minus')
+      this.showInnerTable(true, e.target)
 
     }
+  }
+
+  showInnerTable(flag, target) {
+
   }
 
 }
