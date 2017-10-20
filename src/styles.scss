@@ -116,3 +116,23 @@ li {
     }
   }
 }
+
+// 美化checkbox
+.beauty-chk{
+  display: inline-block;
+  vertical-align: middle;
+  input{
+    display: none;
+    &:checked+.chk-icon{
+      background-image: url("/assets/images/checked.png");
+    }
+  }
+  .chk-icon{
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background-image: url("/assets/images/unchecked.png");
+    background-position: no-repeat;
+    background-position: center;
+  }
+}

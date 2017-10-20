@@ -20,6 +20,7 @@ import { AccountsComponent } from './accounts';
 import { PrivilegesComponent } from './privileges';
 import { DialogAccountComponent } from './dialog-account';
 import { EvaluationsComponent } from './evaluations';
+import { DialogEvaluationComponent } from './dialog-evaluation';
 
 @NgModule({
   imports: [
@@ -31,7 +32,7 @@ import { EvaluationsComponent } from './evaluations';
     ReactiveFormsModule,
     SharedModule
   ],
-  entryComponents: [DialogConditionComponent, DialogAccountComponent],
+  entryComponents: [DialogConditionComponent, DialogAccountComponent, DialogEvaluationComponent],
 
   declarations: [HomeComponent,
     DemoComponent,
@@ -46,7 +47,8 @@ import { EvaluationsComponent } from './evaluations';
     AccountsComponent,
     PrivilegesComponent,
     DialogAccountComponent,
-    EvaluationsComponent
+    EvaluationsComponent,
+    DialogEvaluationComponent
   ]
 })
 export class HomeModule { }
