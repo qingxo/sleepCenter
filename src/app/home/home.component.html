@@ -6,14 +6,14 @@
         <li>
           <a title class="head-index ant-menu-item" [class.ant-menu-item-selected]='homeShow' (click)="toggleChoose(1,$event)" routerLink="/home/main"><i class="anticon anticon-home"></i>我的首页</a>
         </li>
-        <li nz-submenu>
+        <li nz-submenu nzOpen=true>
           <span title><i class="anticon anticon-user"></i>患者档案</span>
           <ul class="menu-level-sec">
             <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/patients">患者查询</li>
             <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/patientsubject">患者主索引</li>
           </ul>
         </li>
-        <li nz-submenu>
+        <li nz-submenu nzOpen=true>
           <span title><i class="anticon anticon-laptop"></i>健康监测</span>
           <ul>
             <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/demo">床用体征监测</li>
@@ -21,7 +21,7 @@
           </ul>
         </li>
 
-        <li nz-submenu>
+        <li nz-submenu nzOpen=true>
           <span title><i class="anticon anticon-notification"></i>睡眠报告</span>
           <ul>
             <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/evaluations">睡眠障碍评估量表</li>
@@ -29,14 +29,14 @@
           </ul>
         </li>
 
-        <li nz-submenu>
+        <li nz-submenu nzOpen=true>
           <span title> <i class="anticon anticon-notification"></i>睡眠诊断</span>
           <ul>
             <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/sleepmedical">睡眠诊断</li>
           </ul>
         </li>
 
-        <li nz-submenu>
+        <li nz-submenu nzOpen=true>
           <span title><i class="anticon anticon-laptop"></i>随访管理</span>
           <ul>
             <li nz-menu-item (click)="toggleChoose(2,$event)">随访计划</li>
@@ -44,7 +44,7 @@
           </ul>
         </li>
 
-        <li nz-submenu>
+        <li nz-submenu nzOpen=true>
           <span title><i class="anticon anticon-laptop"></i>系统设置</span>
           <ul>
             <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/accounts">账号管理</li>
@@ -54,12 +54,11 @@
       </ul>
     </nz-sider>
     <nz-layout style="background-color:#EBEDF3;">
-      <nz-content style=" min-height: 280px;" class="bodyBG-white" [class.bodyBG]='activePageName=="我的首页"'>
+      <nz-content style=" min-height: 280px;" class="bodyBG-white" [class.bodyBG]='activePageUrl=="/home/main"'>
         <div class="">
 
-          <div class="tt" [class.noTabs]="tabLength==1" style="">
-            <app-tabs [activePage]="activePageName" [activeUrl]="activePageUrl" (fired)="menuChange($event)" (tabLen)="tabLengh($event)"></app-tabs>
-
+          <div class="tt" [class.noTabs]="tabLength==1">
+            <app-tabs [activePage]="activePageName" [activeUrl]="activePageUrl" (fired)="menuChange($event)" (tabInfo)="getTabInfo($event)"></app-tabs>
           </div>
           <div class="" style="">
             <router-outlet></router-outlet>
