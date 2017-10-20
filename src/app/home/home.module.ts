@@ -57,7 +57,7 @@ import { EchartEvaluationComponent } from './echart-evaluation';
     DialogConditionComponent,
     HmMsmComponent,
     SleepAnalysisComponent,
-    BarLineComponent
+    BarLineComponent,
     EchartEvaluationComponent
   ]
 })
