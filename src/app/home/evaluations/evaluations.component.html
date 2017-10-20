@@ -1,14 +1,15 @@
 <div class="page-system">
-  <div class="top-line">
+  <div class="top-line clearfix">
     <div class="date-zoom">
-      <nz-datepicker style="width: 40%;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'Start date'"></nz-datepicker>
+      <nz-datepicker style="width: 130px" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'Start date'"></nz-datepicker>
       至
-      <nz-datepicker style="width: 40%;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'End date'"></nz-datepicker>
+      <nz-datepicker style="width: 130px" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'End date'"></nz-datepicker>
     </div>
     <div class="search-wrap">
       <app-search-line></app-search-line>
-      <a class="more-opt" (click)="showModal()">新增账号</a>
+      <a class="btn">搜索</a>
     </div>
+    <a class="btn start-now" (click)="showModal()">开始评估</a>    
   </div>
 
   <div class="table-info">
@@ -45,47 +46,59 @@
           <td><span>89</span></td>
           <td><span>2017-06-27 10:26:54</span></td>
           <td><span>于丹</span></td>
-          <td><span>一般</span></td>
-          <td><span>正常</span></td>
+          <td><span>较好</span></td>
           <td><span>轻度</span></td>
+          <td><span>正常</span></td>
           <td><a>查看结果</a></td>
         </tr>
 
         <tr>
-          <td><span>王婉美</span></td>
-          <td><span>女</span></td>
-          <td><span>89</span></td>
+          <td><span>王介仁</span></td>
+          <td><span>男</span></td>
+          <td><span>76</span></td>
           <td><span>2017-06-27 10:26:54</span></td>
           <td><span>于丹</span></td>
-          <td><span>一般</span></td>
+          <td><span>较差</span></td>
+          <td><span>重度</span></td>
           <td><span>正常</span></td>
-          <td><span>轻度</span></td>
           <td><a>查看结果</a></td>
         </tr>
 
         <tr>
-          <td><span>王婉美</span></td>
+          <td><span>潘晓声</span></td>
           <td><span>女</span></td>
-          <td><span>89</span></td>
-          <td><span>2017-06-27 10:26:54</span></td>
+          <td><span>85</span></td>
+          <td><span>2017-06-27 10:22:10</span></td>
           <td><span>于丹</span></td>
           <td><span>一般</span></td>
-          <td><span>正常</span></td>
           <td><span>轻度</span></td>
+          <td><span>正常</span></td>
           <td><a>查看结果</a></td>
         </tr>
 
         <tr>
-          <td><span>王婉美</span></td>
+          <td><span>孔爱招</span></td>
           <td><span>女</span></td>
-          <td><span>89</span></td>
-          <td><span>2017-06-27 10:26:54</span></td>
+          <td><span>77</span></td>
+          <td><span>2017-06-27 10:20:28</span></td>
           <td><span>于丹</span></td>
           <td><span>一般</span></td>
           <td><span>正常</span></td>
-          <td><span>轻度</span></td>
+          <td><span>重度</span></td>
           <td><a>查看结果</a></td>
         </tr>
+
+        <tr>
+            <td><span>何庆唐</span></td>
+            <td><span>男</span></td>
+            <td><span>78</span></td>
+            <td><span>2017-06-27 10:11:07</span></td>
+            <td><span>于丹</span></td>
+            <td><span>一般</span></td>
+            <td><span>正常</span></td>
+            <td><span>轻度</span></td>
+            <td><a>查看结果</a></td>
+          </tr>
       </tbody>
     </table>
   </div>
