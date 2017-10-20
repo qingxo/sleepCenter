@@ -43,12 +43,18 @@ export class BarLineComponent implements OnInit {
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
           axisTick: {
             alignWithLabel: true
+          },
+          splitLine: {
+            show: false
           }
         }
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          splitLine: {
+            show: false
+          }
         }
       ],
       series: [
