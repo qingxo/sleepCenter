@@ -7,6 +7,7 @@ import { HomeModule } from './home';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared'
 import { EchartsNg2Module } from 'echarts-ng2';
+import { KSSwiperModule } from 'angular2-swiper';
 
 import { InterceptedHttp, httpFactory } from './shared/base.http.interceptor';
 import { LoginGuard } from './guard/LoginGuard';
@@ -24,6 +25,7 @@ import { SleepMonitorComponent } from './sleep-monitor/sleep-monitor.component';
 import { SleepReportComponent } from './sleep-report/sleep-report.component';
 import { MedicalDetailComponent } from './medical-detail/medical-detail.component';
 import { PersonInfoComponent } from './person-info/person-info.component';
+import { EvaluateQuestionnaireComponent } from './evaluate-questionnaire';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import { PersonInfoComponent } from './person-info/person-info.component';
     SleepMonitorComponent,
     SleepReportComponent,
     MedicalDetailComponent,
-    PersonInfoComponent
+    PersonInfoComponent,
+    EvaluateQuestionnaireComponent
   ],
   imports: [
     FormsModule,
@@ -45,6 +48,7 @@ import { PersonInfoComponent } from './person-info/person-info.component';
     SharedModule,
     HomeModule,
     EchartsNg2Module,
+    KSSwiperModule,
     NgZorroAntdModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule
