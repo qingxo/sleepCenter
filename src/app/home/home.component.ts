@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
   }
 
   menuChange(info) {
-    console.log(info)
     $(".ant-menu-item").removeClass('ant-menu-item-selected');
     $('.ant-menu-item').each((index, el) => {
       if ($(el).attr('routerlink') === info.url) {
@@ -58,9 +57,9 @@ export class HomeComponent implements OnInit {
   }
 
   getTabInfo(data) {
-    console.log(data)
     this.tabLength = data.len;
     this.activePageName = data.name;
     this.activePageUrl = data.url;
+    this.menuChange({ url: this.activePageUrl, name: this.activePageName })
   }
 }
