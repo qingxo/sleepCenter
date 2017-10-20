@@ -15,7 +15,17 @@
     img,
     span {
       display: inline-block;
-      padding-left: 10px;
+      padding-left: 6px;
+    }
+
+    img {
+      width: 16px;
+      height: auto;
+      vertical-align: top;
+      line-height: 40px;
+      display: inline-block;
+      margin: 12px 0 12px 12px;
+      padding: 0;
     }
   }
 

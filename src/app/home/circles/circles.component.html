@@ -1,6 +1,6 @@
 <div class="circles">
   <div class="circles-head">
-    <img src="" alt=""><span>{{name}}</span>
+    <img [src]="imageSrc" alt=""><span>{{name}}</span>
   </div>
   <div class="lines" #tt>
     <echarts-ng2 [option]="option" [style]="echartsStyle"></echarts-ng2>

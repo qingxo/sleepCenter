@@ -12,7 +12,7 @@ export class BarLineComponent implements OnInit {
   @Input() serisesData: Array<any> = [];
   @Input() echartsStyle: any = { 'height': '230px' };
   @Input() name: string = '测试';
-  @Input() imageSrc: string = "xxx";
+  @Input() imageSrc: string = "/assets/images/evaluate.png";
   @ViewChild('tt') el: ElementRef;
   constructor() { }
 
