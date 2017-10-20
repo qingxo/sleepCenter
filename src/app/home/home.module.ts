@@ -21,6 +21,9 @@ import { PrivilegesComponent } from './privileges';
 import { DialogAccountComponent } from './dialog-account';
 import { EvaluationsComponent } from './evaluations';
 import { DialogEvaluationComponent } from './dialog-evaluation';
+import { HmMsmComponent } from './hm-msm/hm-msm.component';
+import { SleepAnalysisComponent } from './sleep-analysis';
+
 
 @NgModule({
   imports: [
@@ -48,7 +51,10 @@ import { DialogEvaluationComponent } from './dialog-evaluation';
     PrivilegesComponent,
     DialogAccountComponent,
     EvaluationsComponent,
-    DialogEvaluationComponent
+    DialogEvaluationComponent,
+    DialogConditionComponent,
+    HmMsmComponent,
+    SleepAnalysisComponent
   ]
 })
 export class HomeModule { }

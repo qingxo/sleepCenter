@@ -11,7 +11,7 @@ export class TabsComponent implements OnInit, OnChanges {
   @Input() activePage: string = '';
   @Input() activeUrl: string = '';
   @Output() fired: EventEmitter<any> = new EventEmitter<any>();
-  @Output() tabLen: EventEmitter<number> = new EventEmitter<number>();
+  @Output() tabInfo: EventEmitter<any> = new EventEmitter<any>();
   tabs = [
     {
       name: '我的首页',
@@ -44,8 +44,8 @@ export class TabsComponent implements OnInit, OnChanges {
     if (addFlag) {
       this.tabs.push({ name: this.activePage, url: this.activeUrl })
     }
-
-    this.tabLen.emit(this.tabs.length);
+    let data = { len: this.tabs.length, name: this.activePage, url: this.activeUrl }
+    this.tabInfo.emit(data);
   }
 
   activeTab() {
@@ -86,11 +86,13 @@ export class TabsComponent implements OnInit, OnChanges {
       let len = this.tabs.length - 1;
       index > len ? this.btnIndex = len : this.btnIndex = index;
       this.activeUrl = this.tabs[this.btnIndex].url;
+      console.log(this.tabs)
       this.activeTab()
       this.goTabPages(this.tabs[this.btnIndex].url)
 
     }
-    this.tabLen.emit(this.tabs.length);
+    let data = { len: this.tabs.length, url: this.activeUrl, name: this.tabs[this.btnIndex].name }
+    this.tabInfo.emit(data);
 
   };
 

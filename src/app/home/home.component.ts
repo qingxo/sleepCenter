@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-home',
@@ -10,12 +11,15 @@ export class HomeComponent implements OnInit {
 
   homeShow: boolean = true;
   otherShow: any;
-  activePageName: string = '我的首页';
+  activePageName: string = '';
   activePageUrl: string = '';
   tabLength: number = 1;
-  constructor(public route: ActivatedRoute) { }
+  constructor(public route: ActivatedRoute, public router: Router) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.menuChange({ url: this.router['url'] })
+    }, 1)
   }
 
   toggleChoose(num, ev) {
@@ -39,12 +43,23 @@ export class HomeComponent implements OnInit {
     $('.ant-menu-item').each((index, el) => {
       if ($(el).attr('routerlink') === info.url) {
         $(el).addClass('ant-menu-item-selected');
+        this.activePageName = $(el).text().trim();
+        this.activePageUrl = info.url;
       }
     })
-    this.activePageName = info.name;
+    $('.ant-menu-submenu').each((index, el) => {
+      $(el).click()
+    });
+    // $('.ant-menu-submenu').removeClass('ant-menu-submenu-open');
+    // $('ul.ant-menu-sub').remove();
+
+
   }
 
-  tabLengh(num) {
-    this.tabLength = num;
+  getTabInfo(data) {
+    this.tabLength = data.len;
+    this.activePageName = data.name;
+    this.activePageUrl = data.url;
+    this.menuChange({ url: this.activePageUrl, name: this.activePageName })
   }
 }
