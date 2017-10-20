@@ -1,5 +1,5 @@
 const Infos = {
-  leftMenu =[
+  leftMenu: [
     { 'name': '我的首页', 'url': '/home/main' },
     { 'name': '患者查询', 'url': '/home/patients' },
     { 'name': '患者主索引', 'url': '/home/patientsubject' },
