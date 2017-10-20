@@ -28,7 +28,12 @@ export class PatientSubjectComponent implements OnInit {
   }
 
   showInnerTable(flag, target) {
+    if (flag) {
+      $(target).parents('tr').next().css('display', 'none')
+    } else {
+      $(target).parents('tr').next().css('display', '')
 
+    }
   }
 
 }
