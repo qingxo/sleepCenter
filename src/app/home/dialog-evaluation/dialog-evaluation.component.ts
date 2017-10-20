@@ -17,6 +17,7 @@ export class DialogEvaluationComponent implements OnInit {
   handleOk = (e) => {
     console.log('点击了确定');
     this.isVisible = false;
+    window.open('/evaluatequestionnaire');
     console.log(this.role)
   }
 

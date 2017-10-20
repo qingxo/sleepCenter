@@ -7,6 +7,7 @@ import { HomeModule } from './home';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared'
 import { EchartsNg2Module } from 'echarts-ng2';
+import { SwiperModule, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import { InterceptedHttp, httpFactory } from './shared/base.http.interceptor';
 import { LoginGuard } from './guard/LoginGuard';
@@ -24,6 +25,15 @@ import { SleepMonitorComponent } from './sleep-monitor/sleep-monitor.component';
 import { SleepReportComponent } from './sleep-report/sleep-report.component';
 import { MedicalDetailComponent } from './medical-detail/medical-detail.component';
 import { PersonInfoComponent } from './person-info/person-info.component';
+import { EvaluateQuestionnaireComponent } from './evaluate-questionnaire';
+const SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  threshold: 50,
+  spaceBetween: 5,
+  slidesPerView: 1,
+  centeredSlides: true,
+  keyboardControl: true
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +46,8 @@ import { PersonInfoComponent } from './person-info/person-info.component';
     SleepMonitorComponent,
     SleepReportComponent,
     MedicalDetailComponent,
-    PersonInfoComponent
+    PersonInfoComponent,
+    EvaluateQuestionnaireComponent
   ],
   imports: [
     FormsModule,
@@ -45,6 +56,7 @@ import { PersonInfoComponent } from './person-info/person-info.component';
     SharedModule,
     HomeModule,
     EchartsNg2Module,
+    SwiperModule.forRoot(SWIPER_CONFIG),
     NgZorroAntdModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule

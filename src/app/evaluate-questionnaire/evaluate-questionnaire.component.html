@@ -1,0 +1,45 @@
+<app-head-layout>
+</app-head-layout>
+<div class="evaluate-questionnaire">
+  <div class="person-info">
+    <app-person-info></app-person-info>
+  </div>
+  <div class="container">
+    <div class="progress-wrap">
+      <span class="start hightlight">1</span>
+      <div class="progress">
+        <span style="width: 10%" id="progress"></span>
+      </div>
+      <span class="end" id="end">{{slides.length}}</span>
+    </div>
+    <div class="evaluate">
+      <div class="swiper-container" [swiper]="config" (indexChange)="onIndexChange($event)">
+        <div class="swiper-wrapper">
+          <div *ngFor="let slide of slides;let index=index" class="swiper-slide">
+            <div class="swiper-slide-content" fxLayout="column" fxLayoutAlign="center center">
+                <div class="question-wrap">
+                    <div class="question">
+                      <h1>{{index+1}}、您感到闷闷不乐、情绪低沉吗？</h1>
+                      <p>指心情不愉快，情绪低落</p>
+                    </div>
+                    <div class="choices">
+                      <p>没有</p>
+                      <p>很少</p>
+                      <p>有时</p>
+                      <p class="checked">经常</p>
+                      <p>总是</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <div class="prev" (click)="scrollPrev($event)"></div>
+        <div class="next" (click)="scrollNext($event)"></div>
+      </div>   
+    </div>
+    <div class="btns-wrap">
+      <a class="btn btn-plain">重新测试</a>
+      <a class="btn btn-primary">保存测评结果</a>
+    </div>
+  </div>
+</div>
