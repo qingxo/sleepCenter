@@ -23,6 +23,7 @@ import { EvaluationsComponent } from './evaluations';
 import { DialogEvaluationComponent } from './dialog-evaluation';
 import { HmMsmComponent } from './hm-msm/hm-msm.component';
 import { SleepAnalysisComponent } from './sleep-analysis';
+import { EchartEvaluationComponent } from './echart-evaluation';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { SleepAnalysisComponent } from './sleep-analysis';
     DialogEvaluationComponent,
     DialogConditionComponent,
     HmMsmComponent,
-    SleepAnalysisComponent
+    SleepAnalysisComponent,
+    EchartEvaluationComponent
   ]
 })
 export class HomeModule { }
