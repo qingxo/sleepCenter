@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EchartEvaluationComponent } from './echart-evaluation.component';
+import { ViewQuestionnaireComponent } from './view-questionnaire.component';
 
-describe('EchartEvaluationComponent', () => {
-  let component: EchartEvaluationComponent;
-  let fixture: ComponentFixture<EchartEvaluationComponent>;
+describe('PatientDetailComponent', () => {
+  let component: ViewQuestionnaireComponent;
+  let fixture: ComponentFixture<ViewQuestionnaireComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EchartEvaluationComponent ]
+      declarations: [ ViewQuestionnaireComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EchartEvaluationComponent);
+    fixture = TestBed.createComponent(ViewQuestionnaireComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

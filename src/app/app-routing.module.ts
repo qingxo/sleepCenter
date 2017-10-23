@@ -8,6 +8,7 @@ import { EvaluateQuestionnaireComponent } from './evaluate-questionnaire';
 import { AssessmentResultComponent } from './assessment-result';
 import { HmbedDetailComponent } from "./hmbed-detail";
 import { HmmsmDetailComponent } from "./hmmsm-detail";
+import { ViewQuestionnaireComponent } from './view-questionnaire';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'hmbeddetail', component: HmbedDetailComponent },
   { path: 'evaluatequestionnaire', component: EvaluateQuestionnaireComponent },
   { path: 'assessmentresult', component: AssessmentResultComponent },
+  { path: 'viewquestionnaire', component: ViewQuestionnaireComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
