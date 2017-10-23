@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
+import Infos from '../../shared/Infos'
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
@@ -79,6 +80,8 @@ export class TabsComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
   closeTab(tab, index) {
+    let arr = this.tabs[this.btnIndex].url.split('/')
+    let urlTarget = arr[arr.length - 1]
     if (this.btnIndex !== index) { //关闭的页面，不是当前展示的页面时
       this.tabs.splice(this.tabs.indexOf(tab), 1);
     } else {
@@ -86,11 +89,12 @@ export class TabsComponent implements OnInit, OnChanges {
       let len = this.tabs.length - 1;
       index > len ? this.btnIndex = len : this.btnIndex = index;
       this.activeUrl = this.tabs[this.btnIndex].url;
-      console.log(this.tabs)
       this.activeTab()
       this.goTabPages(this.tabs[this.btnIndex].url)
 
     }
+
+    Infos['killUrl'] = urlTarget
     let data = { len: this.tabs.length, url: this.activeUrl, name: this.tabs[this.btnIndex].name }
     this.tabInfo.emit(data);
 
