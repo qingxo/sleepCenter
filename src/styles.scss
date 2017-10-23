@@ -145,7 +145,7 @@ li {
     background: #F4F6F9;
     height: 40px;
 
-    i {
+    & > i {
       border-left: 3px solid #2e5ee9;
       width: 3px;
       display: inline-block;
@@ -153,7 +153,7 @@ li {
       margin: 8px 0 8px 12px;
     }
 
-    span {
+    & > span {
       font-family: PingFangSC-Regular;
       font-size: 16px;
       color: #333333;
