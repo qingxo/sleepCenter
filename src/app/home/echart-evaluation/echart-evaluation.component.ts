@@ -27,12 +27,15 @@ export class EchartEvaluationComponent implements OnInit {
       //     text: '特性示例：渐变色 阴影 点击缩放',
       //     subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
       // },
+      legend: {
+        show: true
+      },
       xAxis: {
           data: this.dataAxis,
           axisLabel: {
-              inside: true,
+              inside: false,
               textStyle: {
-                  color: '#fff'
+                  color: '#888'
               }
           },
           axisTick: {
@@ -53,7 +56,13 @@ export class EchartEvaluationComponent implements OnInit {
           },
           axisLabel: {
               textStyle: {
-                  color: '#999'
+                  color: '#a5a5a5'
+              }
+          },
+          splitLine: {
+            lineStyle: {
+                color: ['#eceff2'],
+                type: 'dashed'
               }
           }
       },
@@ -66,7 +75,7 @@ export class EchartEvaluationComponent implements OnInit {
           { // For shadow
               type: 'bar',
               itemStyle: {
-                  normal: {color: 'rgba(0,0,0,0.05)'}
+                  normal: {color: 'rgba(0,0,0,0.5)'}
               },
               barGap:'-100%',
               barCategoryGap:'40%',
@@ -80,16 +89,16 @@ export class EchartEvaluationComponent implements OnInit {
                       color: '#7ACC5A',
                       barBorderRadius: [30, 30, 0, 0]
                   },
-                  emphasis: {
-                      // color: new echarts.graphic.LinearGradient(
-                      //     0, 0, 0, 1,
-                      //     [
-                      //         {offset: 0, color: '#2378f7'},
-                      //         {offset: 0.7, color: '#2378f7'},
-                      //         {offset: 1, color: '#83bff6'}
-                      //     ]
-                      // )
-                  }
+                  // emphasis: {
+                  //     color: new echarts.graphic.LinearGradient(
+                  //         0, 0, 0, 1,
+                  //         [
+                  //             {offset: 0, color: '#2378f7'},
+                  //             {offset: 0.7, color: '#2378f7'},
+                  //             {offset: 1, color: '#83bff6'}
+                  //         ]
+                  //     )
+                  // }
               },
               data: this.data
           }
