@@ -28,6 +28,11 @@ import { PersonInfoComponent } from './person-info/person-info.component';
 import { EvaluateQuestionnaireComponent } from './evaluate-questionnaire';
 import { ClinicListComponent } from './clinic-list/clinic-list.component';
 import { ClinicDetailComponent } from './clinic-detail/clinic-detail.component';
+import { BloodOxygenComponent } from './blood-oxygen';
+import { BloodPressureComponent } from './blood-pressure';
+import { BloodSugarComponent } from './blood-sugar';
+import { BmiLineComponent } from './bmi-line';
+import { HeatLineComponent } from './heat-line';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   threshold: 50,
@@ -51,7 +56,12 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     PersonInfoComponent,
     EvaluateQuestionnaireComponent,
     ClinicListComponent,
-    ClinicDetailComponent
+    ClinicDetailComponent,
+    HeatLineComponent,
+    BmiLineComponent,
+    BloodSugarComponent,
+    BloodPressureComponent,
+    BloodOxygenComponent
   ],
   imports: [
     FormsModule,

@@ -1,0 +1,48 @@
+.sign-monitor-info {
+  .box-lines {
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .float-l {
+    float: left;
+  }
+
+  .float-r {
+    float: right;
+  }
+
+  .m-r {
+    margin-right: 8px;
+  }
+
+  .m-l {
+    margin-left: 8px;
+  }
+
+  .box-info-til {
+    background: #FFFFFF;
+    border: 1px solid #E5E8EF;
+    display: inline-block;
+    width: 50%;
+
+    .box-info-h {
+      height: 50px;
+      background: #FFFFFF;
+      box-shadow: 0 1px 0 0 rgba(219,223,233,0.70);
+
+      span {
+        font-family: PingFangSC-Regular;
+        font-size: 18px;
+        color: #666666;
+        padding: 12px;
+        display: inline-block;
+      }
+    }
+
+    .box-info-b {
+      height: 340px;
+      padding: 10px;
+    }
+  }
+}

@@ -116,23 +116,58 @@ li {
     }
   }
 }
-
 // 美化checkbox
-.beauty-chk{
+
+.beauty-chk {
   display: inline-block;
   vertical-align: middle;
-  input{
+
+  input {
     display: none;
-    &:checked+.chk-icon{
+
+    &:checked+.chk-icon {
       background-image: url("/assets/images/checked.png");
     }
   }
-  .chk-icon{
+
+  .chk-icon {
     width: 16px;
     height: 16px;
     margin-right: 6px;
     background-image: url("/assets/images/unchecked.png");
     background-position: no-repeat;
     background-position: center;
+  }
+}
+
+.box-sec {
+  .box-sec-head {
+    background: #F4F6F9;
+    height: 40px;
+
+    i {
+      border-left: 3px solid #2e5ee9;
+      width: 3px;
+      display: inline-block;
+      height: 16px;
+      margin: 8px 0 8px 12px;
+    }
+
+    span {
+      font-family: PingFangSC-Regular;
+      font-size: 16px;
+      color: #333333;
+      letter-spacing: 0;
+      line-height: 16px;
+      padding-left: 10px;
+      vertical-align: top;
+      display: inline-block;
+      margin: 8px 0;
+    }
+  }
+
+  .box-sec-body {
+    background-color: white;
+    padding: 10px 20px;
   }
 }
