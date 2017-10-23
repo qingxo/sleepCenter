@@ -41,6 +41,7 @@ import { AssessmentResultComponent } from './assessment-result';
 import { EchartAssessComponent } from './echart-assess';
 import { HmmsmDetailComponent } from './hmmsm-detail/hmmsm-detail.component';
 import { HmbedDetailComponent } from './hmbed-detail/hmbed-detail.component';
+import { ViewQuestionnaireComponent } from './view-questionnaire';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   threshold: 50,
@@ -78,7 +79,8 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     EchartAssessComponent,
     EvaluateQuestionnaireComponent,
     HmmsmDetailComponent,
-    HmbedDetailComponent
+    HmbedDetailComponent,
+    ViewQuestionnaireComponent
   ],
   imports: [
     FormsModule,
