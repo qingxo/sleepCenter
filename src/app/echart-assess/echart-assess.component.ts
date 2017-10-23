@@ -2,11 +2,11 @@ import { Component, OnInit, Input, Output, SimpleChanges, Renderer, ElementRef, 
 import { EChartOption } from 'echarts-ng2';
 
 @Component({
-  selector: 'app-echart-evaluation',
-  templateUrl: './echart-evaluation.component.html',
-  styleUrls: ['./echart-evaluation.component.scss']
+  selector: 'app-echart-assess',
+  templateUrl: './echart-assess.component.html',
+  styleUrls: ['./echart-assess.component.scss']
 })
-export class EchartEvaluationComponent implements OnInit {
+export class EchartAssessComponent implements OnInit {
 
   private option: EChartOption;
   private nothingFlag = false;
@@ -62,7 +62,7 @@ export class EchartEvaluationComponent implements OnInit {
           },
           splitLine: {
             lineStyle: {
-                color: ['#eceff2'],
+                color: ['#ccc'],
                 type: 'dashed'
               }
           }

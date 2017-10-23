@@ -27,7 +27,7 @@ import { MedicalDetailComponent } from './medical-detail/medical-detail.componen
 import { PersonInfoComponent } from './person-info/person-info.component';
 import { EvaluateQuestionnaireComponent } from './evaluate-questionnaire';
 import { AssessmentResultComponent } from './assessment-result';
-import { EchartEvaluationComponent } from './echart-evaluation';
+import { EchartAssessComponent } from './echart-assess';
 
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -52,7 +52,7 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     PersonInfoComponent,
     EvaluateQuestionnaireComponent,
     AssessmentResultComponent,
-    EchartEvaluationComponent
+    EchartAssessComponent
   ],
   imports: [
     FormsModule,
