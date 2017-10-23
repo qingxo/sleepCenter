@@ -13,6 +13,8 @@ import { EvaluationsComponent } from './evaluations';
 import { SleepAnalysisComponent } from './sleep-analysis';
 import { HmMsmComponent } from './hm-msm';
 import { SleepReportsComponent } from './sleep-reports';
+import { EchartEvaluationComponent } from './echart-evaluation';
+import { HmBedComponent } from './hm-bed';
 
 const homeRoutes: Routes = [
   {
@@ -28,8 +30,10 @@ const homeRoutes: Routes = [
       { path: 'privileges', component: PrivilegesComponent },
       { path: 'evaluations', component: EvaluationsComponent },
       { path: 'sleepanalysis', component: SleepAnalysisComponent },
+      { path: 'sleepreports', component: SleepReportsComponent },
+      { path: 'echartevaluation', component: EchartEvaluationComponent },
       { path: 'hmmsm', component: HmMsmComponent },
-      { path: 'sleepreports', component: SleepReportsComponent }
+      { path: 'hmbed', component: HmBedComponent }
     ]
   },
 

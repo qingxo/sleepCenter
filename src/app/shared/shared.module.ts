@@ -9,6 +9,7 @@ import { LineBtnComponent } from "./line-btn";
 import { SearchLineComponent } from './search-line';
 import { HeadLayoutComponent } from './head-layout';
 import { TimesComponent } from './times/times.component';
+import { NothingComponent } from './nothing';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,13 +21,15 @@ import { TimesComponent } from './times/times.component';
     LineBtnComponent,
     SearchLineComponent,
     HeadLayoutComponent,
-    TimesComponent
+    TimesComponent,
+    NothingComponent
   ],
   exports: [
     LineBtnComponent,
     SearchLineComponent,
     HeadLayoutComponent,
-    TimesComponent
+    TimesComponent,
+    NothingComponent
   ]
 })
 export class SharedModule { }

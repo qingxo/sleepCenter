@@ -1,0 +1,218 @@
+$bed_on: #00B990 !default;
+$bed_off: #786AFF !default;
+$bed_power-off: #FF9502 !default;
+$bed_no_set: #FF593C !default;
+
+.hmbed-info {
+  background-color: white;
+  padding: 8px 10px;
+
+  .top-line {
+    height: 30px;
+    margin-bottom: 8px;
+
+    .lf {
+      float: left;
+    }
+  }
+
+  .top-line:after {
+    clear: both;
+  }
+
+  .dashbox-info{
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+
+  /* dashbox 开始 */
+  .dashbox{
+    width: 20%;
+    min-width: 200px;
+    float: left;
+    margin-bottom: 8px;
+    padding-right: 4px;
+    padding-left: 4px;
+    background-color: #ffffff;
+
+    .box-body:before,.box-body:after {
+      clear: both;
+      content: "";
+      display: table;
+      line-height: 0;
+    }
+    .box-body {
+      padding: 0px;
+    }
+
+    .box-left,.box-right{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .box-left {
+      width: 30%;
+      float: left;
+      text-align: center;
+      border-radius: 4px 0 0 4px;
+      border: 1px solid #DEE4E9;
+      padding: 10px 0;
+
+      .l-bedno{
+        color: #252525;
+        font-size: 20px;
+        height: 30px;
+        line-height: 30px;
+      }
+      .l-avatar{
+        height: 48px;
+        line-height: 48px;
+        padding-top:3px;
+      }
+      .l-name{
+        color: #333333;
+        font-size: 14px;
+        height: 20px;
+        line-height: 20px;
+        margin-top: 5px;
+      }
+      .l-age{
+        color: #888888;
+        font-size: 12px;
+        height: 20px;
+        line-height: 20px;
+      }
+    }
+    .box-left-on,.box-left-off,.box-left-power-off,.box-left-no-set{
+      border-left-width: 3px;
+      border-left-style: solid;
+    }
+    .box-left-on{
+      border-left-color: $bed_on;
+    }
+    .box-left-off{
+      border-left-color: $bed_off;
+    }
+    .box-left-power-off{
+      border-left-color: $bed_power_off;
+    }
+    .box-left-no-set{
+      border-left-color: $bed_no_set;
+    }
+    .color-on{
+      color: $bed_on;
+    }
+    .color-off{
+      color: $bed_off;
+    }
+    .color-power-off{
+      color: $bed_power_off;
+    }
+    .color-no-set{
+      color: $bed_no_set;
+    }
+    .box-right {
+      width: 70%;
+      float: right;
+      border-radius: 0 4px 4px 0;
+      border: 1px solid #DEE4E9;
+      border-left:none;
+      padding: 10px;
+
+      .r-title{
+        height: 30px;
+        line-height: 30px;
+      }
+      .r-data{
+        .r-data-l,.r-data-m{
+          float: left;
+          display: inline-block;
+          text-align: center;
+          height: 48px;
+          line-height: 48px;
+        }
+        .r-data-l{
+          .r-data-num{
+            color: #555555;
+            font-size: 20px;
+            height: 30px;
+            line-height: 30px;
+          }
+          .r-data-txt{
+            color: #A5A5A5;
+            font-size: 12px;
+            height: 18px;
+            line-height: 18px;
+          }
+        }
+        .r-data-m{
+          width:28%;
+          position:relative;
+          .v-line{
+            width: 1px;
+            height: 30px;
+            display: inline-block;
+            position:absolute;
+            top:50%;
+            margin-top:-15px;
+            background: #DEE4E9;
+          }
+        }
+      }
+      .r-doctor,.r-date{
+        color: #555555;
+        font-size: 12px;
+        height: 20px;
+        line-height: 20px;
+      }
+      .r-doctor{
+        margin-top: 5px;
+      }
+    }
+
+    .box-empty .box-left{
+      border-right: none;
+    }
+    .box-empty .box-right .r-data .r-data-txt{
+      font-size: 16px;
+    }
+
+    .clear{
+      clear: both;
+    }
+    .avatar-img{
+      display: inline-block;
+      width: 42px;
+      height: 42px;
+      line-height: 42px;
+      -webkit-background-size:contain;
+      -moz-background-size:contain; /* 老版本的 Firefox */
+      background-size:contain;
+    }
+    .bed-img{
+      display: inline-block;
+      width: 20px;
+      height: 16px;
+      line-height: 16px;
+      -webkit-background-size:contain;
+      -moz-background-size:contain; /* 老版本的 Firefox */
+      background-size:contain;
+    }
+    .img-man{
+      background:url('/assets/images/avatar.png') no-repeat center center;
+    }
+    .img-woman{
+      background:url('/assets/images/avatar-f.png') no-repeat center center;
+    }
+    .img-bed-on{
+      background:url('/assets/images/bed-on.png') no-repeat center center;
+    }
+    .img-bed-off{
+      background:url('/assets/images/bed-off.png') no-repeat center center;
+    }
+    .img-power-off{
+      background:url('/assets/images/power-off.png') no-repeat center center;
+    }
+  }
+  /* dashbox 结束 */
+}

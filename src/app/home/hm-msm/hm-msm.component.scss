@@ -1,0 +1,22 @@
+.hmmsm-info {
+  background-color: white;
+  padding: 8px 10px;
+
+  .top-line {
+    height: 30px;
+    margin-bottom: 8px;
+
+    .lf {
+      float: left;
+    }
+  }
+
+  .top-line:after {
+    clear: both;
+  }
+
+  .ex-warning {
+    color: #EE6723;
+    font-weight: bold;
+  }
+}

@@ -26,9 +26,21 @@ import { SleepReportComponent } from './sleep-report/sleep-report.component';
 import { MedicalDetailComponent } from './medical-detail/medical-detail.component';
 import { PersonInfoComponent } from './person-info/person-info.component';
 import { EvaluateQuestionnaireComponent } from './evaluate-questionnaire';
+import { ClinicListComponent } from './clinic-list/clinic-list.component';
+import { ClinicDetailComponent } from './clinic-detail/clinic-detail.component';
+import { BloodOxygenComponent } from './blood-oxygen';
+import { BloodPressureComponent } from './blood-pressure';
+import { BloodSugarComponent } from './blood-sugar';
+import { BmiLineComponent } from './bmi-line';
+import { HeatLineComponent } from './heat-line';
+import { HeartLineComponent } from './heart-line';
+import { MoveActionComponent } from './move-action';
+import { BedAnalysisComponent } from './bed-analysis';
+import { CirclesComponent } from './circles';
 import { AssessmentResultComponent } from './assessment-result';
 import { EchartAssessComponent } from './echart-assess';
-
+import { HmmsmDetailComponent } from './hmmsm-detail/hmmsm-detail.component';
+import { HmbedDetailComponent } from './hmbed-detail/hmbed-detail.component';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   threshold: 50,
@@ -51,8 +63,22 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     MedicalDetailComponent,
     PersonInfoComponent,
     EvaluateQuestionnaireComponent,
+    ClinicListComponent,
+    ClinicDetailComponent,
+    HeatLineComponent,
+    BmiLineComponent,
+    BloodSugarComponent,
+    BloodPressureComponent,
+    BloodOxygenComponent,
+    HeartLineComponent,
+    MoveActionComponent,
+    BedAnalysisComponent,
+    CirclesComponent,
     AssessmentResultComponent,
-    EchartAssessComponent
+    EchartAssessComponent,
+    EvaluateQuestionnaireComponent,
+    HmmsmDetailComponent,
+    HmbedDetailComponent
   ],
   imports: [
     FormsModule,

@@ -1,0 +1,20 @@
+.sleep-monitor-info {
+  .head-time {
+    float: right;
+    margin: 5px;
+  }
+
+  .head-time:after {
+    clear: both;
+  }
+
+  .sleep-bed-info {
+    width: 100%;
+
+    & > div {
+      width: 48%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
