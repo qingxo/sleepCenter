@@ -1,0 +1,17 @@
+<nz-modal class="d-condition" [nzWidth]="560" [nzWrapClassName]="'vertical-center-modal'" [nzContent]="modalEx" [nzVisible]="isVisibleEx" [nzTitle]="'异常处理'" [nzMaskClosable]=false (nzOnCancel)="handleCancelEx($event)" (nzOnOk)="handleOkEx($event)">
+  <ng-template #modalEx>
+    <div class="">
+      <form nz-form>
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="3" nz-form-label>
+            <label>处理意见</label>
+          </div>
+          <div nz-col [nzSpan]="21" nz-form-control>
+            <nz-input [nzRows]="4" [nzType]="'textarea'" [nzPlaceHolder]="'请输入意见'" [nzSize]="'large'">
+            </nz-input>
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</nz-modal>

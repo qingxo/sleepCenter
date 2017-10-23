@@ -1,0 +1,199 @@
+<div class="hmbed-info">
+  <div class="top-line">
+    <div class="lf">
+      <nz-select
+        style="width: 160px;"
+        nzAllowClear
+        [nzPlaceHolder]="'请选择科室'"
+        [nzFilter]="false"
+        [(ngModel)]="selectedDept"
+        (nzSearchChange)="searchDept($event)"
+        [nzNotFoundContent]="'无法找到'"
+        [nzShowSearch]="true">
+        <nz-option
+          *ngFor="let option of deptOptions"
+          [nzLabel]="option[0]"
+          [nzValue]="option[0]">
+        </nz-option>
+      </nz-select>
+
+      <nz-select
+        style="width: 160px;"
+        nzAllowClear
+        [nzPlaceHolder]="'请选择病区'"
+        [nzFilter]="false"
+        [(ngModel)]="selectedWard"
+        (nzSearchChange)="searchWard($event)"
+        [nzNotFoundContent]="'无法找到'"
+        [nzShowSearch]="true">
+        <nz-option
+          *ngFor="let option of wardOptions"
+          [nzLabel]="option[0]"
+          [nzValue]="option[0]">
+        </nz-option>
+      </nz-select>
+
+      <nz-input style="width: 160px;" [(ngModel)]="pName" [nzPlaceHolder]="'请输入患者姓名'"></nz-input>
+
+      <button nz-button [nzType]="'primary'">
+        <span>搜索</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="dashbox-info">
+    <div class="dashbox">
+      <div class="box-body">
+        <div class="box-left box-left-on">
+          <div class="l-bedno">001</div>
+          <div class="l-avatar"><span class="avatar-img img-man"></span></div>
+          <div class="l-name">王安石</div>
+          <div class="l-age">39岁</div>
+        </div>
+        <div class="box-right">
+          <div class="r-title">
+            <span class="bed-img img-bed-on"></span>
+            <span class="color-on">在床</span>
+          </div>
+          <div class="r-data">
+            <span class="r-data-l">
+              <div class="r-data-num">76</div>
+              <div class="r-data-txt">心率</div>
+            </span>
+            <span class="r-data-m"><span class="v-line"></span></span>
+            <span class="r-data-l">
+              <div class="r-data-num">15</div>
+              <div class="r-data-txt">呼吸率</div>
+            </span>
+            <div class="clear"></div>
+          </div>
+          <div class="r-doctor">医生：蒋秀东</div>
+          <div class="r-date">入院：2017-09-07</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashbox">
+      <div class="box-body">
+        <div class="box-left box-left-off">
+          <div class="l-bedno">002</div>
+          <div class="l-avatar"><span class="avatar-img img-woman"></span></div>
+          <div class="l-name">刘米</div>
+          <div class="l-age">39岁</div>
+        </div>
+        <div class="box-right">
+          <div class="r-title">
+            <span class="bed-img img-bed-off"></span>
+            <span class="color-off">离床</span>
+          </div>
+          <div class="r-data">
+            <span class="r-data-l">
+              <div class="r-data-num">--</div>
+              <div class="r-data-txt">心率</div>
+            </span>
+            <span class="r-data-m"><span class="v-line"></span></span>
+            <span class="r-data-l">
+              <div class="r-data-num">--</div>
+              <div class="r-data-txt">呼吸率</div>
+            </span>
+            <div class="clear"></div>
+          </div>
+          <div class="r-doctor">医生：蒋秀东</div>
+          <div class="r-date">入院：2017-09-07</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashbox">
+      <div class="box-body">
+        <div class="box-left box-left-no-set">
+          <div class="l-bedno">003</div>
+          <div class="l-avatar"><span class="avatar-img img-man"></span></div>
+          <div class="l-name">齐白</div>
+          <div class="l-age">58岁</div>
+        </div>
+        <div class="box-right">
+          <div class="r-title">
+            <span class="color-no-set">未绑定床用体征设备</span>
+          </div>
+          <div class="r-data">
+            <span class="r-data-l">
+              <div class="r-data-num">--</div>
+              <div class="r-data-txt">心率</div>
+            </span>
+            <span class="r-data-m"><span class="v-line"></span></span>
+            <span class="r-data-l">
+              <div class="r-data-num">--</div>
+              <div class="r-data-txt">呼吸率</div>
+            </span>
+            <div class="clear"></div>
+          </div>
+          <div class="r-doctor">医生：蒋秀东</div>
+          <div class="r-date">入院：2017-09-07</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashbox">
+      <div class="box-body">
+        <div class="box-left box-left-power-off">
+          <div class="l-bedno">004</div>
+          <div class="l-avatar"><span class="avatar-img img-woman"></span></div>
+          <div class="l-name">陶虹</div>
+          <div class="l-age">22岁</div>
+        </div>
+        <div class="box-right">
+          <div class="r-title">
+            <span class="bed-img img-power-off"></span>
+            <span class="color-power-off">设备断电</span>
+          </div>
+          <div class="r-data">
+            <span class="r-data-l">
+              <div class="r-data-num">--</div>
+              <div class="r-data-txt">心率</div>
+            </span>
+            <span class="r-data-m"><span class="v-line"></span></span>
+            <span class="r-data-l">
+              <div class="r-data-num">--</div>
+              <div class="r-data-txt">呼吸率</div>
+            </span>
+            <div class="clear"></div>
+          </div>
+          <div class="r-doctor">医生：蒋秀东</div>
+          <div class="r-date">入院：2017-09-07</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashbox">
+      <div class="box-body box-empty">
+        <div class="box-left">
+          <div class="l-bedno">005</div>
+          <div class="l-avatar">&nbsp;</div>
+          <div class="l-name">&nbsp;</div>
+          <div class="l-age">&nbsp;</div>
+        </div>
+        <div class="box-right">
+          <div class="r-title">
+            <span>&nbsp;</span>
+          </div>
+          <div class="r-data">
+            <span class="r-data-l">
+              <div class="r-data-num"></div>
+              <div class="r-data-txt">空床</div>
+            </span>
+            <span class="r-data-m"></span>
+            <span class="r-data-l">
+              <div class="r-data-num"></div>
+              <div class="r-data-txt"></div>
+            </span>
+            <div class="clear"></div>
+          </div>
+          <div class="r-doctor">&nbsp;</div>
+          <div class="r-date">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

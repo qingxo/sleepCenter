@@ -25,7 +25,9 @@ import { HmMsmComponent } from './hm-msm/hm-msm.component';
 import { SleepAnalysisComponent } from './sleep-analysis';
 import { BarLineComponent } from './bar-line/bar-line.component';
 import { SleepReportsComponent } from './sleep-reports';
-
+import { EchartEvaluationComponent } from './echart-evaluation';
+import { DialogHmmsmComponent } from './dialog-hmmsm';
+import { HmBedComponent } from './hm-bed/hm-bed.component';
 
 @NgModule({
   imports: [
@@ -59,6 +61,9 @@ import { SleepReportsComponent } from './sleep-reports';
     SleepAnalysisComponent,
     BarLineComponent,
     SleepReportsComponent,
+    EchartEvaluationComponent,
+    DialogHmmsmComponent,
+    HmBedComponent
   ]
 })
 export class HomeModule { }
