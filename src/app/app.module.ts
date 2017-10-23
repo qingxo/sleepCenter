@@ -33,6 +33,10 @@ import { BloodPressureComponent } from './blood-pressure';
 import { BloodSugarComponent } from './blood-sugar';
 import { BmiLineComponent } from './bmi-line';
 import { HeatLineComponent } from './heat-line';
+import { HeartLineComponent } from './heart-line';
+import { MoveActionComponent } from './move-action';
+import { BedAnalysisComponent } from './bed-analysis';
+import { CirclesComponent } from './circles';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   threshold: 50,
@@ -61,7 +65,11 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     BmiLineComponent,
     BloodSugarComponent,
     BloodPressureComponent,
-    BloodOxygenComponent
+    BloodOxygenComponent,
+    HeartLineComponent,
+    MoveActionComponent,
+    BedAnalysisComponent,
+    CirclesComponent
   ],
   imports: [
     FormsModule,

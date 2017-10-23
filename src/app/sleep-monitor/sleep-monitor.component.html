@@ -1,3 +1,143 @@
-<p>
-  sleep-monitor works!
-</p>
+<div class="sleep-monitor-info">
+  <div class="box-sec">
+    <div class="box-sec-head">
+      <i></i><span>历史数据</span>
+      <div class="head-time">
+        <app-times></app-times>
+      </div>
+    </div>
+    <div class="box-sec-body">
+      <div class="box-info">
+        <div class="box-head">
+          <span>睡眠统计</span>
+        </div>
+        <div class="box-body">
+          <div class="vertical-table">
+            <div class="table-info more-info" style="background-color:white">
+              <table>
+                <tr>
+                  <td><span class="g-info">上床时间</span></td>
+                  <td><span>22:55</span></td>
+                  <td><span class="g-info">睡眠时长</span></td>
+                  <td><span>120</span></td>
+                  <td><span class="g-info">睡眠时间段</span></td>
+                  <td><span>22:50</span></td>
+                </tr>
+                <tr>
+                  <td><span class="g-info">平均心率</span></td>
+                  <td><span>66次/分</span></td>
+                  <td><span class="g-info">最大心率</span></td>
+                  <td><span>55次/分</span></td>
+                  <td><span class="g-info">最小心率</span></td>
+                  <td><span>66次/分</span></td>
+                </tr>
+                <tr>
+                  <td><span class="g-info">平均呼吸</span></td>
+                  <td><span>77次/分</span></td>
+                  <td><span class="g-info">最大呼吸</span></td>
+                  <td><span>56次/分</span></td>
+                  <td><span class="g-info">最小呼吸</span></td>
+                  <td><span>78次/分</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="mybox" style="padding-bottom:2px;height:350px;">
+            <div class="sleep-bed-info">
+              <div class="">
+                <app-heart-line [xAxisList]="timeList" [dataList]="heartList"></app-heart-line>
+              </div>
+              <div class="">
+                <app-move-action [xAxisList]="timeList" [dataList]="moveList"></app-move-action>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="box-info" style="height:auto;padding-bottom:2px">
+        <div class="box-head " style="text-align:left">
+          <span>睡眠分期</span>
+        </div>
+        <div class="box-body">
+          <div class="table-info more-info" style="background-color:white">
+            <table>
+              <tr>
+                <td><span class="g-info">入眠时间(睡眠潜伏期)</span></td>
+                <td><span>35分钟</span></td>
+                <td><span class="g-info">入眠时间占比(%)</span></td>
+                <td><span>5%</span></td>
+              </tr>
+              <tr>
+                <td><span class="g-info">深水时长</span></td>
+                <td><span>22分钟</span>
+                </td>
+                <td><span class="g-info">深水占比(%)</span></td>
+                <td><span>5%</span></td>
+              </tr>
+              <tr>
+                <td><span class="g-info">浅水时长</span></td>
+                <td><span>22分钟</span></td>
+                <td><span class="g-info">浅水占比(%)</span></td>
+                <td><span>55%</span></td>
+              </tr>
+              <tr>
+                <td><span class="g-info">清醒时长</span></td>
+                <td><span>22分钟</span></td>
+                <td><span class="g-info">清醒占比(%)</span></td>
+                <td><span>22%</span></td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+        <div class="mybox" style="padding-bottom:2px;height:350px;">
+          <div class="sleep-bed-info">
+            <div class="">
+              <app-bed-analysis title="睡眠状况" [yAxisData]="['深睡','浅睡','清醒']" isOpen="true" [bedAwayTime]="sleepListTime" [bedAwayAnalysis]="sleepListStatus"></app-bed-analysis>
+            </div>
+            <div class="">
+              <app-circles [title]="['深睡占比','浅睡占比','清醒占比']" [radios]='circleRadios'></app-circles>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="box-info" style="height:auto;padding-bottom:2px">
+        <div class="box-head " style="text-align:left">
+          <span>在离床情况</span>
+        </div>
+        <div class="box-body">
+          <div class="table-info more-info" style="background-color:white">
+            <table>
+              <tr>
+                <td><span class="g-info">在床总时长</span></td>
+                <td><span>55</span></td>
+                <td><span class="g-info">离床总次数</span></td>
+                <td><span>22</span></td>
+              </tr>
+              <tr>
+                <td><span class="g-info">翻身总次数</span></td>
+                <td><span>21</span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="mybox" style="padding-bottom:2px;height:350px;">
+        <div class="sleep-bed-info">
+          <app-bed-analysis title="在离床分析" isOpen="true" [yAxisData]="['在床','离床']" [bedAwayTime]="bedListTime" [bedAwayAnalysis]="bedList"></app-bed-analysis>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
