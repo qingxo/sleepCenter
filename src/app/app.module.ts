@@ -26,6 +26,8 @@ import { SleepReportComponent } from './sleep-report/sleep-report.component';
 import { MedicalDetailComponent } from './medical-detail/medical-detail.component';
 import { PersonInfoComponent } from './person-info/person-info.component';
 import { EvaluateQuestionnaireComponent } from './evaluate-questionnaire';
+import { ClinicListComponent } from './clinic-list/clinic-list.component';
+import { ClinicDetailComponent } from './clinic-detail/clinic-detail.component';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   threshold: 50,
@@ -47,7 +49,9 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     SleepReportComponent,
     MedicalDetailComponent,
     PersonInfoComponent,
-    EvaluateQuestionnaireComponent
+    EvaluateQuestionnaireComponent,
+    ClinicListComponent,
+    ClinicDetailComponent
   ],
   imports: [
     FormsModule,
