@@ -14,10 +14,17 @@
     justify-content: space-between;
     align-items: center;
 
-    img {
-      border: 1px solid black;
+    a {
       width: 140px;
       height: 40px;
+      display: inline-block;
+      border-right: 1px solid #6b6868;
+
+      img {
+        width: 100px;
+        margin-top: 7px;
+        margin-left: 18px;
+      }
     }
 
     div,
