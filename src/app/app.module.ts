@@ -37,6 +37,8 @@ import { HeartLineComponent } from './heart-line';
 import { MoveActionComponent } from './move-action';
 import { BedAnalysisComponent } from './bed-analysis';
 import { CirclesComponent } from './circles';
+import { AssessmentResultComponent } from './assessment-result';
+import { EchartEvaluationComponent } from './echart-evaluation';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   threshold: 50,
@@ -69,7 +71,9 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     HeartLineComponent,
     MoveActionComponent,
     BedAnalysisComponent,
-    CirclesComponent
+    CirclesComponent,
+    AssessmentResultComponent,
+    EchartEvaluationComponent
   ],
   imports: [
     FormsModule,

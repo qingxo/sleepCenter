@@ -1,0 +1,69 @@
+.assessment-result {
+  width: 100%;
+  height: 100%;
+  background: #EBEDF3;
+  .person-info{
+    padding: 10px 100px 0;
+  }
+  .container{
+    padding: 0 20px;  
+    height: 100%;
+    background: #EBEDF3;
+  }
+  .panel{
+    .panel-hd{
+      position: relative;
+      padding: 0 20px 0 12px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      
+      &:before{
+        display: block;
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 2px;
+        height: 10px;
+        background-color: #2E5EE9;
+      }
+      .fr{
+        float: right;
+        margin-top: -2px;
+      }
+      .view{
+        color: white;
+        background-color: #3d80e4;
+        font-size: 12px;
+        line-height: 30px;
+        padding: 0 14px;
+        height: 30px;
+        display: inline-block;
+        border-radius: 4px;
+      }
+    }
+    .panel-bd{
+      height: 500px;
+      padding-bottom: 60px;
+      background-color: #fff;
+      .assess-list{
+        padding-right: 20px;
+        .one-assess{
+          float: left;
+          width: 33.33%;
+          padding-left: 20px;
+          background: #F9FBFD;
+        }
+      }
+    }
+    &+.panel{
+      margin-top: 10px;
+    }
+  }
+}
+.clearfix{
+  content: '';
+  display: table;
+  clear: both;
+}
