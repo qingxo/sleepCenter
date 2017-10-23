@@ -24,7 +24,6 @@ import { DialogEvaluationComponent } from './dialog-evaluation';
 import { HmMsmComponent } from './hm-msm/hm-msm.component';
 import { SleepAnalysisComponent } from './sleep-analysis';
 import { BarLineComponent } from './bar-line/bar-line.component';
-import { EchartEvaluationComponent } from './echart-evaluation';
 import { SleepReportsComponent } from './sleep-reports';
 
 
@@ -58,7 +57,6 @@ import { SleepReportsComponent } from './sleep-reports';
     DialogConditionComponent,
     HmMsmComponent,
     SleepAnalysisComponent,
-    EchartEvaluationComponent,
     BarLineComponent,
     SleepReportsComponent,
   ]

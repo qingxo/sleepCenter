@@ -48,6 +48,7 @@ export class EchartEvaluationComponent implements OnInit {
       },
       yAxis: {
           min: 0,
+          max: 'dataMax',
           axisLine: {
               show: false
           },

@@ -1,0 +1,45 @@
+.echart-assess{
+  .chart {
+    width: 100%;
+    overflow: hidden;
+  }
+  .bg-grey{
+    background-color: #F4F6F9; 
+  }
+  .title{
+    display: table;
+    margin: 0 auto;
+    padding: 17px 0  17px 46px;
+    font-size: 16px;
+    line-height: 22px; 
+  }
+  .intro{
+    margin-top: -24px;
+    padding: 0 30px 22px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .result{
+    position: relative;
+    padding: 16px 10px;
+    background-color: #fff;
+    border: 1px solid #7ACC5A;
+    &:after{
+      display: block;
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+    }
+    h2{
+      color: #7ACC5A;
+      font-size: 18px;
+      line-height: 26px;
+    }
+    p{
+      margin-top: 6px;
+      color: #888;
+      line-height: 18px;
+    }
+  }
+}

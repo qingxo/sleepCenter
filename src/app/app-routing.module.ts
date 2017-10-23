@@ -5,12 +5,15 @@ import { NotFoundComponent } from './not-found';
 import { PatientDetailComponent } from './patient-detail';
 import { MedicalDetailComponent } from './medical-detail';
 import { EvaluateQuestionnaireComponent } from './evaluate-questionnaire';
+import { AssessmentResultComponent } from './assessment-result';
+
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
   { path: 'patientdetail', component: PatientDetailComponent },
   { path: 'medicaldetail', component: MedicalDetailComponent },
   { path: 'evaluatequestionnaire', component: EvaluateQuestionnaireComponent },
+  { path: 'assessmentresult', component: AssessmentResultComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];

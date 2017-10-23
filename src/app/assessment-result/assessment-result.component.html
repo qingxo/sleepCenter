@@ -1,0 +1,31 @@
+<app-head-layout>
+</app-head-layout>
+<div class="assessment-result">
+  <div class="person-info">
+    <app-person-info></app-person-info>
+  </div>
+  <div class="container">
+    <div class="panel">
+      <div class="panel-hd">
+        评估结果
+        <div class="fr">
+          <nz-datepicker (ngModelChange)="_startDate=$event;_startValueChange()" [nzDisabledDate]=" _disabledStartDate " [nzShowTime]="true " [nzFormat]=" 'YYYY-MM-DD' " [nzPlaceHolder]=" '' "></nz-datepicker>          
+          <a class="view">查看问卷</a>  
+        </div>  
+      </div>
+      <div class="panel-bd">
+        <div class="assess-list">
+          <div class="one-assess">
+            <app-echart-evaluation></app-echart-evaluation>
+          </div>
+          <div class="one-assess">
+            <app-echart-evaluation></app-echart-evaluation> 
+          </div>
+          <div class="one-assess">
+            <app-echart-evaluation></app-echart-evaluation>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
