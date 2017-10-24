@@ -15,9 +15,9 @@
         <div class="box-body" style="padding:0;overflow:hidden;background:white;">
           <div class="tabs-info">
             <nz-tabset>
-              <nz-tab *ngFor="let tab of tabs;let index=index">
+              <nz-tab *ngFor="let tab of tabs;let index=index" (nzClick)="showTpl(index)">
                 <ng-template #nzTabHeading>
-                  <div class="" (click)="showTpl(index)">
+                  <div class="">
                     {{tab.name}}
                   </div>
 
