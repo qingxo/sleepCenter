@@ -4,7 +4,7 @@
     <app-person-info></app-person-info>
   </div>
   <div class="medical-content">
-    <div class="left-content">
+    <div class="left-content" style="background:#EBEDF3">
       <div class="box-info">
         <div class="box-head">
           <i></i><span>监测报告</span>
@@ -12,7 +12,7 @@
             <app-times [name]="['监测时间:']" (fired)="getReportTime($event)"></app-times>
           </div>
         </div>
-        <div class="box-body" style="padding:0 ;">
+        <div class="box-body" style="padding:0;overflow:hidden;background:white;">
           <div class="tabs-info">
             <nz-tabset>
               <nz-tab *ngFor="let tab of tabs;let index=index">
@@ -27,11 +27,24 @@
           </div>
           <div class="">
             <ng-container *ngIf="tabsIndex==0">
-              000
+              <div class="">
+                <app-sleep-monitor [dateShow]='true'></app-sleep-monitor>
+              </div>
             </ng-container>
 
             <ng-container *ngIf="tabsIndex==1">
-              111
+              <div class="sleep-no">
+                <div class="">
+                  <app-echart-assess></app-echart-assess>
+                </div>
+                <div class="">
+                  <app-echart-assess></app-echart-assess>
+                </div>
+                <div class="">
+                  <app-echart-assess></app-echart-assess>
+
+                </div>
+              </div>
             </ng-container>
 
             <ng-container *ngIf="tabsIndex==2">
@@ -49,8 +62,112 @@
             <app-times></app-times>
           </div>
         </div>
-        <div class="box-body">
+        <div class="box-body" style="background-color:white;padding:10px;">
+          <div class="big-block">
+            <div class="block-head">
+              监测结论
+            </div>
+            <div class="block-body">
+              <div class="paper">
+                <div class="paper-head">
+                  1、睡眠呼吸暂停低通气综合征
+                </div>
+                <div class="chk">
+                  <input type="radio" name="one" value=""><label for="">符合</label>
+                  <input type="radio" name="one" value=""><label for="">不符合</label>
+                  <input type="radio" name="one" value=""><label for="">单存憨症</label>
+                </div>
+              </div>
 
+              <div class="paper">
+                <div class="paper-head">
+                  1、睡眠呼吸暂停低通气综合征
+                </div>
+                <div class="chk">
+                  <input type="radio" name="one" value=""><label for="">符合</label>
+                  <input type="radio" name="one" value=""><label for="">不符合</label>
+                  <input type="radio" name="one" value=""><label for="">单存憨症</label>
+                </div>
+              </div>
+
+              <div class="paper">
+                <div class="paper-head">
+                  1、睡眠呼吸暂停低通气综合征
+                </div>
+                <div class="chk">
+                  <input type="radio" name="one" value=""><label for="">符合</label>
+                  <input type="radio" name="one" value=""><label for="">不符合</label>
+                  <input type="radio" name="one" value=""><label for="">单存憨症</label>
+                </div>
+              </div>
+
+              <div class="paper">
+                <div class="paper-head">
+                  1、睡眠呼吸暂停低通气综合征
+                </div>
+                <div class="chk">
+                  <input type="radio" name="one" value=""><label for="">符合</label>
+                  <input type="radio" name="one" value=""><label for="">不符合</label>
+                  <input type="radio" name="one" value=""><label for="">单存憨症</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="big-block" style="overflow:hidden">
+            <div class="block-head">
+              诊疗建议
+            </div>
+            <div class="block-body">
+              <div class="">
+                <textarea name="name" rows="8" cols="80" style="width:100%;border:1px solid #dbe0e9;padding:10px;"></textarea>
+                <a href="#" class="save">保存</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="big-block">
+            <div class="block-head-2">
+              诊疗建议模板
+            </div>
+            <div class="block-body">
+              <div class="">
+                <app-line-btn [totalBtn]="['心里&健康','饮食运动','诊疗复查']"></app-line-btn>
+              </div>
+              <div class="f-chk">
+                <input type="checkbox" name="" value="">
+                <span>避免长期紧张、激动焦虑、烦躁等不良情绪及波动，平和心态</span>
+              </div>
+              <div class="f-chk">
+                <input type="checkbox" name="" value="">
+                <span>平衡心理</span>
+              </div>
+              <div class="f-chk">
+                <input type="checkbox" name="" value="">
+                <span>保持良好心态</span>
+              </div>
+              <div class="f-chk">
+                <input type="checkbox" name="" value="">
+                <span>主动调整情绪</span>
+              </div>
+              <div class="f-chk">
+                <input type="checkbox" name="" value="">
+                <span>一些体育锻炼、社交活动可以缓解心里压力</span>
+              </div>
+              <div class="f-chk">
+                <input type="checkbox" name="" value="">
+                <span>保证充分睡眠</span>
+              </div>
+              <div class="f-chk">
+                <input type="checkbox" name="" value="">
+                <span>早睡早起</span>
+              </div>
+              <div class="f-chk">
+                <input type="checkbox" name="" value="">
+                <span>睡前放松，不纠结工作生活琐事</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
