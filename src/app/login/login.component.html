@@ -1,35 +1,22 @@
-<div class="login" ng-keypress="loginByEnter($event)">
-  <div class="login-wrap">
-    <div class="login-center">
-      <div class="login-left">
-
-      </div>
-      <div class="login-cont">
-        <div class="login-title">
-          <div class="login-logo">
-          </div>
-          <h1>智慧养老管理平台</h1>
+<div class="login-info">
+  <div class="logo">
+    <img src="/assets/images/logo.png" alt="">
+  </div>
+  <div class="center">
+    <div class="left-content">
+      <img src="/assets/images/login-left.png" alt="">
+    </div>
+    <div class="right-content">
+      <h3>医养康护睡眠业务平台</h3>
+      <form class="" #userForm="ngForm" (ngSubmit)="loginConfirm()">
+        <input type="text" name="name" value="" placeholder="用户名" [(ngModel)]="user.name" required #sp> {{sp.className}}
+        <input type="password" name="password" value="" placeholder="用户密码" [(ngModel)]="user.password" required>
+        <div class="line">
+          <input type="checkbox" name="remember" value="" [(ngModel)]="user.remember"><label for="">记住我</label>
         </div>
-        <div class="login-form">
-          <span class="login-errmsg" [hidden]="!loginErr">{{errorMsg}}</span>
-          <div class="login-input">
-            <span class="user-name"></span>
-            <input type="text" class="form-text" placeholder="请输入账号" [(ngModel)]="loginName" (ngModelChange)="styleChange()">
-          </div>
-          <div class="login-input">
-            <span class="user-pwd"></span>
-            <input type="password" class="form-text" placeholder="请输入密码" [(ngModel)]="passWord" (keydown)="loginConfirm($event)" (ngModelChange)="styleChange()">
-          </div>
-          <div class="login-input rememberPwd">
-            <span class="checkbox-nice " [ngClass]="{true:'checkbox-nice-true',false:''}[rememberPWD]" (click)="rememberChange()"></span>
-            <input type="checkbox" id="rememberPWD" [(ngModel)]="rememberPWD"><label for="rememberPWD">记住密码</label>
-          </div>
-          <div class="login-input submit">
-            <span class="login-button" [ngClass]="{'login-not-allow':loginFlag}" (click)="loginHandler()">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</span>
-          </div>
-
-        </div>
-      </div>
+        <button type="submit" [disabled]='!userForm.form.valid'>登录</button>
+      </form>
     </div>
   </div>
+
 </div>
