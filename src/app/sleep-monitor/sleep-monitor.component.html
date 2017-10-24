@@ -46,10 +46,10 @@
           <div class="mybox" style="padding-bottom:2px;height:350px;">
             <div class="sleep-bed-info">
               <div class="">
-                <app-heart-line [xAxisList]="timeList" [dataList]="heartList"></app-heart-line>
+                <app-heart-line chartTitleText="心率走势" [xAxisList]="timeList" [dataList]="heartList" [legendDataList]="heartLegendList"></app-heart-line>
               </div>
               <div class="">
-                <app-move-action [xAxisList]="timeList" [dataList]="moveList"></app-move-action>
+                <app-move-action chartTitleText="实时体动" [xAxisList]="timeList" [dataList]="moveList" [legendDataList]="moveLegendList"></app-move-action>
               </div>
             </div>
           </div>

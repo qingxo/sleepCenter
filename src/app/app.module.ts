@@ -41,6 +41,7 @@ import { AssessmentResultComponent } from './assessment-result';
 import { EchartAssessComponent } from './echart-assess';
 import { HmmsmDetailComponent } from './hmmsm-detail/hmmsm-detail.component';
 import { HmbedDetailComponent } from './hmbed-detail/hmbed-detail.component';
+import { BedMonitorComponent } from './bed-monitor/bed-monitor.component';
 import { ViewQuestionnaireComponent } from './view-questionnaire';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -80,6 +81,7 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     EvaluateQuestionnaireComponent,
     HmmsmDetailComponent,
     HmbedDetailComponent,
+    BedMonitorComponent,
     ViewQuestionnaireComponent
   ],
   imports: [

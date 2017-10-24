@@ -1,0 +1,42 @@
+<div class="bed-monitor-info">
+  <div class="box-sec">
+    <div class="box-sec-head">
+      <i></i><span>实时数据</span>
+      <div class="head-right">
+        <span class="head-right-item">
+          <span>实时心率/HRL：</span>
+          <span>66次/分</span>
+        </span>
+        <span class="head-right-item">
+          <span>实时呼吸率/RR：</span>
+          <span>18次/分</span>
+        </span>
+        <span class="head-right-item">
+          <span>状态：</span>
+          <span>在床</span>
+        </span>
+      </div>
+    </div>
+    <div class="box-sec-body">
+
+      <div class="mybox" style="padding-bottom:2px;height:350px;">
+        <div class="sleep-bed-info">
+          <app-heart-line chartTitleText="心率" [xAxisList]="timeList" [dataList]="heartList" [legendDataList]="heartLegendList"></app-heart-line>
+        </div>
+      </div>
+
+      <div class="mybox" style="padding-bottom:2px;height:350px;">
+        <div class="sleep-bed-info">
+          <app-heart-line chartTitleText="呼吸率" [xAxisList]="timeList" [dataList]="breathList" [legendDataList]="breathLegendList"></app-heart-line>
+        </div>
+      </div>
+
+      <div class="mybox" style="padding-bottom:2px;height:350px;">
+        <div class="sleep-bed-info">
+          <app-move-action chartTitleText="实时体动" [xAxisList]="timeList" [dataList]="moveList" [legendDataList]="moveLegendList"></app-move-action>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

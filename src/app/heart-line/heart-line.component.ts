@@ -10,6 +10,8 @@ export class HeartLineComponent implements OnInit, OnChanges {
   private sources = '';
   private option: EChartOption;
   private nothingFlag = false;
+  @Input() chartTitleText = '';
+  @Input('legendDataList') legendDataList: Array<any> = [];
   @Input('dataList') heartList: Array<any> = [];
   @Input('xAxisList') xHeatData: Array<any> = [];
   @Input() echartsStyle: any = { 'height': '350px' };
@@ -36,7 +38,7 @@ export class HeartLineComponent implements OnInit, OnChanges {
   refreshHeartEcharts() {
     this.option = {
       title: {
-        text: '心率走势',
+        text: this.chartTitleText,
         textStyle: {
           fontSize: '14'
         },
@@ -47,8 +49,8 @@ export class HeartLineComponent implements OnInit, OnChanges {
         trigger: 'axis'
       },
       legend: {
-        data: ['心率'],
-        right: '2%'
+        data: this.legendDataList,
+        right: '9%'
       },
       xAxis: {
         type: 'category',
@@ -60,7 +62,7 @@ export class HeartLineComponent implements OnInit, OnChanges {
       },
       series: [
         {
-          name: '心率',
+          name: this.legendDataList[0],
           type: 'line',
           data: this.heartList,
           symbolSize: 4,

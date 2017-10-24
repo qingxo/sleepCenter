@@ -1,0 +1,61 @@
+<nz-modal class="d-condition" [nzWidth]="420" [nzWrapClassName]="'vertical-center-modal'" [nzContent]="modalBind" [nzVisible]="isVisibleBind" [nzTitle]="'绑定床用体征设备'" [nzMaskClosable]=false (nzOnCancel)="handleCancelBind($event)" (nzOnOk)="handleOkBind($event)">
+  <ng-template #modalBind>
+    <div class="">
+      <form nz-form>
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="6" nz-form-label>
+            <label>患者姓名</label>
+          </div>
+          <div nz-col [nzSpan]="18" nz-form-control>
+            <span>李思悟</span>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="6" nz-form-label>
+            <label>性别</label>
+          </div>
+          <div nz-col [nzSpan]="18" nz-form-control>
+            <span>男</span>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="6" nz-form-label>
+            <label>年龄</label>
+          </div>
+          <div nz-col [nzSpan]="18" nz-form-control>
+            <span>55岁</span>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="6" nz-form-label>
+            <label>设备类型</label>
+          </div>
+          <div nz-col [nzSpan]="18" nz-form-control>
+            <nz-select
+              style="width: 200px;"
+              name="devType"
+              nzAllowClear
+              [nzPlaceHolder]="'请选择设备类型'"
+              [(ngModel)]="mItemOption"
+              [nzNotFoundContent]="'无法找到'"
+              [nzShowSearch]="true">
+              <nz-option
+                *ngFor="let option of itemOptions"
+                [nzLabel]="option.label"
+                [nzValue]="option">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="6" nz-form-label>
+            <label>设备编号</label>
+          </div>
+          <div nz-col [nzSpan]="18" nz-form-control>
+            <nz-input [(ngModel)]="inputValue" style="width: 200px;" name="devNo" [nzPlaceHolder]="'请填写设备编号'"></nz-input>
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</nz-modal>

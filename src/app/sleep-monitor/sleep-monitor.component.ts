@@ -17,6 +17,8 @@ export class SleepMonitorComponent implements OnInit {
   bedListTime: Array<any> = [2, 3, 5, 6, 7]
   bedList: Array<any> = [2, 2, 0, 1, 0]
   @Input() dateShow: boolean = false;
+  heartLegendList: Array<any> = ['心率']
+  moveLegendList: Array<any> = ['体动值']
   constructor() { }
 
   ngOnInit() {
