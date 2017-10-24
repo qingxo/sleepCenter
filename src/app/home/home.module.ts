@@ -39,7 +39,7 @@ import { HmBedComponent } from './hm-bed/hm-bed.component';
     ReactiveFormsModule,
     SharedModule
   ],
-  entryComponents: [DialogConditionComponent, DialogAccountComponent, DialogEvaluationComponent],
+  entryComponents: [DialogConditionComponent, DialogAccountComponent, DialogEvaluationComponent, DialogHmmsmComponent],
 
   declarations: [HomeComponent,
     DemoComponent,
