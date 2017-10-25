@@ -28,6 +28,7 @@ import { SleepReportsComponent } from './sleep-reports';
 import { EchartEvaluationComponent } from './echart-evaluation';
 import { DialogHmmsmComponent } from './dialog-hmmsm';
 import { HmBedComponent } from './hm-bed/hm-bed.component';
+import { DialogHmbedComponent } from './dialog-hmbed';
 
 @NgModule({
   imports: [
@@ -39,7 +40,7 @@ import { HmBedComponent } from './hm-bed/hm-bed.component';
     ReactiveFormsModule,
     SharedModule
   ],
-  entryComponents: [DialogConditionComponent, DialogAccountComponent, DialogEvaluationComponent],
+  entryComponents: [DialogConditionComponent, DialogAccountComponent, DialogEvaluationComponent, DialogHmmsmComponent, DialogHmbedComponent],
 
   declarations: [HomeComponent,
     DemoComponent,
@@ -63,7 +64,8 @@ import { HmBedComponent } from './hm-bed/hm-bed.component';
     SleepReportsComponent,
     EchartEvaluationComponent,
     DialogHmmsmComponent,
-    HmBedComponent
+    HmBedComponent,
+    DialogHmbedComponent
   ]
 })
 export class HomeModule { }

@@ -1,6 +1,6 @@
 <div class="sleep-monitor-info">
   <div class="box-sec">
-    <div class="box-sec-head">
+    <div class="box-sec-head" [class.noshow]="dateShow">
       <i></i><span>历史数据</span>
       <div class="head-time">
         <app-times></app-times>
@@ -9,11 +9,11 @@
     <div class="box-sec-body">
       <div class="box-info">
         <div class="box-head">
-          <span>睡眠统计</span>
+          <i></i><span>睡眠统计</span>
         </div>
         <div class="box-body">
           <div class="vertical-table">
-            <div class="table-info more-info" style="background-color:white">
+            <div class="table-info more-info" style="background: #F9FAFC;">
               <table>
                 <tr>
                   <td><span class="g-info">上床时间</span></td>
@@ -46,10 +46,10 @@
           <div class="mybox" style="padding-bottom:2px;height:350px;">
             <div class="sleep-bed-info">
               <div class="">
-                <app-heart-line [xAxisList]="timeList" [dataList]="heartList"></app-heart-line>
+                <app-heart-line chartTitleText="心率走势" [xAxisList]="timeList" [dataList]="heartList" [legendDataList]="heartLegendList"></app-heart-line>
               </div>
               <div class="">
-                <app-move-action [xAxisList]="timeList" [dataList]="moveList"></app-move-action>
+                <app-move-action chartTitleText="实时体动" [xAxisList]="timeList" [dataList]="moveList" [legendDataList]="moveLegendList"></app-move-action>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
           <span>睡眠分期</span>
         </div>
         <div class="box-body">
-          <div class="table-info more-info" style="background-color:white">
+          <div class="table-info more-info" style="background: #F9FAFC;">
             <table>
               <tr>
                 <td><span class="g-info">入眠时间(睡眠潜伏期)</span></td>
@@ -112,7 +112,7 @@
           <span>在离床情况</span>
         </div>
         <div class="box-body">
-          <div class="table-info more-info" style="background-color:white">
+          <div class="table-info more-info" style="background: #F9FAFC;">
             <table>
               <tr>
                 <td><span class="g-info">在床总时长</span></td>

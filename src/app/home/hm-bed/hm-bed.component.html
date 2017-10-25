@@ -43,7 +43,7 @@
 
   <div class="dashbox-info">
     <div class="dashbox">
-      <div class="box-body">
+      <div class="box-body box-hit" [routerLink]="['/hmbeddetail']">
         <div class="box-left box-left-on">
           <div class="l-bedno">001</div>
           <div class="l-avatar"><span class="avatar-img img-man"></span></div>
@@ -74,7 +74,7 @@
     </div>
 
     <div class="dashbox">
-      <div class="box-body">
+      <div class="box-body box-hit" [routerLink]="['/hmbeddetail']">
         <div class="box-left box-left-off">
           <div class="l-bedno">002</div>
           <div class="l-avatar"><span class="avatar-img img-woman"></span></div>
@@ -114,7 +114,7 @@
         </div>
         <div class="box-right">
           <div class="r-title">
-            <span class="color-no-set">未绑定床用体征设备</span>
+            <span><a class="color-no-set" href="javascript:void(0)" (click)="showModalBind()">未绑定床用体征设备</a></span>
           </div>
           <div class="r-data">
             <span class="r-data-l">
@@ -135,7 +135,7 @@
     </div>
 
     <div class="dashbox">
-      <div class="box-body">
+      <div class="box-body box-hit" [routerLink]="['/hmbeddetail']">
         <div class="box-left box-left-power-off">
           <div class="l-bedno">004</div>
           <div class="l-avatar"><span class="avatar-img img-woman"></span></div>
