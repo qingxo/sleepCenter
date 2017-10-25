@@ -9,6 +9,7 @@ import { SharedModule } from './shared'
 import { EchartsNg2Module } from 'echarts-ng2';
 import { SwiperModule, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { InterceptedHttp, httpFactory } from './shared/base.http.interceptor';
 import { LoginGuard } from './guard/LoginGuard';
 import { AppComponent } from './app.component';
@@ -54,6 +55,7 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
 @NgModule({
   declarations: [
     AppComponent,
+    PdfViewerComponent,
     LoginComponent,
     NotFoundComponent,
     PatientDetailComponent,
