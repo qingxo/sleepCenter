@@ -15,14 +15,33 @@
       </div>
       <div class="panel-bd">
         <div class="assess-list clearfix">
+            <div class="one-assess">
+              <app-echart-assess [type]="'PSQI'"></app-echart-assess>
+            </div>
+            <div class="one-assess">
+              <app-echart-assess [type]="'GAD7'"></app-echart-assess> 
+            </div>
+            <div class="one-assess">
+              <app-echart-assess [type]="'PHQ9'"></app-echart-assess>  
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-hd">
+          结合指标
+      </div>
+      <div class="panel-bd">
+        <div class="assess-list clearfix">
           <div class="one-assess">
-            <app-echart-assess></app-echart-assess>
+            <app-echart-assess2 [type]="'PSQI'"></app-echart-assess2>
           </div>
           <div class="one-assess">
-            <app-echart-assess></app-echart-assess> 
+            <app-echart-assess2 [type]="'GAD7'"></app-echart-assess2> 
           </div>
           <div class="one-assess">
-            <app-echart-assess></app-echart-assess>  
+            <app-echart-assess2 [type]="'PHQ9'"></app-echart-assess2>  
           </div>
         </div>
       </div>

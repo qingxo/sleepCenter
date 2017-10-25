@@ -2,11 +2,11 @@ import { Component, OnInit, Input, Output, SimpleChanges, Renderer, ElementRef, 
 import { EChartOption } from 'echarts-ng2';
 
 @Component({
-  selector: 'app-echart-assess',
-  templateUrl: './echart-assess.component.html',
-  styleUrls: ['./echart-assess.component.scss']
+  selector: 'app-echart-assess2',
+  templateUrl: './echart-assess2.component.html',
+  styleUrls: ['./echart-assess2.component.scss']
 })
-export class EchartAssessComponent implements OnInit {
+export class EchartAssess2Component implements OnInit {
 
   private option: EChartOption;
   private nothingFlag = false;
@@ -18,8 +18,8 @@ export class EchartAssessComponent implements OnInit {
   @Input() imageSrc: string = "xxx";
   @ViewChild('tt') el: ElementRef;
   constructor() { }
-  dataAxis = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
-  data = [220, 182, 191, 234, 290, 330, 310];
+  dataAxis = ['09/20', '09/21', '09/22', '09/23', '09/24', '09/25', '09/26'];
+  data = [70, 123, 100, 30, 150, 92, 86];
   yMax = 500;
   dataShadow = [];
   ngOnInit() {
@@ -102,6 +102,13 @@ export class EchartAssessComponent implements OnInit {
                   //     )
                   // }
               },
+              label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    color: '#6F7B91'
+                }
+                },  
               data: this.data
           }
       ]

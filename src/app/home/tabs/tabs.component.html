@@ -1,13 +1,16 @@
 <div class="tabs-info">
-  <nz-tabset [nzType]="'card'">
-    <nz-tab *ngFor="let tab of tabs;let index = index" class="dot" (nzClick)="showTpl(tab,index)">
-      <ng-template #nzTabHeading>
-        <div>
-          {{tab.name}}
+<nz-tabset [nzType]="'card'">
+     <nz-tab *ngFor="let tab of tabs;let index = index" class="dot">
+       <ng-template #nzTabHeading >
+         <div (click)="showTpl(tab,index)"  >
+           {{tab.name}}
 
-          <i class="anticon anticon-cross" [class.noShow]="tab.name ==indexPageName" (click)="closeTab(tab,index)"></i>
-        </div>
-      </ng-template>
-    </nz-tab>
-  </nz-tabset>
+           <i class="anticon anticon-cross" [class.noShow]="tab.name ==indexPageName" (click)="closeTab(tab,index)"></i>
+         </div>
+       </ng-template>
+     </nz-tab>
+     <!-- <ng-template #nzTabBarExtraContent>
+       <i class="ant-tabs-new-tab anticon anticon-plus" (click)="newTab()"></i>
+     </ng-template> -->
+   </nz-tabset>
 </div>

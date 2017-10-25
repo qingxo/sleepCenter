@@ -1,0 +1,35 @@
+.echart-assess2{
+  .chart {
+    width: 100%;
+    overflow: hidden;
+  }
+  .bg-grey{
+    background-color: #F4F6F9; 
+  }
+  .title{
+    display: table;
+    margin: 0 auto -40px;
+    padding: 17px 0  17px 46px;
+    font-size: 16px;
+    line-height: 22px; 
+    background-image: url("/assets/images/assess-icon1.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    &.gad7{
+      background-image: url("/assets/images/assess-icon2.png");
+    }
+    &.phq9{
+      background-image: url("/assets/images/assess-icon3.png");
+    }
+  }
+  .result{
+    margin-top: -50px;
+    padding: 20px 10px;
+    p{
+      margin-top: 6px;
+      color: #555;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+}

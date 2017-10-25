@@ -2,9 +2,10 @@
   border-top-left-radius: 10px;
   height: 50px;
   border-top-right-radius: 10px;
-  background-image: linear-gradient(-230deg, rgba(255,255,255,0.00) 72%, rgba(0,0,0,0.19) 100%);
+  background-image: url("/assets/images/pinfo-bg.png");
+  background-size: 100%;
   padding: 0 30px;
-  background-color: #f1eeee;
+  box-shadow: 0 -2px 16px #efefef inset;
 
   img {
     display: inline-block;

@@ -7,8 +7,7 @@ const Infos = {
     { 'name': '睡眠诊断', 'url': '/home/sleepmedical' },
     { 'name': '账号管理', 'url': '/home/accounts' },
     { 'name': '权限管理', 'url': '/home/privileges' }
-  ],
-  killUrl: ''
+  ]
 }
 
 export default Infos;

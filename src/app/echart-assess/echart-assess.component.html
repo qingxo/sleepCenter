@@ -1,6 +1,8 @@
 <div class="echart-assess">
   <div class="bg-grey">
-    <div class="title">睡眠质量(PSQI)</div>
+    <div *ngIf="type==='PSQI'" class="title">睡眠质量(PSQI)</div>
+    <div *ngIf="type==='GAD7'" class="title gad7">焦虑情绪(GAD7)</div>
+    <div *ngIf="type==='PHQ9'" class="title phq9">抑郁情绪(PHQ9)</div>
     <div class="chart" #tt>
       <echarts-ng2 [option]="option" [style]="echartsStyle"></echarts-ng2>
     </div>

@@ -21,93 +21,17 @@
     .left-content {
       float: left;
       width: 65%;
-      background-color: white;
       padding-right: 10px;
 
       .tabs-info {
         background: #F5F9FC;
         box-shadow: 0 1px 0 0 #E0E2E4;
       }
-
-      .sleep-no {
-        & > div {
-          float: left;
-          width: 50%;
-          padding: 10px;
-        }
-      }
     }
 
     .right-content {
       float: left;
       width: 35%;
-
-      .big-block {
-        .block-head {
-          background: #94A5D7;
-          font-family: PingFangSC-Regular;
-          font-size: 16px;
-          color: #FFFFFF;
-          padding: 8px;
-          margin-bottom: 10px;
-        }
-
-        .block-head-2 {
-          color: #333333;
-          font-size: 16px;
-          padding: 10px 0;
-        }
-
-        .block-body {
-          background-color: white;
-          font-family: PingFangSC-Regular;
-          font-size: 14px;
-          color: #333333;
-
-          .save {
-            background: #3D70E4;
-            border-radius: 2px;
-            float: right;
-            height: 40px;
-            width: 128px;
-            color: white;
-            font-size: 16px;
-            padding: 9px 44px;
-          }
-
-          .f-chk {
-            margin: 10px 0;
-
-            input,
-            span {
-              display: inline-block;
-              font-size: 14px;
-            }
-          }
-
-          .save:after {
-            clear: both;
-          }
-
-          .paper {
-            padding: 5px;
-
-            .paper-head {
-              margin-bottom: 7px;
-            }
-
-            .chk {
-              label {
-                margin-right: 22px;
-              }
-
-              input[type='radio'] {
-                margin-right: 5px;
-              }
-            }
-          }
-        }
-      }
     }
 
     .right-content:after {

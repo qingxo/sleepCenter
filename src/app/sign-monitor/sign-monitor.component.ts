@@ -1,6 +1,4 @@
-import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
-import {DialogHmmsmComponent} from "../home/dialog-hmmsm";
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sign-monitor',
@@ -9,16 +7,9 @@ import {DialogHmmsmComponent} from "../home/dialog-hmmsm";
 })
 export class SignMonitorComponent implements OnInit {
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  showModalEx() {
-    const componentFatory = this.componentFactoryResolver.resolveComponentFactory(DialogHmmsmComponent);
-    const containerRef = this.viewContainerRef;
-    containerRef.clear();
-    const dd = <DialogHmmsmComponent>containerRef.createComponent(componentFatory).instance;
   }
 
 }

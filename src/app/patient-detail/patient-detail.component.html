@@ -7,11 +7,12 @@
   <div class="right-detail">
     <div class="right-tabs">
       <nz-tabset>
-        <nz-tab *ngFor="let tab of tabs;let index=index" (nzClick)='tabShow(tab,index)'>
+        <nz-tab *ngFor="let tab of tabs;let index=index">
           <ng-template #nzTabHeading>
-            <div class="">
+            <div class="" (click)="tabShow(tab,index)">
               {{tab.name}}
             </div>
+
           </ng-template>
         </nz-tab>
       </nz-tabset>

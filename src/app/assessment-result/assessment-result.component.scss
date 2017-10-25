@@ -6,7 +6,7 @@
     padding: 10px 100px 0;
   }
   .container{
-    padding: 0 20px;  
+    padding: 0 20px 30px;  
     min-height: 100%;
     background: #EBEDF3;
   }
@@ -44,7 +44,7 @@
       }
     }
     .panel-bd{
-      padding-bottom: 60px;
+      padding-bottom: 36px;
       background-color: #fff;
       .assess-list{
         padding-right: 20px;
@@ -63,6 +63,6 @@
 }
 .clearfix{
   content: '';
-  display: table;
+  display: block;
   clear: both;
 }

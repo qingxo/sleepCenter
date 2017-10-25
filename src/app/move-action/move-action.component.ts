@@ -10,8 +10,6 @@ export class MoveActionComponent implements OnInit, OnChanges {
   private sources = '';
   private option: EChartOption;
   private nothingFlag = false;
-  @Input() chartTitleText = '';
-  @Input('legendDataList') legendDataList: Array<any> = [];
   @Input('dataList') moveList: Array<any> = [];
   @Input('xAxisList') xHeatData: Array<any> = [];
   @Input() echartsStyle: any = { 'height': '350px' };
@@ -38,7 +36,7 @@ export class MoveActionComponent implements OnInit, OnChanges {
   refreshHeartEcharts() {
     this.option = {
       title: {
-        text: this.chartTitleText,
+        text: '体动走势',
         textStyle: {
           fontSize: '14'
         },
@@ -49,8 +47,8 @@ export class MoveActionComponent implements OnInit, OnChanges {
         trigger: 'axis'
       },
       legend: {
-        data: this.legendDataList,
-        right: '9%'
+        data: ['体动走势'],
+        right: '2%'
       },
       xAxis: {
         type: 'category',
@@ -62,7 +60,7 @@ export class MoveActionComponent implements OnInit, OnChanges {
       },
       series: [
         {
-          name: this.legendDataList[0],
+          name: '体动走势',
           type: 'bar',
           data: this.moveList,
           symbolSize: 4,
