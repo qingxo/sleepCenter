@@ -38,5 +38,15 @@
     float: right;
     padding-right: 30px;
     color: white;
+
+    img,
+    span {
+      vertical-align: middle;
+    }
+
+    img {
+      padding-right: 10px;
+      width: 35px;
+    }
   }
 }

@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
-
+import { PipeBirthPipe } from './pipes/pipe-birth.pipe';
 import { LineBtnComponent } from "./line-btn";
 import { SearchLineComponent } from './search-line';
 import { HeadLayoutComponent } from './head-layout';
@@ -22,6 +22,7 @@ import { NothingComponent } from './nothing';
     SearchLineComponent,
     HeadLayoutComponent,
     TimesComponent,
+    PipeBirthPipe,
     NothingComponent
   ],
   exports: [
@@ -29,6 +30,7 @@ import { NothingComponent } from './nothing';
     SearchLineComponent,
     HeadLayoutComponent,
     TimesComponent,
+    PipeBirthPipe,
     NothingComponent
   ]
 })

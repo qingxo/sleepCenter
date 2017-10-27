@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import Infos from '../../shared/Infos'
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.scss']
+  styleUrls: ['./tabs.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TabsComponent implements OnInit, OnChanges {
 

@@ -9,59 +9,59 @@
           <tbody>
             <tr>
               <td><span class="tle">病历号</span></td>
-              <td><span>0xxx0</span></td>
+              <td><span>{{personInfo.patientId}}</span></td>
               <td><span class="tle">姓名</span></td>
-              <td><span>龙芳芳</span></td>
+              <td><span>{{personInfo.name}}</span></td>
               <td><span class="tle">性别</span></td>
-              <td><span>男</span></td>
+              <td><span>{{personInfo.sex=='1'?'男':'女'}}</span></td>
               <td><span class="tle">年龄</span></td>
-              <td><span>99</span></td>
+              <td><span>{{personInfo.birthday | pipeBirth}}</span></td>
             </tr>
             <tr>
               <td><span class="tle">身份证号</span></td>
-              <td><span>33064755556447</span></td>
+              <td><span>{{personInfo.cardId}}</span></td>
               <td><span class="tle">联系电话</span></td>
-              <td><span>18756474655</span></td>
+              <td><span>{{personInfo.mobile}}</span></td>
               <td><span class="tle">民族</span></td>
-              <td><span>汉</span></td>
+              <td><span>{{personInfo.nation}}</span></td>
               <td><span class="tle">婚姻</span></td>
-              <td><span>已婚</span></td>
+              <td><span>{{personInfo.marriage}}</span></td>
             </tr>
             <tr>
               <td><span class="tle">身高</span></td>
-              <td><span>189</span></td>
+              <td><span>{{personInfo.height}}cm</span></td>
               <td><span class="tle">体重</span></td>
-              <td><span>66kg</span></td>
+              <td><span>{{personInfo.weight}}kg</span></td>
               <td><span class="tle">学历</span></td>
-              <td><span>博士</span></td>
+              <td><span>{{personInfo.education}}</span></td>
               <td><span class="tle">职业</span></td>
-              <td><span>人工大脑</span></td>
+              <td><span>{{personInfo.occupation}}</span></td>
             </tr>
             <tr>
               <td><span class="tle">证件类型</span></td>
-              <td><span>189</span></td>
+              <td><span>{{personInfo.certificateType}}</span></td>
               <td><span class="tle">证件号码</span></td>
-              <td><span>66kg</span></td>
+              <td><span>{{personInfo.papersNum}}</span></td>
               <td><span class="tle">联系地址</span></td>
-              <td><span>博士</span></td>
+              <td><span>{{personInfo.contactAddress}}</span></td>
               <td><span class="tle">邮编</span></td>
-              <td><span>人工大脑</span></td>
+              <td><span>{{personInfo.postcode}}</span></td>
             </tr>
             <tr>
               <td><span class="tle">家庭地址</span></td>
-              <td><span>189</span></td>
+              <td><span>{{personInfo.homeAddress}}</span></td>
               <td><span class="tle">家庭电话</span></td>
-              <td><span>66kg</span></td>
+              <td><span>{{personInfo.homeTelephone}}</span></td>
               <td><span class="tle">户口所在地</span></td>
-              <td><span>博士</span></td>
+              <td><span>{{personInfo.beneficiaryAddress}}</span></td>
               <td><span class="tle">籍贯</span></td>
-              <td><span>人工大脑</span></td>
+              <td><span>{{personInfo.nativePlace}}</span></td>
             </tr>
             <tr>
               <td><span class="tle">电子邮件</span></td>
-              <td><span>189</span></td>
+              <td><span>{{personInfo.mailbox}}</span></td>
               <td><span class="tle">工作单位</span></td>
-              <td><span>66kg</span></td>
+              <td><span>{{personInfo.workUnit}}</span></td>
               <td><span class="tle"></span></td>
               <td><span></span></td>
               <td><span class="tle"></span></td>
@@ -82,21 +82,13 @@
       <div class="table-detail">
         <table cellpadding="0" cellspacing="0" border="0">
           <tbody>
-            <tr>
+            <tr *ngFor="let item of personInfo.contactList">
               <td><span class="tle">姓名</span></td>
-              <td><span>孔卡</span></td>
+              <td><span>{{item.contactName}}</span></td>
               <td><span class="tle">关系</span></td>
-              <td><span>父子</span></td>
+              <td><span>{{item.relation}}</span></td>
               <td><span class="tle">联系方式</span></td>
-              <td><span>18744746555</span></td>
-            </tr>
-            <tr>
-              <td><span class="tle">姓名</span></td>
-              <td><span>不落洗涤</span></td>
-              <td><span class="tle">关系</span></td>
-              <td><span>部落</span></td>
-              <td><span class="tle">联系方式</span></td>
-              <td><span>188844944</span></td>
+              <td><span>{{item.phone}}</span></td>
             </tr>
           </tbody>
         </table>
@@ -109,32 +101,34 @@
       <i></i><span>疾病史</span>
     </div>
     <div class="box-body">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tbody>
-          <tr>
-            <td><span class="tle">过敏史</span></td>
-            <td><span>无</span></td>
-          </tr>
+      <div class="table-detail">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            <tr>
+              <td><span class="tle">过敏史</span></td>
+              <td><span>{{personInfo.allergy}}</span></td>
+            </tr>
 
-          <tr>
-            <td><span class="tle">既往史</span></td>
-            <td><span>无</span></td>
-          </tr>
-          <tr>
-            <td><span class="tle">手术史</span></td>
-            <td><span>无</span></td>
-          </tr>
-          <tr>
-            <td><span class="tle">输血史</span></td>
-            <td><span>18744746555</span></td>
-          </tr>
-          <tr>
-            <td><span class="tle">传染病史</span></td>
-            <td><span>无</span></td>
-          </tr>
-        </tbody>
+            <tr>
+              <td><span class="tle">既往史</span></td>
+              <td><span>{{personInfo.pastHistory}}</span></td>
+            </tr>
+            <tr>
+              <td><span class="tle">手术史</span></td>
+              <td><span>{{personInfo.operationHistory}}</span></td>
+            </tr>
+            <tr>
+              <td><span class="tle">输血史</span></td>
+              <td><span>{{personInfo.transfusionHistory}}</span></td>
+            </tr>
+            <tr>
+              <td><span class="tle">传染病史</span></td>
+              <td><span>{{personInfo.infectionHistory}}</span></td>
+            </tr>
+          </tbody>
 
-      </table>
+        </table>
+      </div>
     </div>
   </div>
 

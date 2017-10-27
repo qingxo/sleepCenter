@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginConfirm() {
-    console.log(this.user)
+    this.router.navigate(['/'])
   }
 
 }

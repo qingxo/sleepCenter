@@ -19,7 +19,7 @@ import { PatientSubjectComponent } from './patient-subject/patient-subject.compo
 import { AccountsComponent } from './accounts';
 import { PrivilegesComponent } from './privileges';
 import { DialogAccountComponent } from './dialog-account';
-import { EvaluationsComponent } from './evaluations';
+import { SleepAssessmentComponent } from './sleep-assessment';
 import { DialogEvaluationComponent } from './dialog-evaluation';
 import { HmMsmComponent } from './hm-msm/hm-msm.component';
 import { SleepAnalysisComponent } from './sleep-analysis';
@@ -55,7 +55,7 @@ import { DialogHmbedComponent } from './dialog-hmbed';
     AccountsComponent,
     PrivilegesComponent,
     DialogAccountComponent,
-    EvaluationsComponent,
+    SleepAssessmentComponent,
     DialogEvaluationComponent,
     DialogConditionComponent,
     HmMsmComponent,

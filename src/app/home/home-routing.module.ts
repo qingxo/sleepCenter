@@ -9,7 +9,7 @@ import { SleepMedicalComponent } from './sleep-medical';
 import { PatientSubjectComponent } from './patient-subject';
 import { AccountsComponent } from './accounts';
 import { PrivilegesComponent } from './privileges';
-import { EvaluationsComponent } from './evaluations';
+import { SleepAssessmentComponent } from './sleep-assessment';
 import { SleepAnalysisComponent } from './sleep-analysis';
 import { HmMsmComponent } from './hm-msm';
 import { SleepReportsComponent } from './sleep-reports';
@@ -28,7 +28,7 @@ const homeRoutes: Routes = [
       { path: 'sleepmedical', component: SleepMedicalComponent },
       { path: 'accounts', component: AccountsComponent },
       { path: 'privileges', component: PrivilegesComponent },
-      { path: 'evaluations', component: EvaluationsComponent },
+      { path: 'sleepassessment', component: SleepAssessmentComponent },
       { path: 'sleepanalysis', component: SleepAnalysisComponent },
       { path: 'sleepreports', component: SleepReportsComponent },
       { path: 'echartevaluation', component: EchartEvaluationComponent },

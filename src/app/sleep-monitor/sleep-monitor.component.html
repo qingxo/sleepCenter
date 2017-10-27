@@ -17,27 +17,27 @@
               <table>
                 <tr>
                   <td><span class="g-info">上床时间</span></td>
-                  <td><span>22:55</span></td>
+                  <td><span>{{list?.onbedbegintime}}</span></td>
                   <td><span class="g-info">睡眠时长</span></td>
-                  <td><span>120</span></td>
+                  <td><span>{{list?.sleepminutes}}</span></td>
                   <td><span class="g-info">睡眠时间段</span></td>
-                  <td><span>22:50</span></td>
+                  <td><span>{{list?.sleeptimespan}}</span></td>
                 </tr>
                 <tr>
                   <td><span class="g-info">平均心率</span></td>
-                  <td><span>66次/分</span></td>
+                  <td><span *ngIf="list.signinfo?.avghr ">{{list.signinfo?.avghr }}次/分</span></td>
                   <td><span class="g-info">最大心率</span></td>
-                  <td><span>55次/分</span></td>
+                  <td><span *ngIf="list.signinfo?.maxhr">{{list.signinfo?.maxhr }}次/分</span></td>
                   <td><span class="g-info">最小心率</span></td>
-                  <td><span>66次/分</span></td>
+                  <td><span *ngIf="list.signinfo?.minhr">{{list.signinfo?.minhr }}次/分</span></td>
                 </tr>
                 <tr>
                   <td><span class="g-info">平均呼吸</span></td>
-                  <td><span>77次/分</span></td>
+                  <td><span *ngIf="list.signinfo?.avgrr">{{list.signinfo?.avgrr }}次/分</span></td>
                   <td><span class="g-info">最大呼吸</span></td>
-                  <td><span>56次/分</span></td>
+                  <td><span *ngIf="list.signinfo?.maxrr">{{list.signinf?.maxrr}}次/分</span></td>
                   <td><span class="g-info">最小呼吸</span></td>
-                  <td><span>78次/分</span></td>
+                  <td><span *ngIf="list.signinfo?.minrr">{{list.signinfo?.minrr }}次/分</span></td>
                 </tr>
               </table>
             </div>
@@ -46,10 +46,10 @@
           <div class="mybox" style="padding-bottom:2px;height:350px;">
             <div class="sleep-bed-info">
               <div class="">
-                <app-heart-line chartTitleText="心率走势" [xAxisList]="timeList" [dataList]="heartList" [legendDataList]="heartLegendList"></app-heart-line>
+                <app-echart-arealine chartTitleText="心率走势" [xAxisList]="timeList" [dataList]="heartList" [legendDataList]="heartLegendList"></app-echart-arealine>
               </div>
               <div class="">
-                <app-move-action chartTitleText="实时体动" [xAxisList]="timeList" [dataList]="moveList" [legendDataList]="moveLegendList"></app-move-action>
+                <app-move-action chartTitleText="体动走势" [xAxisList]="timeList" [dataList]="moveList" [legendDataList]="moveLegendList"></app-move-action>
               </div>
             </div>
           </div>
@@ -59,35 +59,35 @@
 
       <div class="box-info" style="height:auto;padding-bottom:2px">
         <div class="box-head " style="text-align:left">
-          <span>睡眠分期</span>
+          <i></i><span>睡眠分期</span>
         </div>
         <div class="box-body">
           <div class="table-info more-info" style="background: #F9FAFC;">
             <table>
               <tr>
                 <td><span class="g-info">入眠时间(睡眠潜伏期)</span></td>
-                <td><span>35分钟</span></td>
+                <td><span *ngIf="!list?.sleephideminutes"></span><span *ngIf="list?.sleephideminutes">{{list?.sleephideminutes}}分钟</span></td>
                 <td><span class="g-info">入眠时间占比(%)</span></td>
-                <td><span>5%</span></td>
+                <td><span></span></td>
               </tr>
               <tr>
-                <td><span class="g-info">深水时长</span></td>
-                <td><span>22分钟</span>
+                <td><span class="g-info">深睡时长</span></td>
+                <td><span *ngIf="!list?.deepminutes"></span><span *ngIf="list?.deepminutes">{{list?.deepminutes}}分钟</span>
                 </td>
-                <td><span class="g-info">深水占比(%)</span></td>
-                <td><span>5%</span></td>
+                <td><span class="g-info">深睡占比(%)</span></td>
+                <td><span>{{sleepDeep=='NaN'?'':sleepDeep+'分钟'}}</span></td>
               </tr>
               <tr>
-                <td><span class="g-info">浅水时长</span></td>
-                <td><span>22分钟</span></td>
-                <td><span class="g-info">浅水占比(%)</span></td>
-                <td><span>55%</span></td>
+                <td><span class="g-info">浅睡时长</span></td>
+                <td><span *ngIf="!list?.lightminutes"></span><span *ngIf="list?.lightminutes">{{list?.lightminutes}}分钟</span></td>
+                <td><span class="g-info">浅睡占比(%)</span></td>
+                <td><span>{{sleepLower=='NaN'?'':(sleepLower+'分钟')}}</span></td>
               </tr>
               <tr>
                 <td><span class="g-info">清醒时长</span></td>
-                <td><span>22分钟</span></td>
+                <td><span *ngIf="!list?.wakeminutes"></span><span *ngIf="list?.wakeminutes">{{list?.wakeminutes}}分钟</span></td>
                 <td><span class="g-info">清醒占比(%)</span></td>
-                <td><span>22%</span></td>
+                <td><span>{{sleepNo=='NaN'?'':(sleepNo+'分钟')}}</span></td>
               </tr>
 
             </table>
@@ -109,7 +109,7 @@
 
       <div class="box-info" style="height:auto;padding-bottom:2px">
         <div class="box-head " style="text-align:left">
-          <span>在离床情况</span>
+          <i></i><span>在离床情况</span>
         </div>
         <div class="box-body">
           <div class="table-info more-info" style="background: #F9FAFC;">

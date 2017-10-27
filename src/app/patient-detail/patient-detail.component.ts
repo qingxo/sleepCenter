@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-patient-detail',
@@ -6,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patient-detail.component.scss']
 })
 export class PatientDetailComponent implements OnInit {
-
+  customerId: String = '';
+  personInfo: any = {};
   tabs: Array<any> = [{ name: '基本信息' }, { name: '诊疗信息' }, { name: '体征监测' }, { name: '睡眠监测' }, { name: '睡眠报告' }]
   showIndex: number = 0;
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.customerId = this.route.snapshot.params['customerId'];
   }
 
   tabShow(tab, index) {

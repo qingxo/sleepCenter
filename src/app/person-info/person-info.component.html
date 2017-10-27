@@ -1,4 +1,5 @@
 <div class="person-info">
-  <img src="/assets/images/avatar.png" alt="">
-  <span class="name">zhangxx</span><span>男 | 44岁</span><span>15158447474</span>
+  <img *ngIf="personInfo.sex==1"src="/assets/images/avatar-man.png" alt="">
+  <img *ngIf="personInfo.sex==0"src="/assets/images/avatar-f.png" alt="">
+  <span class="name">{{personInfo.name}}</span><span>{{personInfo.sex=='1'?'男':'女'}} | {{personInfo.birthday|pipeBirth}}岁</span><span>{{personInfo.mobile}}</span>
 </div>

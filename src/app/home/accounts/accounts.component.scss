@@ -1,8 +1,8 @@
 .page-system{
-  padding: 8px 30px;
+  padding: 10px;
   .search-wrap{
     float: right;
-    margin: 8px 0;
+    margin-bottom: 8px;
   }
   .more-opt {
     color: white;
@@ -13,5 +13,11 @@
     height: 30px;
     display: inline-block;
     border-radius: 4px;
+  }
+  tr td a{
+    display: inline-block;
+    &+a{
+      margin-left: 10px;
+    }
   }
 }

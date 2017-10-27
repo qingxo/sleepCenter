@@ -4,28 +4,30 @@
       <form class="" method="post">
         <div class="line">
           <label for="">患者姓名:</label>
-          <input type="text" name="" value="">
+          <input type="text" name="name" value="" [(ngModel)]='cond.name'>
         </div>
         <div class="line">
           <label for="">门诊号:</label>
-          <input type="text" name="" value="">
+          <input type="text" name="id" [(ngModel)]="cond.id">
         </div>
         <div class="line">
           <label for="">联系方式:</label>
-          <input type="text" name="" value="">
+          <input type="text" name="tel" [(ngModel)]="cond.tel">
         </div>
         <div class="line">
           <label for="">就诊日期:</label>
-          <nz-datepicker style="width: 38%;" (ngModelChange)="_startDate=$event;_startValueChange()" [nzDisabledDate]=" _disabledStartDate " [nzShowTime]="true " [nzFormat]=" 'YYYY-MM-DD HH:mm:ss' " [nzPlaceHolder]=" 'Start date' "></nz-datepicker>
-          <nz-datepicker style="width: 38%; " (ngModelChange)="_endDate=$event;_endValueChange() " [nzDisabledDate]="_disabledEndDate " [nzShowTime]="_endTime " [nzFormat]=" 'YYYY-MM-DD HH:mm:ss' " [nzPlaceHolder]=" 'End date' "></nz-datepicker>
+          <nz-datepicker style="width: 38%;" name="startd" [(ngModel)]="cond.startDate" [nzShowTime]="true " [nzFormat]=" 'YYYY-MM-DD HH:mm:ss' " [nzPlaceHolder]=" '起始时间' "></nz-datepicker>
+          <nz-datepicker style="width: 38%; " name="endd" [(ngModel)]="cond.endDate" [nzShowTime]="_endTime " [nzFormat]=" 'YYYY-MM-DD HH:mm:ss' " [nzPlaceHolder]=" '结束时间' "></nz-datepicker>
+          <!-- <nz-datepicker style="width: 38%;" (ngModelChange)="_startDate=$event;_startValueChange()" [nzDisabledDate]=" _disabledStartDate " [nzShowTime]="true " [nzFormat]=" 'YYYY-MM-DD HH:mm:ss' " [nzPlaceHolder]=" '起始时间' "></nz-datepicker> -->
+          <!-- <nz-datepicker style="width: 38%; " (ngModelChange)="_endDate=$event;_endValueChange() " [nzDisabledDate]="_disabledEndDate " [nzShowTime]="_endTime " [nzFormat]=" 'YYYY-MM-DD HH:mm:ss' " [nzPlaceHolder]=" '结束时间' "></nz-datepicker> -->
         </div>
         <div class="line ">
           <label for=" ">就诊科室:</label>
-          <input type="text " name=" " value=" ">
+          <input type="text " name="office" [(ngModel)]="cond.office">
         </div>
         <div class="line ">
           <label for=" ">就诊医生:</label>
-          <input type="text " name=" " value=" ">
+          <input type="text " name="doc" [(ngModel)]="cond.doctor">
         </div>
       </form>
     </div>

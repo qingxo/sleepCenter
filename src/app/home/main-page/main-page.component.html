@@ -1,15 +1,15 @@
 <div class="index-page">
   <div class="day-choose">
-    <app-line-btn [totalBtn]="['今日','本周','本月','本年']"></app-line-btn>
+    <app-line-btn [totalBtn]="['今日','本周','本月','本年']" (btnInfo)="firedInfo($event)"></app-line-btn>
 
   </div>
   <div class="new-patient-info">
     <div class="">
-      <app-new-patients></app-new-patients>
+      <app-new-patients [list]='newPatients'></app-new-patients>
 
     </div>
     <div class="">
-      <app-new-patients [imageType]=1></app-new-patients>
+      <app-new-patients [imageType]=1 [list]="visitor"></app-new-patients>
     </div>
 
   </div>
@@ -17,16 +17,16 @@
 
   <div class="circle-lines">
     <div class="">
-      <app-circles name='睡眠障碍评估量表'></app-circles>
+      <app-circles name='睡眠障碍评估量表' [topTitle]="['正常','异常']" [dataSeries]="sleepAboutReport"></app-circles>
     </div>
     <div class="">
-      <app-circles name='PSG睡眠检测报告'></app-circles>
+      <app-circles name='PSG睡眠检测报告' [topTitle]="['正常','异常']" [dataSeries]="psgReport"></app-circles>
     </div>
     <div class="">
-      <app-circles name='床用体征监测'></app-circles>
+      <app-circles name='床用体征监测' [topTitle]="['在床','离床','断电','异常']" [dataSeries]="bedMonitor"></app-circles>
     </div>
   </div>
   <div class="bar-lines">
-    <app-bar-line [name]="['多体征监测']"></app-bar-line>
+    <app-bar-line [name]="['多体征监测']" [normalList]="normalList" [abNormalList]="abNormalList"></app-bar-line>
   </div>
 </div>

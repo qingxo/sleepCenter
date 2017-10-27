@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import * as moment from 'moment';
-
+import Conditions from './condition.model'
 // import { DialogCondition } from './conditions';
 @Component({
   selector: 'app-dialog-condition',
@@ -9,27 +9,39 @@ import * as moment from 'moment';
 })
 export class DialogConditionComponent implements OnInit {
 
+
   isVisible = false;
-
-  showModal = () => {
-    this.isVisible = true;
-  }
-
-  handleOk = (e) => {
-    console.log('点击了确定');
-    this.isVisible = false;
-  }
-
-  handleCancel = (e) => {
-    console.log(e);
-    this.isVisible = false;
-  }
+  @Output() fired = new EventEmitter<any>();
+  cond = new Conditions('', '', '', '', '', '', '')
 
 
   constructor() { }
   ngOnInit() {
     this.showModal()
   }
+
+  showModal = () => {
+    this.isVisible = true;
+  }
+
+  handleOk = (e) => {
+    console.log(this.cond);
+    this.fired.emit(this.cond);
+    this.isVisible = false;
+
+  }
+
+  handleCancel = (e) => {
+    this.isVisible = false;
+  }
+
+  initMoreInfo(val) {
+    console.log(val)
+    if (val !== null) {
+      this.cond = val
+    }
+  }
+
 
   _startDate = null;
   _endDate = null;
@@ -41,6 +53,7 @@ export class DialogConditionComponent implements OnInit {
     return result;
   };
   _startValueChange = () => {
+    console.log(this._startDate)
     if (this._startDate > this._endDate) {
       this._endDate = null;
     }

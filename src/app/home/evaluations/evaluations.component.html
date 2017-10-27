@@ -1,9 +1,9 @@
 <div class="page-system">
   <div class="top-line clearfix">
     <div class="date-zoom">
-      <nz-datepicker style="width: 130px" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'Start date'"></nz-datepicker>
+      <nz-datepicker style="width: 130px" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
       至
-      <nz-datepicker style="width: 130px" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'End date'"></nz-datepicker>
+      <nz-datepicker style="width: 130px" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
     </div>
     <div class="search-wrap">
       <app-search-line></app-search-line>

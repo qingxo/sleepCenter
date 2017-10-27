@@ -2,7 +2,7 @@
 </app-head-layout>
 <div class="patient-detail">
   <div class="person-info">
-    <app-person-info></app-person-info>
+    <app-person-info [customerId]="customerId"></app-person-info>
   </div>
   <div class="right-detail">
     <div class="right-tabs">
@@ -18,10 +18,10 @@
     </div>
     <div class="right-content">
       <ng-container *ngIf="showIndex==0">
-        <app-patient-info></app-patient-info>
+        <app-patient-info [customerId]="customerId"></app-patient-info>
       </ng-container>
       <ng-container *ngIf="showIndex==1">
-        <app-clinic-info></app-clinic-info>
+        <app-clinic-info [customerId]="customerId"></app-clinic-info>
       </ng-container>
       <ng-container *ngIf="showIndex==2">
         <app-sign-monitor></app-sign-monitor>

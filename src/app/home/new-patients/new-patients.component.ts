@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, Input, OnChanges, SimpleChanges } from '@angular/core';
-
 @Component({
   selector: 'app-new-patients',
   templateUrl: './new-patients.component.html',
@@ -21,10 +20,11 @@ export class NewPatientsComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-
   }
 
+
   ngOnChanges(change: SimpleChanges) {
+    console.log(change)
     if (change['imageType']) {
       if (this.imageType == 0) {
         this.cmpImage = []

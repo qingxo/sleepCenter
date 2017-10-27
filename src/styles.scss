@@ -8,6 +8,10 @@ li {
   color: #FF955F!important;
 }
 
+.ant-layout {
+  min-height: 100%;
+}
+
 .ant-tabs-bar {
   margin-bottom: 0 !important;
 }
@@ -64,7 +68,7 @@ li {
     background: rgba(255,255,255,0.70);
     box-shadow: 0 1px 0 0 #DEE3E9;
 
-    i {
+    & > i {
       display: inline-block;
       background: #2E5EE9;
       width: 5px;

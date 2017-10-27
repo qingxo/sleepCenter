@@ -10,10 +10,28 @@ $mainComponentColor: #D2D2D2;
     width: 300px;
     margin-right: 8px;
     border-radius: 4px;
-    padding-left: 8px;
+    padding-left: 10px;
     height: 30px;
     line-height: 30px;
     font-size: 14px;
+    outline: none;
+    &:focus{
+      border-color: #49a9ee;
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba(16, 142, 233, 0.2);
+    }
+    &::-webkit-input-placeholder {
+      color: #ccc;
+    }
+    &::-moz-placeholder {
+      color: #ccc;
+    }
+    &:-ms-input-placeholder {
+      color: #ccc;
+    }
+    &:-moz-placeholder {
+      color: #ccc;
+    }
   }
 
   span {

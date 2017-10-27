@@ -1,12 +1,12 @@
 <div class="patient-subject-info">
   <div class="search-line">
-    <label for="">姓名:</label><input type="text" name="" value="">
-    <label for="">身份证号:</label><input type="text" name="" value="">
-    <label for="">手机号码</label><input type="text" name="" value="">
-    <span>搜索</span>
+    <label for="">姓名：</label><input type="text" name="name" value="" [(ngModel)]="customerName">
+    <label for="">身份证号：</label><input type="text" name="cardId" value="" [(ngModel)]="cardId">
+    <label for="">手机号码：</label><input type="text" name="tel" value="" [(ngModel)]="mobile">
+    <span (click)="searchInfo($event)">搜索</span>
   </div>
-  <div class="table-info">
-    <table cellpadding="0" cellspacing="0" border="0">
+  <div class="table-info table-subject">
+    <table cellpadding="0" cellspacing="0" border="0" *ngIf="list.length>0">
       <thead>
         <tr>
           <td><span>姓名</span></td>
@@ -18,49 +18,50 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span class="dot icons-plus" (click)="showDetail($event)">赵志龙</span></td>
-          <td><span>男</span></td>
-          <td><span>1987-9-5</span></td>
-          <td><span>15158114444</span></td>
-          <td><span>330611187764546322</span></td>
-          <td class="opt"><span>查看档案</span></td>
-        </tr>
-        <tr style="display:none">
-          <td colspan='6'>
-            <div class="table-in">
-              <table cellpadding="0" cellspacing="0" border="0">
-                <thead>
-                  <tr>
-                    <td><span>来源</span></td>
-                    <td><span>住院号</span></td>
-                    <td><span>姓名</span></td>
-                    <td><span>性别</span></td>
-                    <td><span>出生日期</span></td>
-                    <td><span>手机号码</span></td>
-                    <td><span>身份证号</span></td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span><input type="checkbox" name="" value=""> 门诊</span></td>
-                    <td><span>0333</span></td>
-                    <td><span>咖啡</span></td>
-                    <td><span>男</span></td>
-                    <td><span>1924-8-09</span></td>
-                    <td><span>148474484444</span></td>
-                    <td><span>33074444482242344</span></td>
-                  </tr>
-
-                </tbody>
-              </table>
-              <div class="btn">
-                <span>拆分</span>
+        <ng-container *ngFor="let item of list">
+          <tr>
+            <td><span class="dot icons-plus" (click)="showDetail($event,item.name)">{{item.name}}</span></td>
+            <td><span>{{item.sex=='1'?'男':'女'}}</span></td>
+            <td><span>{{item.birthday | pipeBirth}}</span></td>
+            <td><span>{{item.mobile}}</span></td>
+            <td><span>{{item.cardId}}</span></td>
+            <td class="opt"><a target="_blank" [routerLink]="['/patientdetail']">查看档案</a></td>
+          </tr>
+          <tr style="display:none" *ngIf="childList.length>0">
+            <td colspan='6'>
+              <div class="table-in">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <thead>
+                    <tr>
+                      <td><span>来源</span></td>
+                      <td><span>住院号</span></td>
+                      <td><span>姓名</span></td>
+                      <td><span>性别</span></td>
+                      <td><span>出生日期</span></td>
+                      <td><span>手机号码</span></td>
+                      <td><span>身份证号</span></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ck of childList">
+                      <td><span><input type="checkbox" name="" value=""> {{ck.source}}</span></td>
+                      <td><span>{{ck.visitId}}</span></td>
+                      <td><span>{{ck.name}}</span></td>
+                      <td><span>{{ck.sex=='1'?'男':'女'}}</span></td>
+                      <td><span>{{ck.birthday | pipeBirth}}</span></td>
+                      <td><span>{{ck.mobile}}</span></td>
+                      <td><span>{{ck.cardId}}</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="btn">
+                  <span>拆分</span>
+                </div>
               </div>
-            </div>
-          </td>
+            </td>
 
-        </tr>
+          </tr>
+        </ng-container>
 
 
       </tbody>

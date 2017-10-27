@@ -9,7 +9,7 @@
     <div class="right-content">
       <h3>医养康护睡眠业务平台</h3>
       <form class="" #userForm="ngForm" (ngSubmit)="loginConfirm()">
-        <input type="text" name="name" value="" placeholder="用户名" [(ngModel)]="user.name" required #sp> {{sp.className}}
+        <input type="text" name="name" value="" placeholder="用户名" [(ngModel)]="user.name" required #sp>
         <input type="password" name="password" value="" placeholder="用户密码" [(ngModel)]="user.password" required>
         <div class="line">
           <input type="checkbox" name="remember" value="" [(ngModel)]="user.remember"><label for="">记住我</label>

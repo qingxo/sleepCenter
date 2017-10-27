@@ -1,0 +1,47 @@
+<div class="page-system">
+  <div class="top-line clearfix">
+    <div class="date-zoom">
+      <nz-datepicker style="width: 130px" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+      至
+      <nz-datepicker style="width: 130px" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+    </div>
+    <div class="search-wrap">
+      <app-search-line ></app-search-line>
+      <a class="btn">搜索</a>
+    </div>
+    <a class="btn start-now" (click)="showModal()">开始评估</a>    
+  </div>
+
+  <div class="table-info">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <td><span>姓名</span></td>
+          <td><span>性别</span></td>
+          <td><span>年龄</span></td>
+          <td><span>评估时间</span></td>
+          <td><span>操作员</span></td>
+          <td><span>睡眠质量(PSQI)</span></td>
+          <td><span>焦虑情绪(GAD7)</span></td>
+          <td><span>抑郁情绪(PHQ9)</span></td>
+          <td><span>操作员</span></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list">
+          <td><span>{{item.name}}</span></td>
+          <td><span>{{item.sex=='1'?'男':'女'}}</span></td>
+          <td><span>{{item.birthday | pipeBirth}}</span></td>
+          <td><span>{{item.evaluateTime | date:'yyyy-MM-dd hh:mm:ss'}}</span></td>
+          <td><span>{{item.commissionerName}}</span></td>
+          <td><span>{{item.psqi}}</span></td>
+          <td><span>{{item.gad7}}</span></td>
+          <td><span>{{item.phq9}}</span></td>
+          <td><a href="/assessmentresult/{{item.customerId}}/{{item.evaluateTime | date:'yyyy-MM-dd'}}" target="_blank">查看结果</a></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -45,6 +45,7 @@ import { HmmsmDetailComponent } from './hmmsm-detail/hmmsm-detail.component';
 import { HmbedDetailComponent } from './hmbed-detail/hmbed-detail.component';
 import { BedMonitorComponent } from './bed-monitor/bed-monitor.component';
 import { ViewQuestionnaireComponent } from './view-questionnaire';
+import { EchartArealineComponent } from './echart-arealine';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   threshold: 50,
@@ -86,7 +87,8 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     HmmsmDetailComponent,
     HmbedDetailComponent,
     BedMonitorComponent,
-    ViewQuestionnaireComponent
+    ViewQuestionnaireComponent,
+    EchartArealineComponent
   ],
   imports: [
     FormsModule,
@@ -96,7 +98,7 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     HomeModule,
     EchartsNg2Module,
     SwiperModule.forRoot(SWIPER_CONFIG),
-    NgZorroAntdModule.forRoot(),
+    NgZorroAntdModule.forRoot({ extraFontName: 'anticon', extraFontUrl: '/assets/fonts/iconfont' }),
     BrowserAnimationsModule,
     AppRoutingModule
   ],

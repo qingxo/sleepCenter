@@ -1,7 +1,7 @@
 <div class="medical-detail">
   <app-head-layout></app-head-layout>
   <div class="head-zoom">
-    <app-person-info></app-person-info>
+    <app-person-info [customerId]="customerId"></app-person-info>
   </div>
   <div class="medical-content">
     <div class="left-content" style="background:#EBEDF3">
@@ -28,14 +28,14 @@
           <div class="">
             <ng-container *ngIf="tabsIndex==0">
               <div class="">
-                <app-sleep-monitor [dateShow]='true'></app-sleep-monitor>
+                <app-sleep-monitor [dateShow]='true' [reportDay]="time"></app-sleep-monitor>
               </div>
             </ng-container>
 
             <ng-container *ngIf="tabsIndex==1">
               <div class="sleep-no">
                 <div class="">
-                  <app-echart-assess></app-echart-assess>
+                  <app-echart-assess [chooseDay]="time"></app-echart-assess>
                 </div>
                 <div class="">
                   <app-echart-assess></app-echart-assess>
@@ -83,36 +83,58 @@
 
               <div class="paper">
                 <div class="paper-head">
-                  1、睡眠呼吸暂停低通气综合征
+                  2、类型
                 </div>
                 <div class="chk">
-                  <input type="radio" name="one" value=""><label for="">符合</label>
-                  <input type="radio" name="one" value=""><label for="">不符合</label>
-                  <input type="radio" name="one" value=""><label for="">单存憨症</label>
+                  <input type="radio" name="one" value=""><label for="">低通气</label>
+                  <input type="radio" name="one" value=""><label for="">阻塞性</label>
+                  <input type="radio" name="one" value=""><label for="">中枢性</label>
                 </div>
               </div>
 
               <div class="paper">
                 <div class="paper-head">
-                  1、睡眠呼吸暂停低通气综合征
+                  3、严重程度
                 </div>
                 <div class="chk">
-                  <input type="radio" name="one" value=""><label for="">符合</label>
-                  <input type="radio" name="one" value=""><label for="">不符合</label>
-                  <input type="radio" name="one" value=""><label for="">单存憨症</label>
+                  <input type="radio" name="one" value=""><label for="">轻度</label>
+                  <input type="radio" name="one" value=""><label for="">中度</label>
+                  <input type="radio" name="one" value=""><label for="">重度</label>
                 </div>
               </div>
 
               <div class="paper">
                 <div class="paper-head">
-                  1、睡眠呼吸暂停低通气综合征
+                  4、低血氧程度
                 </div>
                 <div class="chk">
-                  <input type="radio" name="one" value=""><label for="">符合</label>
-                  <input type="radio" name="one" value=""><label for="">不符合</label>
-                  <input type="radio" name="one" value=""><label for="">单存憨症</label>
+                  <input type="radio" name="one" value=""><label for="">轻度</label>
+                  <input type="radio" name="one" value=""><label for="">中度</label>
+                  <input type="radio" name="one" value=""><label for="">重度</label>
                 </div>
               </div>
+
+              <div class="paper">
+                <div class="paper-head">
+                  5、睡眠状态
+                </div>
+                <div class="chk">
+                  <input type="radio" name="one" value=""><label for="">好</label>
+                  <input type="radio" name="one" value=""><label for="">尚可</label>
+                  <input type="radio" name="one" value=""><label for="">紊乱</label>
+                </div>
+              </div>
+
+              <div class="paper">
+                <div class="paper-head">
+                  6、体位关系
+                </div>
+                <div class="chk">
+                  <input type="radio" name="one" value=""><label for="">无关</label>
+                  <input type="radio" name="one" value=""><label for="">有关</label>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -134,40 +156,16 @@
             </div>
             <div class="block-body">
               <div class="">
-                <app-line-btn [totalBtn]="['心里&健康','饮食运动','诊疗复查']"></app-line-btn>
+                <app-line-btn [totalBtn]="['心里&健康','饮食运动','诊疗复查']" (btnInfo)="typeChange($event)"></app-line-btn>
               </div>
-              <div class="f-chk">
-                <input type="checkbox" name="" value="">
-                <span>避免长期紧张、激动焦虑、烦躁等不良情绪及波动，平和心态</span>
-              </div>
-              <div class="f-chk">
-                <input type="checkbox" name="" value="">
-                <span>平衡心理</span>
-              </div>
-              <div class="f-chk">
-                <input type="checkbox" name="" value="">
-                <span>保持良好心态</span>
-              </div>
-              <div class="f-chk">
-                <input type="checkbox" name="" value="">
-                <span>主动调整情绪</span>
-              </div>
-              <div class="f-chk">
-                <input type="checkbox" name="" value="">
-                <span>一些体育锻炼、社交活动可以缓解心里压力</span>
-              </div>
-              <div class="f-chk">
-                <input type="checkbox" name="" value="">
-                <span>保证充分睡眠</span>
-              </div>
-              <div class="f-chk">
-                <input type="checkbox" name="" value="">
-                <span>早睡早起</span>
-              </div>
-              <div class="f-chk">
-                <input type="checkbox" name="" value="">
-                <span>睡前放松，不纠结工作生活琐事</span>
-              </div>
+              <ng-container *ngFor="let item of tplList">
+                <div class="f-chk" *ngIf="item.type==type">
+                  <input type="checkbox" name="" value="">
+                  <span>{{item.advice}}</span>
+                </div>
+              </ng-container>
+
+
             </div>
           </div>
         </div>

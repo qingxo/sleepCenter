@@ -12,12 +12,12 @@ import { ViewQuestionnaireComponent } from './view-questionnaire';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
-  { path: 'patientdetail', component: PatientDetailComponent },
-  { path: 'medicaldetail', component: MedicalDetailComponent },
+  { path: 'patientdetail/:customerId', component: PatientDetailComponent },
+  { path: 'medicaldetail/:customerId', component: MedicalDetailComponent },
   { path: 'hmmsmdetail', component: HmmsmDetailComponent },
   { path: 'hmbeddetail', component: HmbedDetailComponent },
   { path: 'evaluatequestionnaire', component: EvaluateQuestionnaireComponent },
-  { path: 'assessmentresult', component: AssessmentResultComponent },
+  { path: 'assessmentresult/:customerId/:evaluateTime', component: AssessmentResultComponent },
   { path: 'viewquestionnaire', component: ViewQuestionnaireComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }

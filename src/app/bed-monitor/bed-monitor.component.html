@@ -21,13 +21,17 @@
 
       <div class="mybox" style="padding-bottom:2px;height:350px;">
         <div class="sleep-bed-info">
-          <app-heart-line chartTitleText="心率" [xAxisList]="timeList" [dataList]="heartList" [legendDataList]="heartLegendList"></app-heart-line>
+          <app-echart-arealine chartTitleText="心率" seriesItemStyleColor="#3D86E4"
+                               [xAxisList]="timeList" [dataList]="heartList"
+                               [legendDataList]="heartLegendList" [seriesAreaStyleList]="heartSAStyleList"></app-echart-arealine>
         </div>
       </div>
 
       <div class="mybox" style="padding-bottom:2px;height:350px;">
         <div class="sleep-bed-info">
-          <app-heart-line chartTitleText="呼吸率" [xAxisList]="timeList" [dataList]="breathList" [legendDataList]="breathLegendList"></app-heart-line>
+          <app-echart-arealine chartTitleText="呼吸率" seriesItemStyleColor="#00CDBD"
+                               [xAxisList]="timeList" [dataList]="breathList"
+                               [legendDataList]="breathLegendList" [seriesAreaStyleList]="breathSAStyleList"></app-echart-arealine>
         </div>
       </div>
 

@@ -83,6 +83,16 @@
               display: inline-block;
               font-size: 14px;
             }
+
+            input {
+              float: left;
+              margin-top: 5px;
+            }
+
+            span {
+              margin-left: 20px;
+              display: block;
+            }
           }
 
           .save:after {

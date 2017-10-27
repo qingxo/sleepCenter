@@ -38,6 +38,10 @@
               min-width: 90px;
               text-align: right;
             }
+
+            span.center {
+              text-align: center;
+            }
           }
         }
       }
@@ -63,5 +67,19 @@
         padding-right: 25px;
       }
     }
+  }
+
+  .custom-table{
+    table-layout: fixed;
+    td span{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    td:nth-child(2n+1){  
+      width: 92px;
+    }
+  }
+  .ft12{
+    font-size: 12px !important;
   }
 }

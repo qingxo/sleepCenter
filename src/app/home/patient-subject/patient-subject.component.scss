@@ -1,13 +1,34 @@
 .patient-subject-info {
   width: 100%;
 
+  .table-subject {
+    table tbody tr:nth-child(3n) {
+      background-color: #F5F9FC;
+    }
+  }
+
   .search-line {
     margin: 10px;
+
+    label {
+      font-size: 14px;
+      color: #555;
+    }
 
     input {
       height: 30px;
       width: 160px;
-      margin: 0 20px 0 5px;
+      margin: 0 20px 0 0;
+      padding-left: 10px;
+      outline: none;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+
+      &:focus {
+        border-color: #49a9ee;
+        outline: 0;
+        box-shadow: 0 0 0 2px rgba(16, 142, 233, 0.2);
+      }
     }
 
     span {

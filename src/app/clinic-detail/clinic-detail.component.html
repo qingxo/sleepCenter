@@ -5,7 +5,7 @@
     </div>
     <div class="box-sec-body">
       <div class="table-spec">
-        <table cellpadding="0" cellspacing="0" border="0">
+        <table class="custom-table" cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td><span class="cc">就诊日期</span></td>
             <td><span>2015-08-09</span></td>
@@ -107,7 +107,7 @@
     </div>
     <div class="box-sec-body">
       <div class="table-spec">
-        <table cellpadding="0" cellspacing="0" border="0">
+        <table class="custom-table" cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td><span class="cc">住院号</span></td>
             <td><span>0934</span></td>
@@ -146,63 +146,139 @@
 
   <div class="box-sec">
     <div class="box-sec-head">
-      <i></i><span>检验报告</span>
+      <i></i><span>住院手术</span>
     </div>
     <div class="box-sec-body">
-      <div class="lines">
-        <div class="info">
-          报告单编号:202424234324
-        </div>
-        <div class="details">
-          <span>检验项目：电解质思想+森</span>
-          <span>样本类型：血液</span>
-          <span>报告时间：2015-09-09</span>
-          <span>开单医生：赵忠祥</span>
-          <span>开单科室：急诊</span>
-        </div>
-      </div>
       <div class="table-spec">
-        <table cellpadding="0" cellspacing="0" border="0">
+        <table class="custom-table table-surgery" *ngFor="let item of clinicInfo.surgeriesList" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td><span class="cc">项目</span></td>
-            <td><span class="cc">异常指标</span></td>
-            <td><span class="cc">检验结果值</span></td>
-            <td><span class="cc">检验结果值单位</span></td>
-            <td><span class="cc">参考范围</span></td>
+            <td><span class="cc">手术日期</span></td>
+            <td><span>{{item.surgeryBeginDate | date: 'yyyy-MM-dd'}}</span></td>
+            <td><span class="cc">手术名称</span></td>
+            <td><span>{{item.surgeryOperName?item.surgeryOperName:'-'}}</span></td>
+            <td><span class="cc">手术医生</span></td>
+            <td><span>{{item.surgeryDrName}}</span></td>
+            <td><span class="cc">麻醉方式</span></td>
+            <td><span>{{item.anesMethodName?item.anesMethodName:'-'}}</span></td>
           </tr>
           <tr>
-            <td><span>鼻涕院桥颗粒</span></td>
-            <td><span>上升</span></td>
-            <td><span>244</span></td>
-            <td><span>umol/L</span></td>
-            <td><span>190-240</span></td>
-          </tr>
-          <tr>
-            <td><span>鼻涕院桥颗粒</span></td>
-            <td><span>上升</span></td>
-            <td><span>244</span></td>
-            <td><span>umol/L</span></td>
-            <td><span>190-240</span></td>
-          </tr>
-          <tr>
-            <td><span>鼻涕院桥颗粒</span></td>
-            <td><span>上升</span></td>
-            <td><span>244</span></td>
-            <td><span>umol/L</span></td>
-            <td><span>190-240</span></td>
-          </tr>
-          <tr>
-            <td><span>鼻涕院桥颗粒</span></td>
-            <td><span>上升</span></td>
-            <td><span>244</span></td>
-            <td><span>umol/L</span></td>
-            <td><span>190-240</span></td>
+            <td><span class="cc">手术级别</span></td>
+            <td><span>-</span></td>
+            <td><span class="cc ft12">切口愈合登记</span></td>
+            <td><span>-</span></td>
+            <td><span class="cc">麻醉医生</span></td>
+            <td colspan="3"><span>{{item.anesDrName?item.anesDrName:'-'}}</span></td>
           </tr>
         </table>
       </div>
+
     </div>
   </div>
 
 
+  <div class="box-sec">
+    <div class="box-sec-head">
+      <i></i><span>检查报告</span>
+    </div>
+    <div class="box-sec-body">
+      <div class="table-spec" *ngFor="let item of clinicInfo.examReportList">
+        <div class="lines">
+          <div class="info">
+            报告编号：{{item.reportNo}}
+          </div>
+        </div>
 
-</div>
+        <table class="custom-table" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td><span class="cc">检查类别</span></td>
+            <td><span>{{item.examCategName}}</span></td>
+            <td><span class="cc">检查项目</span></td>
+            <td><span>{{item.examItemName}}</span></td>
+            <td><span class="cc">报告时间</span></td>
+            <td><span>{{item.reportDate | date:'yyyy-MM-dd'}}</span></td>
+            <td><span class="cc">开单医生</span></td>
+            <td><span>{{item.reportDrName}}</span></td>
+          </tr>
+          <tr>
+            <td><span class="cc">开单科室</span></td>
+            <td colspan="7"><span>{{item.reportDeptName}}</span></td>
+          </tr>
+          <tr>
+            <td><span class="cc">检查结果</span></td>
+            <td colspan="7"><span>{{item.examResults}}</span></td>
+          </tr>
+          <tr>
+            <td><span class="cc">检查描述</span></td>
+            <td colspan="7"><span></span></td>
+          </tr>
+          <tr>
+            <td><span class="cc">图文报告</span></td>
+            <td colspan="7"><span style="color:#2e5ee9">点击查看</span></td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+
+    <div class="box-sec">
+      <div class="box-sec-head">
+        <i></i><span>检验报告</span>
+      </div>
+      <div class="box-sec-body">
+        <div class="lines">
+          <div class="info">
+            报告单编号:202424234324
+          </div>
+          <div class="details">
+            <span>检验项目：电解质思想+森</span>
+            <span>样本类型：血液</span>
+            <span>报告时间：2015-09-09</span>
+            <span>开单医生：赵忠祥</span>
+            <span>开单科室：急诊</span>
+          </div>
+        </div>
+        <div class="table-spec">
+          <table  class="custom-table" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td><span class="cc center">项目</span></td>
+              <td><span class="cc center">异常指标</span></td>
+              <td><span class="cc center">检验结果值</span></td>
+              <td><span class="cc center">检验结果值单位</span></td>
+              <td><span class="cc center">参考范围</span></td>
+            </tr>
+            <tr>
+              <td><span class="center">鼻涕院桥颗粒</span></td>
+              <td><span class="center"><i class="anticon anticon-arrow-down"></i></span></td>
+              <td><span class="center">244</span></td>
+              <td><span class="center">umol/L</span></td>
+              <td><span class="center">190-240</span></td>
+            </tr>
+            <tr>
+              <td><span class="center">鼻涕院桥颗粒</span></td>
+              <td><span class="center"><i class="anticon anticon-arrow-down"></i></span></td>
+              <td><span class="center">244</span></td>
+              <td><span class="center">umol/L</span></td>
+              <td><span class="center">190-240</span></td>
+            </tr>
+            <tr>
+              <td><span class="center">鼻涕院桥颗粒</span></td>
+              <td><span class="center"><i class="anticon anticon-arrow-up"></i></span></td>
+              <td><span class="center">244</span></td>
+              <td><span class="center">umol/L</span></td>
+              <td><span class="center">190-240</span></td>
+            </tr>
+            <tr>
+              <td><span class="center">鼻涕院桥颗粒</span></td>
+              <td><span class="center"><i class="anticon anticon-arrow-up"></i></span></td>
+              <td><span class="center">244</span></td>
+              <td><span class="center">umol/L</span></td>
+              <td><span class="center">190-240</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>

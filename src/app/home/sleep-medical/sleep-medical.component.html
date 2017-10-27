@@ -1,9 +1,9 @@
 <div class="sleep-medical-info">
   <div class="search-line">
     <div class="date-zoom">
-      <nz-datepicker style="width: 40%;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'Start date'"></nz-datepicker>
+      <nz-datepicker style="width: 40%;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
       至
-      <nz-datepicker style="width: 40%;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'End date'"></nz-datepicker>
+      <nz-datepicker style="width: 40%;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
     </div>
     <div class="">
       <app-search-line></app-search-line>
@@ -26,51 +26,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span>golong</span></td>
-          <td><span>男</span></td>
-          <td><span>99</span></td>
-          <td><span>18755759443</span></td>
-          <td><span>2017-09-01</span></td>
-          <td><span>花名册</span></td>
-          <td class="opt"><a [routerLink]="['/medicaldetail']" target="_blank">查看诊断报告</a></td>
+        <tr *ngFor="let item of list">
+          <td><span>{{item.name}}</span></td>
+          <td><span>{{item.sex=='1'?'男':'女'}}</span></td>
+          <td><span>{{item.birthday | pipeBirth}}</span></td>
+          <td><span>{{item.mobile}}</span></td>
+          <td><span>{{item.create_time}}</span></td>
+          <td><span>{{item.doc_name}}</span></td>
+          <td class="opt"><a [routerLink]="['/medicaldetail',item.customerId]" target="_blank">查看诊断报告</a></td>
         </tr>
-        <tr>
-          <td><span>golong</span></td>
-          <td><span>男</span></td>
-          <td><span>99</span></td>
-          <td><span>18755759443</span></td>
-          <td><span>2017-09-01</span></td>
-          <td><span>花名册</span></td>
-          <td class="opt"><a [routerLink]="['/medicaldetail']" target="_blank">查看诊断报告</a></td>
-        </tr>
-        <tr>
-          <td><span>golong</span></td>
-          <td><span>男</span></td>
-          <td><span>99</span></td>
-          <td><span>18755759443</span></td>
-          <td><span>2017-09-01</span></td>
-          <td><span>花名册</span></td>
-          <td class="opt"><a [routerLink]="['/medicaldetail']" target="_blank">查看诊断报告</a></td>
-        </tr>
-        <tr>
-          <td><span>golong</span></td>
-          <td><span>男</span></td>
-          <td><span>99</span></td>
-          <td><span>18755759443</span></td>
-          <td><span>2017-09-01</span></td>
-          <td><span>花名册</span></td>
-          <td class="opt"><a [routerLink]="['/medicaldetail']" target="_blank">查看诊断报告</a></td>
-        </tr>
-        <tr>
-          <td><span>golong</span></td>
-          <td><span>男</span></td>
-          <td><span>99</span></td>
-          <td><span>18755759443</span></td>
-          <td><span>2017-09-01</span></td>
-          <td><span>花名册</span></td>
-          <td class="opt"><a [routerLink]="['/medicaldetail']" target="_blank">查看诊断报告</a></td>
-        </tr>
+
+
       </tbody>
 
     </table>

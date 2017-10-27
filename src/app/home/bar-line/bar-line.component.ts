@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, SimpleChanges, Renderer, ElementRef, ViewChild, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, Renderer, ElementRef, ViewChild } from '@angular/core';
 import { EChartOption } from 'echarts-ng2';
 @Component({
   selector: 'app-bar-line',
   templateUrl: './bar-line.component.html',
   styleUrls: ['./bar-line.component.scss']
 })
-export class BarLineComponent implements OnInit {
+export class BarLineComponent implements OnInit, OnChanges {
   private option: EChartOption;
   private nothingFlag = false;
   @Input() topTitle = '';
@@ -14,9 +14,22 @@ export class BarLineComponent implements OnInit {
   @Input() name: string = '测试';
   @Input() imageSrc: string = "/assets/images/evaluate.png";
   @ViewChild('tt') el: ElementRef;
+  @Input() normalList: Array<any> = [];
+  @Input() abNormalList: Array<any> = [];
   constructor() { }
 
   ngOnInit() {
+
+  }
+  ngOnChanges(change: SimpleChanges) {
+    if (this.normalList.length > 0 && this.abNormalList.length > 0) {
+      this.initEcharts()
+    }
+  }
+
+
+
+  initEcharts() {
     this.option = {
       tooltip: {
         trigger: 'axis',
@@ -29,7 +42,7 @@ export class BarLineComponent implements OnInit {
         orient: 'veritcal',
         right: '10%',
         top: '45%',
-        data: ['直接访问', '间接访问']
+        data: ['正常', '异常']
       },
       grid: {
         left: '3%',
@@ -40,7 +53,7 @@ export class BarLineComponent implements OnInit {
       xAxis: [
         {
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: ['血压', '血糖', '心率', '血氧', '体温', 'BMI'],
           axisTick: {
             alignWithLabel: true
           },
@@ -59,9 +72,9 @@ export class BarLineComponent implements OnInit {
       ],
       series: [
         {
-          name: '直接访问',
+          name: '正常',
           type: 'bar',
-          data: [10, 52, 200, 334, 390, 330, 220],
+          data: this.normalList,
           label: {
             normal: {
               show: true,
@@ -78,9 +91,9 @@ export class BarLineComponent implements OnInit {
             }
           },
         }, {
-          name: '间接访问',
+          name: '异常',
           type: 'bar',
-          data: [20, 12, 100, 304, 90, 30, 120],
+          data: this.abNormalList,
           label: {
             normal: {
               show: true,

@@ -1,9 +1,9 @@
 <div class="page-system">
   <div class="top-line clearfix">
     <div class="date-zoom">
-      <nz-datepicker style="width: 130px" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'Start date'"></nz-datepicker>
+      <nz-datepicker style="width: 130px" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
       至
-      <nz-datepicker style="width: 130px" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'End date'"></nz-datepicker>
+      <nz-datepicker style="width: 130px" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
     </div>
     <div class="search-wrap">
       <app-search-line></app-search-line>
@@ -25,64 +25,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span>李如飞</span></td>
-          <td><span>男</span></td>
-          <td><span>58</span></td>
-          <td><span>13812345678</span></td>
-          <td><span>2017-9-15</span></td>
+        <tr *ngFor="let item of list">
+          <td><span>{{item.name}}</span></td>
+          <td><span>{{item.sex==='1'?'男':'女'}}</span></td>
+          <td><span>{{item.birthday | pipeBirth}}</span></td>
+          <td><span>{{item.mobile}}</span></td>
+          <td><span>{{item.generateTime | date:'yyyy-MM-dd'}}</span></td>
           <td><span>于丹</span></td>
-          <td><a>查看</a></td>
-        </tr>
-
-        <tr>
-          <td><span>赵永美</span></td>
-          <td><span>女</span></td>
-          <td><span>35</span></td>
-          <td><span>13812346666</span></td>
-          <td><span>2017-9-10</span></td>
-          <td><span>于丹</span></td>
-          <td><a>查看</a></td>
-        </tr>
-
-        <tr>
-          <td><span>辰南</span></td>
-          <td><span>男</span></td>
-          <td><span>30</span></td>
-          <td><span>15757102452</span></td>
-          <td><span>2017-8-28</span></td>
-          <td><span>于丹</span></td>
-          <td><a>查看</a></td>
-        </tr>
-
-        <tr>
-          <td><span>张汉能</span></td>
-          <td><span>男</span></td>
-          <td><span>67</span></td>
-          <td><span>15757102433</span></td>
-          <td><span>2017-8-24</span></td>
-          <td><span>于丹</span></td>
-          <td><a>查看</a></td>
-        </tr>
-
-        <tr>
-          <td><span>吴双梅</span></td>
-          <td><span>男</span></td>
-          <td><span>70</span></td>
-          <td><span>15757102455</span></td>
-          <td><span>2017-8-8</span></td>
-          <td><span>于丹</span></td>
-          <td><a>查看</a></td>
-        </tr>
-
-        <tr>
-          <td><span>潘粤明</span></td>
-          <td><span>男</span></td>
-          <td><span>43</span></td>
-          <td><span>13454189999</span></td>
-          <td><span>2017-8-7</span></td>
-          <td><span>于丹</span></td>
-          <td><a>查看</a></td>
+          <td><a href={{item.reportUrl}} target="_blank">查看</a></td>
         </tr>
       </tbody>
     </table>
