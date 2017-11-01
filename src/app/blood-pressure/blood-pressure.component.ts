@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, Renderer, E
 import { EChartOption } from 'echarts-ng2';
 import { BloodPressureService } from './blood-pressure.service';
 import storage from '../shared/storage';
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-blood-pressure',
   templateUrl: './blood-pressure.component.html',
@@ -31,7 +33,9 @@ export class BloodPressureComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.bloodDataInit();
+    if (this.userId != '') {
+      this.bloodDataInit();
+    }
   }
 
 
@@ -42,31 +46,34 @@ export class BloodPressureComponent implements OnInit, OnChanges {
     this.heartRateValue = [];
     this.bloodPressureHigh = [];
     this.bloodPressureLower = [];
-    this.bloodPressureList = [];
     this.nothingFlag = false;
-    this.bloodPressureService.getBloodPressList({ 'customerId': this.userId, 'day': this.periodDay }).subscribe((res) => {
+    let data = {
+      signType: 'bp',
+      customerId: this.userId
+    }
+    this.bloodPressureService.getBloodPressList(data).subscribe((res) => {
       if (res.success) {
-        this.bloodPressureList = eval(res.data);
-        if (this.bloodPressureList instanceof Array) {
-          for (let i = 0; i < this.bloodPressureList.length; i++) {
-            this.bloodPressureHigh[i] = this.bloodPressureList[i].systolicPressure;
-            this.bloodPressureLower[i] = this.bloodPressureList[i].stretchPressure;
-            this.heartRateValue[i] = this.bloodPressureList[i].heartRateValue;
-            if (this.periodDay === 1) {
-              this.bloodPressureDate[i] = this.bloodPressureList[i].measurementTime.split(' ')[1];
-            } else {
-              this.bloodPressureDate[i] = this.bloodPressureList[i].measurementTime.split(' ')[0];
-            }
+        this.bloodPressureList = res.data;
+        // if (this.bloodPressureList instanceof Array) {
+        for (let i = 0; i < this.bloodPressureList.length; i++) {
+          this.bloodPressureHigh[i] = this.bloodPressureList[i].sbp;
+          this.bloodPressureLower[i] = this.bloodPressureList[i].dbp;
+          this.heartRateValue[i] = this.bloodPressureList[i].pulse;
+          if (this.periodDay === 1) {
+            this.bloodPressureDate[i] = moment(this.bloodPressureList[i].occurDt).format('HH:mm');
+          } else {
+            this.bloodPressureDate[i] = moment(this.bloodPressureList[i].occurDt).format('YYYY-MM-DD');
           }
         }
-
+        // }
+      
         if (this.bloodPressureList.length > 0) {
           this.nothingFlag = true;
           this.el.nativeElement.className = '';
         } else {
           this.nothingFlag = false;
           this.el.nativeElement.className = 'black-hole';
-
+      
         }
         this.startEchartPress();
       }

@@ -1,35 +1,13 @@
 <div class="hmbed-info">
   <div class="top-line">
     <div class="lf">
-      <nz-select
-        style="width: 160px;"
-        nzAllowClear
-        [nzPlaceHolder]="'请选择科室'"
-        [nzFilter]="false"
-        [(ngModel)]="selectedDept"
-        (nzSearchChange)="searchDept($event)"
-        [nzNotFoundContent]="'无法找到'"
-        [nzShowSearch]="true">
-        <nz-option
-          *ngFor="let option of deptOptions"
-          [nzLabel]="option[0]"
-          [nzValue]="option[0]">
+      <nz-select style="width: 160px;" nzAllowClear [nzPlaceHolder]="'请选择科室'" [nzFilter]="false" [(ngModel)]="selectedDept" (nzSearchChange)="searchDept($event)" [nzNotFoundContent]="'无法找到'" [nzShowSearch]="true">
+        <nz-option *ngFor="let option of deptOptions" [nzLabel]="option[0]" [nzValue]="option[0]">
         </nz-option>
       </nz-select>
 
-      <nz-select
-        style="width: 160px;"
-        nzAllowClear
-        [nzPlaceHolder]="'请选择病区'"
-        [nzFilter]="false"
-        [(ngModel)]="selectedWard"
-        (nzSearchChange)="searchWard($event)"
-        [nzNotFoundContent]="'无法找到'"
-        [nzShowSearch]="true">
-        <nz-option
-          *ngFor="let option of wardOptions"
-          [nzLabel]="option[0]"
-          [nzValue]="option[0]">
+      <nz-select style="width: 160px;" nzAllowClear [nzPlaceHolder]="'请选择病区'" [nzFilter]="false" [(ngModel)]="selectedWard" (nzSearchChange)="searchWard($event)" [nzNotFoundContent]="'无法找到'" [nzShowSearch]="true">
+        <nz-option *ngFor="let option of wardOptions" [nzLabel]="option[0]" [nzValue]="option[0]">
         </nz-option>
       </nz-select>
 
@@ -43,7 +21,7 @@
 
   <div class="dashbox-info">
     <div class="dashbox">
-      <div class="box-body box-hit" [routerLink]="['/hmbeddetail']">
+      <div class="box-body box-hit" [routerLink]="['/hmbeddetail/1710241455273782625']">
         <div class="box-left box-left-on">
           <div class="l-bedno">001</div>
           <div class="l-avatar"><span class="avatar-img img-man"></span></div>
@@ -74,7 +52,7 @@
     </div>
 
     <div class="dashbox">
-      <div class="box-body box-hit" [routerLink]="['/hmbeddetail']">
+      <div class="box-body box-hit" [routerLink]="['/hmbeddetail/1710241455273782625']">
         <div class="box-left box-left-off">
           <div class="l-bedno">002</div>
           <div class="l-avatar"><span class="avatar-img img-woman"></span></div>
@@ -135,7 +113,7 @@
     </div>
 
     <div class="dashbox">
-      <div class="box-body box-hit" [routerLink]="['/hmbeddetail']">
+      <div class="box-body box-hit" [routerLink]="['/hmbeddetail/1710241455273782625']">
         <div class="box-left box-left-power-off">
           <div class="l-bedno">004</div>
           <div class="l-avatar"><span class="avatar-img img-woman"></span></div>

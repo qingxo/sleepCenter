@@ -9,6 +9,6 @@ export class HeatLineService extends BaseService {
     super(http)
   }
   heatList(data) {
-    return this.postInfo('api/webHealthExamData/list', storage.serialize(data));
+    return this.postInfo('api/v1/cust/getHealthExamDataByParams', storage.serialize(data));
   }
 }

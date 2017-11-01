@@ -12,7 +12,7 @@
               <span>血压</span>
             </div>
             <div class="box-info-b">
-              <app-blood-pressure></app-blood-pressure>
+              <app-blood-pressure [userId]="customerId"></app-blood-pressure>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
               <span>血糖</span>
             </div>
             <div class="box-info-b">
-              <app-blood-sugar></app-blood-sugar>
+              <app-blood-sugar [userId]="customerId"></app-blood-sugar>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
               <span>BMI</span>
             </div>
             <div class="box-info-b">
-              <app-bmi-line></app-bmi-line>
+              <app-bmi-line [userId]="customerId"></app-bmi-line>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
               <span>血氧</span>
             </div>
             <div class="box-info-b">
-              <app-blood-oxygen></app-blood-oxygen>
+              <app-blood-oxygen [userId]="customerId"></app-blood-oxygen>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
               <span>体温</span>
             </div>
             <div class="box-info-b">
-              <app-heat-line></app-heat-line>
+              <app-heat-line [userId]="customerId"></app-heat-line>
             </div>
           </div>
         </div>
@@ -76,55 +76,54 @@
     </div>
     <div class="box-sec-body" style="padding-bottom: 20px;">
       <div class="table-info">
-        <table cellpadding="0" cellspacing="0" border="0">
+        <table cellpadding="0" cellspacing="0" border="0" *ngIf="list.length>0">
           <thead>
-          <tr>
-            <td><span>监测项目</span></td>
-            <td><span>体征值</span></td>
-            <td><span>体征单位</span></td>
-            <td><span>监测时间</span></td>
-            <td><span>异常状态</span></td>
-            <td><span>处理意见</span></td>
-            <td><span>操作</span></td>
-          </tr>
+            <tr>
+              <td><span>监测项目</span></td>
+              <td><span>体征值</span></td>
+              <td><span>体征单位</span></td>
+              <td><span>监测时间</span></td>
+              <td><span>异常状态</span></td>
+              <td><span>处理意见</span></td>
+              <td><span>操作</span></td>
+            </tr>
           </thead>
           <tbody>
-          <tr>
-            <td><span>心率</span></td>
-            <td><span>264</span></td>
-            <td><span>次/分</span></td>
-            <td><span>2017-03-04 15:32</span></td>
-            <td><span class="ex-warning"><i class="anticon anticon-arrow-up"></i></span></td>
-            <td><span>癌术后，长期中药治疗，头晕，乏力，口苦</span></td>
-            <td><span>已处理</span></td>
-          </tr>
-          <tr>
-            <td><span>心率</span></td>
-            <td><span>66</span></td>
-            <td><span>次/分</span></td>
-            <td><span>2017-02-01 15:32</span></td>
-            <td><span class="ex-warning"><i class="anticon anticon-arrow-down"></i></span></td>
-            <td><span>癌术后，长期中药治疗，头晕，乏力，口苦</span></td>
-            <td><span>已处理</span></td>
-          </tr>
-          <tr>
-            <td><span>血压</span></td>
-            <td><span>170/108</span></td>
-            <td><span>mmHg</span></td>
-            <td><span>2017-01-25 15:32</span></td>
-            <td><span class="ex-warning"><i class="anticon anticon-arrow-up"></i></span></td>
-            <td><span>癌术后，长期中药治疗，头晕，乏力，口苦</span></td>
-            <td><span><a href="javascript:void(0);" (click)="showModalEx()">处理</a></span></td>
-          </tr>
-          <tr>
-            <td><span>血率</span></td>
-            <td><span>68</span></td>
-            <td><span>次/分</span></td>
-            <td><span>2017-01-02 15:32</span></td>
-            <td><span class="ex-warning"><i class="anticon anticon-arrow-down"></i></span></td>
-            <td><span>癌术后，长期中药治疗，头晕，乏力，口苦</span></td>
-            <td><span><a href="javascript:void(0);" (click)="showModalEx()">处理</a></span></td>
-          </tr>
+            <tr *ngFor="let item of list">
+              <td>
+                <span *ngIf="item.signType=='bp'">血压</span>
+                <span *ngIf="item.signType=='bg'">血糖</span>
+                <span *ngIf="item.signType=='temp'">体温</span>
+                <span *ngIf="item.signType=='bmi'">BMI</span>
+                <span *ngIf="item.signType=='spo2'">血氧</span>
+              </td>
+              <td>
+                <span *ngIf="item.signType=='bp'">{{item.sbp}}/{{item.dbp}}</span>
+                <span *ngIf="item.signType=='bg'">{{item.bg}}</span>
+                <span *ngIf="item.signType=='temp'">{{item.temp}}</span>
+                <span *ngIf="item.signType=='bmi'">{{item.bmi}}</span>
+                <span *ngIf="item.signType=='spo2'">{{item.spo2}}</span>
+              </td>
+              <td>
+                <span *ngIf="item.signType=='bp'">mmHg</span>
+                <span *ngIf="item.signType=='bg'">mmol/L</span>
+                <span *ngIf="item.signType=='temp'">℃</span>
+                <span *ngIf="item.signType=='bmi'">kg/m²</span>
+                <span *ngIf="item.signType=='spo2'">%</span>
+              </td>
+              <td><span>{{item.occurDtStr}}</span></td>
+              <td>
+                <span class="ex-warning">
+                  <i *ngIf="item.extBizNo==1" class="anticon anticon-arrow-up"></i>
+                  <i *ngIf="item.extBizNo==2" class="anticon anticon-arrow-down"></i>
+                </span>
+              </td>
+              <td><span>{{item.dealResult}}</span></td>
+              <td>
+                <span *ngIf="item.dealStatus==0">已处理</span>
+                <a *ngIf="item.dealStatus!=0">处理</a>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

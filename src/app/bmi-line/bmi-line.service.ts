@@ -10,7 +10,7 @@ export class BmiLineService extends BaseService {
   }
 
   bmiList(data) {
-    return this.postInfo('api/webHealthExamData/list', storage.serialize(data));
+    return this.postInfo('api/v1/cust/getHealthExamDataByParams', storage.serialize(data));
   }
 
 }

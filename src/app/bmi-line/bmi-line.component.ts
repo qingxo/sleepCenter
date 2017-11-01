@@ -30,7 +30,11 @@ export class BmiLineComponent implements OnInit, OnChanges {
 
 
   initBMILine() {
-    this.bmiLineService.bmiList({ 'customerId': this.userId, 'day': this.periodDay, 'signType': 'bf' }).subscribe((res) => {
+    let data = {
+      customerId: this.userId,
+      signType: 'bmi'
+    }
+    this.bmiLineService.bmiList(data).subscribe((res) => {
       if (res.success) {
         this.bmiList = [];
         this.xBMIData = [];
@@ -38,9 +42,9 @@ export class BmiLineComponent implements OnInit, OnChanges {
         for (let i = 0; i < res.data.length; i++) {
           this.bmiList.push(Number(res.data[i].bmi));
           if (this.periodDay === 1) {
-            this.xBMIData[i] = moment(res.data[i].createDt).format('HH:mm');
+            this.xBMIData[i] = moment(res.data[i].occurDt).format('HH:mm');
           } else {
-            this.xBMIData[i] = moment(res.data[i].createDt).format('YYYY-MM-DD');
+            this.xBMIData[i] = moment(res.data[i].occurDt).format('YYYY-MM-DD');
           }
         }
         if (this.bmiList.length > 0) {

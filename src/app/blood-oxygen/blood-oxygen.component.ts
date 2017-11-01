@@ -30,7 +30,11 @@ export class BloodOxygenComponent implements OnInit, OnChanges {
   }
 
   oxygenDataInit() {
-    this.bloodOxygenService.oxygenList({ 'customerId': this.userId, 'day': this.periodDay, 'signType': 'spo2' }).subscribe((res) => {
+    let data = {
+      signType: 'spo2',
+      customerId: this.userId
+    }
+    this.bloodOxygenService.oxygenList(data).subscribe((res) => {
       if (res.success) {
         this.oxygenList = [];
         this.xOxygenData = [];
@@ -38,9 +42,9 @@ export class BloodOxygenComponent implements OnInit, OnChanges {
         for (let i = 0; i < arr.length; i++) {
           this.oxygenList[i] = Number(arr[i].spo2);
           if (this.periodDay === 1) {
-            this.xOxygenData[i] = moment(arr[i].createDt).format('HH:mm');
+            this.xOxygenData[i] = moment(arr[i].occurDt).format('HH:mm');
           } else {
-            this.xOxygenData[i] = moment(arr[i].createDt).format('YYYY-MM-DD');
+            this.xOxygenData[i] = moment(arr[i].occurDt).format('YYYY-MM-DD');
           }
         }
         if (this.oxygenList.length > 0) {

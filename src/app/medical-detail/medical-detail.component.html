@@ -35,13 +35,13 @@
             <ng-container *ngIf="tabsIndex==1">
               <div class="sleep-no">
                 <div class="">
-                  <app-echart-assess [chooseDay]="time"></app-echart-assess>
+                  <app-echart-assess [chooseDay]="time" [type]="['PSQI']"></app-echart-assess>
                 </div>
                 <div class="">
-                  <app-echart-assess></app-echart-assess>
+                  <app-echart-assess [chooseDay]="time" [type]="['GAD7']"></app-echart-assess>
                 </div>
                 <div class="">
-                  <app-echart-assess></app-echart-assess>
+                  <app-echart-assess [chooseDay]="time" [type]="['PHQ9']"></app-echart-assess>
 
                 </div>
               </div>
@@ -61,7 +61,7 @@
         <div class="box-head">
           <i></i><span>诊断记录</span>
           <div class="time-zoom">
-            <app-times></app-times>
+            <app-times (fired)="recordsTime($event)"></app-times>
           </div>
         </div>
         <div class="box-body" style="background-color:white;padding:10px;">
@@ -75,10 +75,11 @@
                   1、睡眠呼吸暂停低通气综合征
                 </div>
                 <div class="chk">
-                  <input type="radio" name="one" value=""><label for="">符合</label>
-                  <input type="radio" name="one" value=""><label for="">不符合</label>
-                  <input type="radio" name="one" value=""><label for="">单存憨症</label>
+                  <input type="radio" name="one" value="0" [(ngModel)]="syndrome" id="one0"><label for="one0">符合</label>
+                  <input type="radio" name="one" value="1" [(ngModel)]="syndrome" id="one1"><label for="one1">不符合</label>
+                  <input type="radio" name="one" value="2" [(ngModel)]="syndrome" id="one2"><label for="one2">单存憨症</label>
                 </div>
+                {{sleepMonitorId}}
               </div>
 
               <div class="paper">
@@ -86,9 +87,9 @@
                   2、类型
                 </div>
                 <div class="chk">
-                  <input type="radio" name="one" value=""><label for="">低通气</label>
-                  <input type="radio" name="one" value=""><label for="">阻塞性</label>
-                  <input type="radio" name="one" value=""><label for="">中枢性</label>
+                  <input type="radio" name="two" value="0" [(ngModel)]="typeId" id="two0"><label for="two0">低通气</label>
+                  <input type="radio" name="two" value="1" [(ngModel)]="typeId" id="two1"><label for="two1">阻塞性</label>
+                  <input type="radio" name="two" value="2" [(ngModel)]="typeId" id="two2"><label for="two2">中枢性</label>
                 </div>
               </div>
 
@@ -97,9 +98,9 @@
                   3、严重程度
                 </div>
                 <div class="chk">
-                  <input type="radio" name="one" value=""><label for="">轻度</label>
-                  <input type="radio" name="one" value=""><label for="">中度</label>
-                  <input type="radio" name="one" value=""><label for="">重度</label>
+                  <input type="radio" name="three" value="0" [(ngModel)]="orderOfSeverity" id="three0"><label for="three0">轻度</label>
+                  <input type="radio" name="three" value="1" [(ngModel)]="orderOfSeverity" id="three1"><label for="three1">中度</label>
+                  <input type="radio" name="three" value="2" [(ngModel)]="orderOfSeverity" id="three2"><label for="three2">重度</label>
                 </div>
               </div>
 
@@ -108,9 +109,9 @@
                   4、低血氧程度
                 </div>
                 <div class="chk">
-                  <input type="radio" name="one" value=""><label for="">轻度</label>
-                  <input type="radio" name="one" value=""><label for="">中度</label>
-                  <input type="radio" name="one" value=""><label for="">重度</label>
+                  <input type="radio" name="four" value="0" [(ngModel)]="lowBloodOxygen" id="four0"><label for="four0">轻度</label>
+                  <input type="radio" name="four" value="1" [(ngModel)]="lowBloodOxygen" id="four1"><label for="four1">中度</label>
+                  <input type="radio" name="four" value="2" [(ngModel)]="lowBloodOxygen" id="four2"><label for="four2">重度</label>
                 </div>
               </div>
 
@@ -119,9 +120,9 @@
                   5、睡眠状态
                 </div>
                 <div class="chk">
-                  <input type="radio" name="one" value=""><label for="">好</label>
-                  <input type="radio" name="one" value=""><label for="">尚可</label>
-                  <input type="radio" name="one" value=""><label for="">紊乱</label>
+                  <input type="radio" name="five" value="0" [(ngModel)]="sleepStatus" id="five0"><label for="five0">好</label>
+                  <input type="radio" name="five" value="1" [(ngModel)]="sleepStatus" id="five1"><label for="five1">尚可</label>
+                  <input type="radio" name="five" value="2" [(ngModel)]="sleepStatus" id="five2"><label for="five2">紊乱</label>
                 </div>
               </div>
 
@@ -130,8 +131,8 @@
                   6、体位关系
                 </div>
                 <div class="chk">
-                  <input type="radio" name="one" value=""><label for="">无关</label>
-                  <input type="radio" name="one" value=""><label for="">有关</label>
+                  <input type="radio" name="six" value="0" [(ngModel)]="sleepPosition" id="six0"><label for="six0">无关</label>
+                  <input type="radio" name="six" value="1" [(ngModel)]="sleepPosition" id="six1"><label for="six1">有关</label>
                 </div>
               </div>
 
@@ -144,8 +145,8 @@
             </div>
             <div class="block-body">
               <div class="">
-                <textarea name="name" rows="8" cols="80" style="width:100%;border:1px solid #dbe0e9;padding:10px;"></textarea>
-                <a href="#" class="save">保存</a>
+                <textarea name="name" rows="8" cols="80" style="width:100%;border:1px solid #dbe0e9;padding:10px;" [(ngModel)]="remark"></textarea>
+                <a class="save" (click)="saveRecord()">保存</a>
               </div>
             </div>
           </div>
@@ -160,7 +161,7 @@
               </div>
               <ng-container *ngFor="let item of tplList">
                 <div class="f-chk" *ngIf="item.type==type">
-                  <input type="checkbox" name="" value="">
+                  <input type="checkbox" name="" value="" (click)="hasClick($event)">
                   <span>{{item.advice}}</span>
                 </div>
               </ng-container>

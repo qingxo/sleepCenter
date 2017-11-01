@@ -21,4 +21,8 @@ export class PatientSubjectService extends BaseService {
     return this.postInfo('api/v1/cust/getCustomerByParams', storage.serialize(data))
   }
 
+  pullDownData(data) {
+    return this.postInfo('api/v1/cust/mIndexMarge', storage.serialize(data))
+  }
+
 }

@@ -10,7 +10,7 @@ export class BloodSugarService extends BaseService {
   }
 
   getBloodSugarList(data) {
-    return this.postInfo('api/webBloodSugar/list', storage.serialize(data));
+    return this.postInfo('api/v1/cust/getHealthExamDataByParams', storage.serialize(data));
   }
 
 }

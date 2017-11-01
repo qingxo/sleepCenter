@@ -14,11 +14,11 @@ const appRoutes: Routes = [
   { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
   { path: 'patientdetail/:customerId', component: PatientDetailComponent },
   { path: 'medicaldetail/:customerId', component: MedicalDetailComponent },
-  { path: 'hmmsmdetail', component: HmmsmDetailComponent },
-  { path: 'hmbeddetail', component: HmbedDetailComponent },
-  { path: 'evaluatequestionnaire', component: EvaluateQuestionnaireComponent },
+  { path: 'hmmsmdetail/:customerId', component: HmmsmDetailComponent },
+  { path: 'hmbeddetail/:customerId', component: HmbedDetailComponent },
+  { path: 'evaluatequestionnaire/:customerId', component: EvaluateQuestionnaireComponent },
   { path: 'assessmentresult/:customerId/:evaluateTime', component: AssessmentResultComponent },
-  { path: 'viewquestionnaire', component: ViewQuestionnaireComponent },
+  { path: 'viewquestionnaire/:customerId', component: ViewQuestionnaireComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];

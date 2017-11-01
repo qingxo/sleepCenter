@@ -1,8 +1,8 @@
 <div class="echart-assess">
   <div class="bg-grey">
-    <div *ngIf="type==='PSQI'" class="title">睡眠质量(PSQI)</div>
-    <div *ngIf="type==='GAD7'" class="title gad7">焦虑情绪(GAD7)</div>
-    <div *ngIf="type==='PHQ9'" class="title phq9">抑郁情绪(PHQ9)</div>
+    <div *ngIf="type=='PSQI'" class="title">睡眠质量(PSQI)</div>
+    <div *ngIf="type=='GAD7'" class="title gad7">焦虑情绪(GAD7)</div>
+    <div *ngIf="type=='PHQ9'" class="title phq9">抑郁情绪(PHQ9)</div>
     <div class="chart" #tt>
       <echarts-ng2 [option]="option" [style]="echartsStyle"></echarts-ng2>
     </div>
@@ -17,7 +17,10 @@
     </div>
   </div>
   <div class="result">
-    <h2>您的睡眠质量综合分析：一般</h2>
-    <p>建议您进入我们的康复中心进行一段时间的“睡眠限制”进行康复训练。</p>
+    <h2 *ngIf="type=='PSQI'">您的睡眠质量综合分析：{{level}}</h2>
+    <h2 *ngIf="type=='GAD7'">您的焦虑情绪综合分析：{{level}}</h2>
+    <h2 *ngIf="type=='PHQ9'">您的抑郁情绪综合分析：{{level}}</h2>
+
+    <p>{{suggesting}}</p>
   </div>
 </div>

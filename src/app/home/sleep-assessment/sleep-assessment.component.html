@@ -1,19 +1,28 @@
 <div class="page-system">
   <div class="top-line clearfix">
     <div class="date-zoom">
-      <nz-datepicker style="width: 130px" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+      <nz-datepicker style="width: 130px" 
+        [(ngModel)]="query.startDate" 
+        [nzShowTime]="_endTime" 
+        [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
       至
-      <nz-datepicker style="width: 130px" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+      <!-- <div>
+        (ngModelChange)="_endDate=$event;_endValueChange()" 
+        [nzDisabledDate]="_disabledEndDate" 
+      </div> -->
+      <nz-datepicker style="width: 130px"    
+        [(ngModel)]="query.endDate"     
+        [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
     </div>
     <div class="search-wrap">
-      <app-search-line ></app-search-line>
-      <a class="btn">搜索</a>
+      <input [(ngModel)]="query.name" type="text" placeholder="请输入患者姓名" class="ipt-search"/>
+      <a class="btn" (click)="getList()">搜索</a>
     </div>
     <a class="btn start-now" (click)="showModal()">开始评估</a>    
   </div>
 
   <div class="table-info">
-    <table cellpadding="0" cellspacing="0" border="0">
+    <table cellpadding="0" cellspacing="0" border="0" *ngIf="list.length>0">
       <thead>
         <tr>
           <td><span>姓名</span></td>
@@ -42,6 +51,7 @@
 
       </tbody>
     </table>
+    <nothing [isHidden]="!!list.length"></nothing> 
   </div>
 
 </div>

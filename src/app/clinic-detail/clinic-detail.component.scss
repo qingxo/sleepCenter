@@ -76,10 +76,16 @@
       padding-right: 10px;
     }
     td:nth-child(2n+1){  
-      width: 92px;
-    }
+      width: 94px;
+    }   
+  }
+  tr.text-left td span{
+    text-align: left !important;
   }
   .ft12{
     font-size: 12px !important;
+  }
+  .mt10{
+    margin-top: 10px;
   }
 }

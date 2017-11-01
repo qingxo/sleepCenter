@@ -6,14 +6,15 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { BaseService } from '../shared/base.service';
 import storage from '../shared/storage';
-
 @Injectable()
 export class AssessmentResultService extends BaseService {
   constructor(public http: Http) {
     super(http)
   }
+
+
   getReportDetail(data) {
-    return this.postInfo('api/sleepReport/SleepReportDetailListByPage', storage.serialize(data))
+    return this.postInfo('api/sleepReport/SleepReportListByPage', storage.serialize(data))
   }
 
 }

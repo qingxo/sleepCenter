@@ -3,7 +3,7 @@
     <div class="box-sec-head" [class.noshow]="dateShow">
       <i></i><span>历史数据</span>
       <div class="head-time">
-        <app-times></app-times>
+        <app-times (fired)="timeFired($event)"></app-times>
       </div>
     </div>
     <div class="box-sec-body">

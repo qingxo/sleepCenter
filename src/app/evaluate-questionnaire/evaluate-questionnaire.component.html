@@ -2,44 +2,45 @@
 </app-head-layout>
 <div class="evaluate-questionnaire">
   <div class="person-info">
-    <app-person-info></app-person-info>
+    <app-person-info [customerId]="customerId"></app-person-info>
   </div>
   <div class="container">
     <div class="progress-wrap">
       <span class="start hightlight">1</span>
       <div class="progress">
-        <span style="width: 10%" id="progress"></span>
+        <span style="width: 0" id="progress"></span>
       </div>
-      <span class="end" id="end">{{slides.length}}</span>
+      <span class="end" id="end" *ngIf="list.length>0">{{list.length}}</span>
     </div>
     <div class="evaluate">
       <div class="swiper-container" [swiper]="config" (indexChange)="onIndexChange($event)">
         <div class="swiper-wrapper">
-          <div *ngFor="let slide of slides;let index=index" class="swiper-slide">
+          <div *ngFor="let item of list;let index=index" class="swiper-slide">
             <div class="swiper-slide-content" fxLayout="column" fxLayoutAlign="center center">
                 <div class="question-wrap">
                     <div class="question">
-                      <h1>{{index+1}}、您感到闷闷不乐、情绪低沉吗？</h1>
-                      <p>指心情不愉快，情绪低落</p>
+                      <h1>{{index+1}}、{{item.question.itemTitle}}</h1>
+                      <p>{{item.question.itemSubTitle}}</p>
                     </div>
-                    <div class="choices">
-                      <p>没有</p>
-                      <p>很少</p>
-                      <p>有时</p>
-                      <p class="checked">经常</p>
-                      <p>总是</p>
+                    <div class="ipt" *ngIf="item.optionsList.length==1 && item.optionsList[0].itemType==3">
+                      <input type="text" [(ngModel)]="answersArr[index]"/>
+                    </div>
+                    <div class="choices" *ngIf="item.optionsList.length!=1 && item.optionsList[0].itemType!=3">
+                      <p *ngFor="let option of item.optionsList" (click)="chooseOption(item, option, index, $event)">{{option.itemVal}}</p>
                     </div>
                   </div>
             </div>
           </div>
         </div>
-        <div class="prev" (click)="scrollPrev($event)"></div>
-        <div class="next" (click)="scrollNext($event)"></div>
+        <!-- <div class="swiper-box-bg"></div> -->
+        <div class="prev" style="display:none;"></div>
+        <div class="next"></div>
       </div>   
     </div>
     <div class="btns-wrap">
-      <a class="btn btn-plain">重新测试</a>
-      <a class="btn btn-primary">保存测评结果</a>
+      <a class="btn btn-plain"  style="display:none;">重新测试</a>
+      <!-- <a class="btn btn-primary"  style="display:none;" routerLink="/home/sleepassessment" (click)="saveAnswer()">保存测评结果</a> -->
+      <a class="btn btn-primary"  style="display:none;" (click)="saveAnswer()">保存测评结果</a>      
     </div>
   </div>
 </div>

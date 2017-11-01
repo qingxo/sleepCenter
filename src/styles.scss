@@ -175,3 +175,33 @@ li {
     padding: 10px 20px;
   }
 }
+
+input[type="text"]{
+  font-size: 14px;
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ccc;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: #ccc;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: #ccc;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: #ccc;
+  }
+}
+.ipt-search{
+  display: inline-block;
+  width: 180px;
+  height: 30px;
+  margin-right: 20px;
+  padding: 5px 10px;
+  border: 1px solid #DBE0E9;
+  border-radius:4px;
+  &:focus{
+    border-color: #49a9ee;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(16, 142, 233, 0.2);
+  }
+}

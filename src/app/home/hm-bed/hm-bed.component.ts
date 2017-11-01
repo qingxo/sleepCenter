@@ -1,10 +1,12 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
-import {DialogHmbedComponent} from "../dialog-hmbed";
+import { DialogHmbedComponent } from "../dialog-hmbed";
+import { HmBedService } from './hm-bed.service';
 
 @Component({
   selector: 'app-hm-bed',
   templateUrl: './hm-bed.component.html',
-  styleUrls: ['./hm-bed.component.scss']
+  styleUrls: ['./hm-bed.component.scss'],
+  providers: [HmBedService]
 })
 export class HmBedComponent implements OnInit {
 
@@ -12,8 +14,8 @@ export class HmBedComponent implements OnInit {
   deptOptions = [];
   selectedWard;
   wardOptions = [];
-
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef) { }
+  list: any = [];
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef, private hmBedService: HmBedService) { }
 
   searchDept(searchText) {
   }
@@ -21,8 +23,14 @@ export class HmBedComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getList();
   }
+  getList() {
+    this.hmBedService.getList({})
+      .subscribe(res => {
 
+      });
+  }
   showModalBind() {
     const componentFatory = this.componentFactoryResolver.resolveComponentFactory(DialogHmbedComponent);
     const containerRef = this.viewContainerRef;

@@ -10,6 +10,6 @@ export class BloodPressureService extends BaseService {
   }
 
   getBloodPressList(data) {
-    return this.postInfo('api/webBloodPressure/list', storage.serialize(data));
+    return this.postInfo('api/v1/cust/getHealthExamDataByParams', storage.serialize(data));
   }
 }

@@ -22,7 +22,6 @@ export class MoveActionComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("from action,", this.moveList, this.xHeatData)
     if (this.moveList.length > 0 && this.xHeatData.length > 0) {
       this.nothingFlag = true;
       this.el.nativeElement.className = '';

@@ -74,6 +74,7 @@ export class BarLineComponent implements OnInit, OnChanges {
         {
           name: '正常',
           type: 'bar',
+          barGap: '15%',
           data: this.normalList,
           label: {
             normal: {
@@ -93,6 +94,7 @@ export class BarLineComponent implements OnInit, OnChanges {
         }, {
           name: '异常',
           type: 'bar',
+
           data: this.abNormalList,
           label: {
             normal: {
@@ -109,6 +111,7 @@ export class BarLineComponent implements OnInit, OnChanges {
               barBorderRadius: [15, 15, 0, 0]
             }
           },
+          barCategoryGap: '70%'
         }
       ]
     }

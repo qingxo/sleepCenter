@@ -2,5 +2,5 @@
   <div class="lines black-hole" #tt>
     <echarts-ng2 [option]="option" [style]="echartsStyle"></echarts-ng2>
   </div>
-  <nothing [isHidden]="nothingFlag" myTips="暂无BMI数据~"></nothing>
+  <nothing [isHidden]="!nothingFlag" myTips="暂无BMI数据~"></nothing>
 </div>

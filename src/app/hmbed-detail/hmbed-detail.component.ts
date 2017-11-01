@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-hmbed-detail',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HmbedDetailComponent implements OnInit {
 
-  constructor() { }
+  customerId: string = ''
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.customerId = this.route.snapshot.params['customerId']
   }
 
 }

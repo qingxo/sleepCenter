@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, Renderer, ElementRef, ViewChild } from '@angular/core';
 import { EChartOption } from 'echarts-ng2';
 import { BloodSugarService } from './blood-sugar.service';
+import * as moment from 'moment';
 @Component({
   selector: 'app-blood-sugar',
   templateUrl: './blood-sugar.component.html',
@@ -11,8 +12,6 @@ export class BloodSugarComponent implements OnInit, OnChanges {
 
   private bloodSugarListAfter: Array<any> = [];
   private bloodSugarListBefore: Array<any> = [];
-  private bloodSugarBefore: Array<any> = [];
-  private bloodSugarAfter: Array<any> = [];
   private nothingFlag = false;
   private bloodSugarDateBefore: Array<any> = [];
   private bloodSugarDateAfter: Array<any> = [];
@@ -34,36 +33,35 @@ export class BloodSugarComponent implements OnInit, OnChanges {
 
 
   bloodDataInit() {
-    this.bloodSugarService.getBloodSugarList({ 'customerId': this.userId, 'day': this.periodDay }).subscribe((res) => {
+    let data = {
+      signType: 'bg',
+      customerId: this.userId
+    }
+    this.bloodSugarService.getBloodSugarList(data).subscribe((res) => {
       if (res.success) {
         const arr = res.data;
+        this.bloodSugarDateBefore = [];
+        this.bloodSugarDateAfter = [];
         this.bloodSugarListAfter = [];
         this.bloodSugarListBefore = [];
-        if (arr.bloodSugarAfters) {
-          this.bloodSugarListAfter = eval(res.data.bloodSugarAfters);
-        }
 
-        if (arr.bloodSugarBegins) {
-          this.bloodSugarListBefore = eval(res.data.bloodSugarBegins);
-        }
-        if (this.bloodSugarListAfter instanceof Array) {
-          for (let i = 0; i < this.bloodSugarListAfter.length; i++) {
-            this.bloodSugarAfter[i] = this.bloodSugarListAfter[i].sugarValue;
-            if (this.periodDay === 1) {
-              this.bloodSugarDateAfter[i] = this.bloodSugarListAfter[i].measurementTime.split(' ')[1];
+        if (arr instanceof Array) {
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i].bgPeriod.trim() == 0){
+              // 餐前
+              this.bloodSugarListBefore.push(arr[i].bg);
+              if (this.periodDay === 1) {
+                this.bloodSugarDateBefore.push(moment(arr[i].occurDt).format('HH:mm'));
+              } else {
+                this.bloodSugarDateBefore.push(moment(arr[i].occurDt).format('YYYY-MM-DD'));
+              }
             } else {
-              this.bloodSugarDateAfter[i] = this.bloodSugarListAfter[i].measurementTime.split(' ')[0];
-            }
-          }
-        }
-
-        if (this.bloodSugarListBefore instanceof Array) {
-          for (let i = 0; i < this.bloodSugarListBefore.length; i++) {
-            this.bloodSugarBefore[i] = this.bloodSugarListBefore[i].sugarValue;
-            if (this.periodDay === 1) {
-              this.bloodSugarDateBefore[i] = this.bloodSugarListBefore[i].measurementTime.split(' ')[1];
-            } else {
-              this.bloodSugarDateBefore[i] = this.bloodSugarListBefore[i].measurementTime.split(' ')[0];
+              this.bloodSugarListAfter.push(arr[i].bg);
+              if (this.periodDay === 1) {
+                this.bloodSugarDateAfter.push(moment(arr[i].occurDt).format('HH:mm'));
+              } else {
+                this.bloodSugarDateAfter.push(moment(arr[i].occurDt).format('YYYY-MM-DD'));
+              }
             }
           }
         }
@@ -167,12 +165,12 @@ export class BloodSugarComponent implements OnInit, OnChanges {
           type: 'line',
           xAxisIndex: 1,
           smooth: true,
-          data: this.bloodSugarBefore
+          data: this.bloodSugarListBefore
         }, {
           name: '餐后血糖',
           type: 'line',
           smooth: true,
-          data: this.bloodSugarAfter
+          data: this.bloodSugarListAfter
         }
       ]
     };

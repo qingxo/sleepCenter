@@ -24,7 +24,6 @@ export class NewPatientsComponent implements OnInit, OnChanges {
 
 
   ngOnChanges(change: SimpleChanges) {
-    console.log(change)
     if (change['imageType']) {
       if (this.imageType == 0) {
         this.cmpImage = []

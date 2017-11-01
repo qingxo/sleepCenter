@@ -80,8 +80,10 @@
         background-image: url("/assets/images/next-blue.png");
       }
     }
+    
     .question-wrap{
       width: 820px;
+      min-height: 410px;
       margin: 10px auto;
       padding: 0 65px 50px;
       box-shadow: 0 0 10px 0 rgba(219,223,233,0.70);
@@ -97,6 +99,17 @@
           font-size: 16px;
           line-height: 22px;
           color: #a5a5a5;
+        }
+      }
+      .ipt{
+        input{
+          font-size: 18px;
+          display: block;
+          width: 100%;
+          outline: none;
+          padding: 13px;
+          line-height: 24px;
+          border: 1px solid #3D70E4;
         }
       }
       .choices{
@@ -147,4 +160,17 @@
       }
     }
   }
+  // .swiper-container{
+  //   padding: 0 65px;
+  // }
+  // .swiper-box-bg{
+  //   position: absolute;
+  //   top: 0;
+  //   left: 65px;
+  //   bottom: 0;
+  //   width: 820px;
+  //   margin: 10px auto;
+  //   padding: 0 65px 50px;
+  //   box-shadow: 0 0 10px 0 rgba(219,223,233,0.70);
+  // }
 }

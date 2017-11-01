@@ -4,31 +4,31 @@
       <i></i><span>就诊信息</span>
     </div>
     <div class="box-sec-body">
-      <div class="table-spec">
+      <div class="table-spec" *ngIf="clinicInfo.visitRecords">
         <table class="custom-table" cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td><span class="cc">就诊日期</span></td>
-            <td><span>2015-08-09</span></td>
+            <td><span>{{clinicInfo.visitRecords.visitDate | date: 'yyyy-MM-dd'}}</span></td>
             <td><span class="cc">就诊类型</span></td>
-            <td><span>医保</span></td>
+            <td><span>{{clinicInfo.visitRecords.visitTypeName}}</span></td>
             <td><span class="cc">接诊医生</span></td>
-            <td><span>打红</span></td>
+            <td><span>{{clinicInfo.visitRecords.receptTreatDrName}}</span></td>
             <td><span class="cc">就诊科室</span></td>
-            <td><span>急诊外科</span></td>
+            <td><span>{{clinicInfo.visitRecords.visitDeptName}}</span></td>
             <td><span class="cc">门诊诊断</span></td>
-            <td><span>急性阑尾炎</span></td>
+            <td><span>{{clinicInfo.visitRecords.diagName}}</span></td>
           </tr>
           <tr>
             <td><span class="cc">主诉</span></td>
-            <td colspan="9"><span>好险</span></td>
+            <td colspan="9"><span>{{clinicInfo.visitRecords.principleAction}}</span></td>
           </tr>
           <tr>
             <td><span class="cc">现病史</span></td>
-            <td colspan="9"><span>无</span></td>
+            <td colspan="9"><span>{{clinicInfo.visitRecords.presentHistory}}</span></td>
           </tr>
           <tr>
             <td><span class="cc">体格检查</span></td>
-            <td colspan="9"><span>壮士</span></td>
+            <td colspan="9"><span>{{clinicInfo.visitRecords.healthCheckup}}</span></td>
           </tr>
         </table>
       </div>
@@ -45,19 +45,19 @@
       <i></i><span>门诊处方</span>
     </div>
     <div class="box-sec-body">
-      <div class="table-spec">
+      <div class="table-spec" [class.mt10]="i>0" *ngFor="let item of clinicInfo.outpatientPrescriptionList;let i = index">
         <table cellpadding="0" cellspacing="0" border="0">
           <thead>
             <tr>
-              <td colspan="2"><span>处方号:19242344</span></td>
-              <td colspan="2"><span>处方类别:西药</span></td>
-              <td><span>开方医生:赵忠祥</span></td>
-              <td><span>开放日期:2015-01-02</span></td>
-              <td><span>开方科室:急诊</span></td>
+              <td colspan="2"><span>处方号:{{item.prescriptions.outhospNo}}</span></td>
+              <td colspan="2"><span>处方类别:{{item.prescriptions.presCategName}}</span></td>
+              <td><span>开方医生:{{item.prescriptions.presOpenDrName}}</span></td>
+              <td><span>开放日期:{{item.prescriptions.presOrderDate | date: 'yyyy-MM-dd'}}</span></td>
+              <td><span>开方科室:{{item.prescriptions.presOpenDeptName}}</span></td>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="text-left">
               <td><span class="cc">药品名称</span></td>
               <td><span class="cc">药品规格</span></td>
 
@@ -68,32 +68,14 @@
               <td><span class="cc">用药途径</span></td>
               <td><span class="cc">药品剂型</span></td>
             </tr>
-            <tr>
-              <td><span>头孢呋辛（西力欣）</span></td>
-              <td><span>0.75</span></td>
-              <td><span>1.50000</span></td>
-              <td><span>1.0000</span></td>
-              <td><span>每天3次</span></td>
-              <td><span>筋脉注射</span></td>
-              <td><span>针剂</span></td>
-            </tr>
-            <tr>
-              <td><span>氯化钠</span></td>
-              <td><span>0.75</span></td>
-              <td><span>1.50000</span></td>
-              <td><span>1.0000</span></td>
-              <td><span>每天3次</span></td>
-              <td><span>筋脉注射</span></td>
-              <td><span>针剂</span></td>
-            </tr>
-            <tr>
-              <td><span>感冒灵</span></td>
-              <td><span>0.75</span></td>
-              <td><span>1.50000</span></td>
-              <td><span>1.0000</span></td>
-              <td><span>每天3次</span></td>
-              <td><span>筋脉注射</span></td>
-              <td><span>针剂</span></td>
+            <tr *ngFor="let subItem of item.prescriptionsDetailsList">
+              <td><span>{{subItem.drugName}}</span></td>
+              <td><span>{{subItem.drugSpecifications}}</span></td>
+              <td><span>{{subItem.drugUseOneDosage}}</span></td>
+              <td><span>{{subItem.drugAmount}}</span></td>
+              <td><span>{{subItem.drugUseFrequencyName}}</span></td>
+              <td><span>{{subItem.doseWayName}}</span></td>
+              <td><span>{{subItem.drugFormName}}</span></td>
             </tr>
           </tbody>
         </table>
@@ -130,11 +112,11 @@
           </tr>
           <tr>
             <td><span class="cc">入院诊断</span></td>
-            <td colspan="9"><span>肋骨骨折</span></td>
+            <td colspan="7"><span>肋骨骨折</span></td>
           </tr>
           <tr>
             <td><span class="cc">出院小结</span></td>
-            <td colspan="9"><span>-</span></td>
+            <td colspan="7"><span>-</span></td>
           </tr>
         </table>
       </div>
@@ -181,7 +163,7 @@
       <i></i><span>检查报告</span>
     </div>
     <div class="box-sec-body">
-      <div class="table-spec" *ngFor="let item of clinicInfo.examReportList">
+      <div class="table-spec" [class.mt10]="i>0" *ngFor="let item of clinicInfo.examReportList; let i = index">
         <div class="lines">
           <div class="info">
             报告编号：{{item.reportNo}}
@@ -225,56 +207,42 @@
         <i></i><span>检验报告</span>
       </div>
       <div class="box-sec-body">
-        <div class="lines">
-          <div class="info">
-            报告单编号:202424234324
+        <div [class.mt10]="i>0" *ngFor="let item of clinicInfo.inspectionReportList;let i=index">
+          <div class="lines">
+            <div class="info">
+              报告单编号:{{item.lisReport.reportNo}}
+            </div>
+            <div class="details">
+              <span>检验项目：{{item.lisReport.testItemName}}</span>
+              <span>样本类型：{{item.lisReport.sampleTypeName}}</span>
+              <span>报告时间：{{item.lisReport.reportDate | date:'yyyy-MM-dd'}}</span>
+              <span>开单医生：{{item.lisReport.reportDrName}}</span>
+              <span>开单科室：{{item.lisReport.reportDeptName}}</span>
+            </div>
           </div>
-          <div class="details">
-            <span>检验项目：电解质思想+森</span>
-            <span>样本类型：血液</span>
-            <span>报告时间：2015-09-09</span>
-            <span>开单医生：赵忠祥</span>
-            <span>开单科室：急诊</span>
+          <div class="table-spec">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td><span class="cc center">项目</span></td>
+                <td><span class="cc center">异常指标</span></td>
+                <td><span class="cc center">检验结果值</span></td>
+                <td><span class="cc center">检验结果值单位</span></td>
+                <td><span class="cc center">参考范围</span></td>
+              </tr>
+              <tr *ngFor="let subItem of item.lisReportDetailList">
+                <td><span class="center">{{subItem.itemName}}</span></td>
+                <td>
+                  <span class="center">
+                    <i *ngIf="subItem.reportAbnormalSign<0" class="anticon anticon-arrow-down"></i>
+                    <i *ngIf="subItem.reportAbnormalSign>0" class="anticon anticon-arrow-up"></i>
+                  </span>
+                </td>
+                <td><span class="center">{{subItem.testResultValue}}</span></td>
+                <td><span class="center">{{subItem.testResultValueUnit}}</span></td>
+                <td><span class="center">{{subItem.lowMaxValue}}-{{subItem.highMaxValue}}</span></td>
+              </tr>
+            </table>
           </div>
-        </div>
-        <div class="table-spec">
-          <table  class="custom-table" cellpadding="0" cellspacing="0" border="0">
-            <tr>
-              <td><span class="cc center">项目</span></td>
-              <td><span class="cc center">异常指标</span></td>
-              <td><span class="cc center">检验结果值</span></td>
-              <td><span class="cc center">检验结果值单位</span></td>
-              <td><span class="cc center">参考范围</span></td>
-            </tr>
-            <tr>
-              <td><span class="center">鼻涕院桥颗粒</span></td>
-              <td><span class="center"><i class="anticon anticon-arrow-down"></i></span></td>
-              <td><span class="center">244</span></td>
-              <td><span class="center">umol/L</span></td>
-              <td><span class="center">190-240</span></td>
-            </tr>
-            <tr>
-              <td><span class="center">鼻涕院桥颗粒</span></td>
-              <td><span class="center"><i class="anticon anticon-arrow-down"></i></span></td>
-              <td><span class="center">244</span></td>
-              <td><span class="center">umol/L</span></td>
-              <td><span class="center">190-240</span></td>
-            </tr>
-            <tr>
-              <td><span class="center">鼻涕院桥颗粒</span></td>
-              <td><span class="center"><i class="anticon anticon-arrow-up"></i></span></td>
-              <td><span class="center">244</span></td>
-              <td><span class="center">umol/L</span></td>
-              <td><span class="center">190-240</span></td>
-            </tr>
-            <tr>
-              <td><span class="center">鼻涕院桥颗粒</span></td>
-              <td><span class="center"><i class="anticon anticon-arrow-up"></i></span></td>
-              <td><span class="center">244</span></td>
-              <td><span class="center">umol/L</span></td>
-              <td><span class="center">190-240</span></td>
-            </tr>
-          </table>
         </div>
       </div>
     </div>

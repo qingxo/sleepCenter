@@ -2,114 +2,29 @@
   </app-head-layout>
   <div class="view-questionnaire">
     <div class="person-info">
-      <app-person-info></app-person-info>
+      <app-person-info [customerId]="customerId"></app-person-info>
     </div>
     <div class="container">
       <ul class="question-list">
-        <li>
-          <h3>1. 近一个月您有没有因为夜间上厕所影响睡眠而烦恼？</h3>
-          <div class="answers">
-            <div class="item">
+        <li *ngFor="let item of list; let index = index">
+          <h3>{{index+1}}. {{item.question.itemTitle}}</h3>
+          <div class="answers" *ngIf="item.optionsList.length>1">
+            <div class="item" *ngFor="let option of item.optionsList">
               <div class="beauty-radio">
-                <input type="radio" />
+                <input type="radio" [checked]="item.answer.itemVal==option.id"/>
                 <span class="radio-icon"></span>
-                <span>无</span>
-              </div>
-              
+                <span>{{option.itemVal}}</span>
+              </div>       
             </div>
+          </div>
+          <div class="answers" *ngIf="item.optionsList.length==1">
             <div class="item">
-              <div class="beauty-radio">
-                <input type="radio"/>
-                <span class="radio-icon"></span>
-                <span><1次/周</span>
-              </div>   
-            </div>
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio" checked/>
-                <span class="radio-icon"></span>
-                <span>1-2次/周</span>
-              </div>   
-            </div>
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio"/>
-                <span class="radio-icon"></span>
-                <span>≥3次/周</span>
-              </div>   
+              <p>{{item.answer.itemVal}}</p>     
             </div>
           </div>
         </li>
 
-        <li>
-          <h3>2. 近一个月您有没有因为夜间上厕所影响睡眠而烦恼？</h3>
-          <div class="answers">
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio" />
-                <span class="radio-icon"></span>
-                <span>无</span>
-              </div>
-              
-            </div>
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio" checked/>
-                <span class="radio-icon"></span>
-                <span><1次/周</span>
-              </div>   
-            </div>
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio"/>
-                <span class="radio-icon"></span>
-                <span>1-2次/周</span>
-              </div>   
-            </div>
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio"/>
-                <span class="radio-icon"></span>
-                <span>≥3次/周</span>
-              </div>   
-            </div>
-          </div>
-        </li>
-
-        <li>
-          <h3>3. 近一个月您有没有因为夜间上厕所影响睡眠而烦恼？</h3>
-          <div class="answers">
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio" />
-                <span class="radio-icon"></span>
-                <span>无</span>
-              </div>
-              
-            </div>
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio"/>
-                <span class="radio-icon"></span>
-                <span><1次/周</span>
-              </div>   
-            </div>
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio"/>
-                <span class="radio-icon"></span>
-                <span>1-2次/周</span>
-              </div>   
-            </div>
-            <div class="item">
-              <div class="beauty-radio">
-                <input type="radio"  checked/>
-                <span class="radio-icon"></span>
-                <span>≥3次/周</span>
-              </div>   
-            </div>
-          </div>
-        </li>
+        
       </ul>
     </div>
   </div> 

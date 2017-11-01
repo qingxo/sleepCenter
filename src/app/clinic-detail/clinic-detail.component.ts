@@ -6,13 +6,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./clinic-detail.component.scss']
 })
 export class ClinicDetailComponent implements OnInit {
-  @Input() clinicInfo: any = {};
-  visitRecords: any = {};
+  @Input() clinicInfo: any = {
+    // visitRecords: {
+    //   visitDate: ''
+    // }
+  };
+  //visitRecords: any = {};
   constructor() { }
 
   ngOnInit() {
-    this.visitRecords = this.clinicInfo.visitRecords;
-    console.log(this.visitRecords);
+    //this.visitRecords = this.clinicInfo.visitRecords;
+    //console.log(this.visitRecords);
   }
 
 }

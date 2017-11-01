@@ -10,29 +10,14 @@ import * as moment from 'moment';
 })
 export class SleepMonitorComponent implements OnInit, OnChanges {
 
-
-  // timeList: Array<any> = [1, 2, 3, 4, 5]
-  // heartList: Array<any> = [99, 22, 44, 62, 22]
-  // moveList: Array<any> = [5, 22, 234, 22, 22]
-  // circleRadios: Array<any> = [55, 25, 20]
-  // sleepListTime: Array<any> = [1, 2, 3, 4, 5]
-  // sleepListStatus: Array<any> = [1, 2, 0, 1, 2]
-  // bedListTime: Array<any> = [2, 3, 5, 6, 7]
-  // bedList: Array<any> = [2, 2, 0, 1, 0]
   @Input() dateShow: boolean = false;
   @Input() reportDay: string = moment(new Date()).format('YYYY-MM-DD')
   heartLegendList: Array<any> = ['心率']
   moveLegendList: Array<any> = ['体动值']
-  // customerId: string = '';
-  // equipNo: string = '';
-  // list: Array<any> = [];
-
   private customerId: string = '';
   private equipNo: string = '';
   private maxDay: string = moment(new Date()).format('YYYY-MM-DD');
-  // private reportDay: string = moment(new Date()).format('YYYY-MM-DD');
   private list: any = {};
-  private
   private heartList: Array<any> = [];
   private moveList: Array<any> = [];
   private bedList: Array<any> = [];
@@ -44,6 +29,7 @@ export class SleepMonitorComponent implements OnInit, OnChanges {
   private sleepNo: string = '0';
   private circleRadios: Array<any> = [];
   private bedListTime: Array<any> = [];
+
   constructor(private sleepMonitorService: SleepMonitorService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -57,6 +43,11 @@ export class SleepMonitorComponent implements OnInit, OnChanges {
       this.callService()
 
     }
+  }
+
+  timeFired(num) {
+    this.reportDay = num;
+    this.callService()
   }
 
   callService() {
@@ -115,7 +106,6 @@ export class SleepMonitorComponent implements OnInit, OnChanges {
 
   callReportSleepOnBed() {
     this.sleepMonitorService.reportSleepOnBed(this.equipNo, this.reportDay).subscribe((res) => {
-      console.log(res)
       this.bedList = [];
       this.bedListTime = [];
       for (let i = 0; i < res.data.length; i++) {

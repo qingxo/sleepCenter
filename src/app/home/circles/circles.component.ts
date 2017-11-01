@@ -23,8 +23,6 @@ export class CirclesComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.topTitle.length > 0 && this.dataSeries.length > 0) {
-      console.log("called", this.topTitle, this.dataSeries)
-
       this.finishOptionData()
     }
   }
@@ -34,7 +32,6 @@ export class CirclesComponent implements OnInit, OnChanges {
     for (let i = 0; i < this.topTitle.length; i++) {
       tmp.series[0]['data'].push({ value: this.dataSeries[i], name: this.topTitle[i] });
     }
-    console.log("the tmp:", tmp)
     tmp.legend.top = 45 - tmp.series[0]['data'].length * 6 + '%'
     this.option = tmp
   }

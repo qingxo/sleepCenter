@@ -9,39 +9,39 @@
       <div class="panel-hd">
         评估结果
         <div class="fr">
-          <nz-datepicker (ngModelChange)="_startDate=$event;_startValueChange()" [nzDisabledDate]=" _disabledStartDate " [nzShowTime]="true " [nzFormat]=" 'YYYY-MM-DD' " [nzPlaceHolder]=" '' "></nz-datepicker>          
-          <a class="view" href="/viewquestionnaire">查看问卷</a>  
-        </div>  
+          <nz-datepicker (ngModelChange)="_startDate=$event;_startValueChange()" [nzDisabledDate]=" _disabledStartDate " [nzShowTime]="true " [nzFormat]=" 'YYYY-MM-DD' " [nzPlaceHolder]=" '' "></nz-datepicker>
+          <a class="view" href="/viewquestionnaire/{{customerId}}">查看问卷</a>
+        </div>
       </div>
       <div class="panel-bd">
         <div class="assess-list clearfix">
-            <div class="one-assess">
-              <app-echart-assess [type]="'PSQI'"></app-echart-assess>
-            </div>
-            <div class="one-assess">
-              <app-echart-assess [type]="'GAD7'"></app-echart-assess> 
-            </div>
-            <div class="one-assess">
-              <app-echart-assess [type]="'PHQ9'"></app-echart-assess>  
-            </div>
+          <div class="one-assess">
+            <app-echart-assess [type]="'PSQI'" [cId]="customerId" [chooseDay]="evaluateTime"></app-echart-assess>
+          </div>
+          <div class="one-assess">
+            <app-echart-assess [type]="'GAD7'" [cId]="customerId" [chooseDay]="evaluateTime"></app-echart-assess>
+          </div>
+          <div class="one-assess">
+            <app-echart-assess [type]="'PHQ9'" [cId]="customerId" [chooseDay]="evaluateTime"></app-echart-assess>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="panel">
       <div class="panel-hd">
-          结合指标
+        结合指标
       </div>
       <div class="panel-bd">
         <div class="assess-list clearfix">
           <div class="one-assess">
-            <app-echart-assess2 [type]="'PSQI'"></app-echart-assess2>
+            <app-echart-assess2 [type]="'PSQI'" [cid]="customerId"></app-echart-assess2>
           </div>
           <div class="one-assess">
-            <app-echart-assess2 [type]="'GAD7'"></app-echart-assess2> 
+            <app-echart-assess2 [type]="'GAD7'" [cid]="customerId"></app-echart-assess2>
           </div>
           <div class="one-assess">
-            <app-echart-assess2 [type]="'PHQ9'"></app-echart-assess2>  
+            <app-echart-assess2 [type]="'PHQ9'" [cid]="customerId"></app-echart-assess2>
           </div>
         </div>
       </div>

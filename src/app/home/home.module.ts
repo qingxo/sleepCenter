@@ -20,7 +20,7 @@ import { AccountsComponent } from './accounts';
 import { PrivilegesComponent } from './privileges';
 import { DialogAccountComponent } from './dialog-account';
 import { SleepAssessmentComponent } from './sleep-assessment';
-import { DialogEvaluationComponent } from './dialog-evaluation';
+import { DialogAssessComponent } from './dialog-assess';
 import { HmMsmComponent } from './hm-msm/hm-msm.component';
 import { SleepAnalysisComponent } from './sleep-analysis';
 import { BarLineComponent } from './bar-line/bar-line.component';
@@ -40,7 +40,7 @@ import { DialogHmbedComponent } from './dialog-hmbed';
     ReactiveFormsModule,
     SharedModule
   ],
-  entryComponents: [DialogConditionComponent, DialogAccountComponent, DialogEvaluationComponent, DialogHmmsmComponent, DialogHmbedComponent],
+  entryComponents: [DialogConditionComponent, DialogAccountComponent, DialogAssessComponent, DialogHmmsmComponent, DialogHmbedComponent],
 
   declarations: [HomeComponent,
     DemoComponent,
@@ -56,7 +56,7 @@ import { DialogHmbedComponent } from './dialog-hmbed';
     PrivilegesComponent,
     DialogAccountComponent,
     SleepAssessmentComponent,
-    DialogEvaluationComponent,
+    DialogAssessComponent,
     DialogConditionComponent,
     HmMsmComponent,
     SleepAnalysisComponent,

@@ -1,159 +1,135 @@
-import { Component, OnInit, Input, Output, SimpleChanges, Renderer, ElementRef, ViewChild, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, Input, Output, SimpleChanges, Renderer, ElementRef, ViewChild, OnChanges } from '@angular/core';
 import { EChartOption } from 'echarts-ng2';
-
+import { EchartAssess2Service } from './echart-assess2.service'
+import * as moment from 'moment';
 @Component({
   selector: 'app-echart-assess2',
   templateUrl: './echart-assess2.component.html',
-  styleUrls: ['./echart-assess2.component.scss']
+  styleUrls: ['./echart-assess2.component.scss'],
+  providers: [EchartAssess2Service]
 })
-export class EchartAssess2Component implements OnInit {
+export class EchartAssess2Component implements OnInit, OnChanges {
 
   private option: EChartOption;
   private nothingFlag = false;
+  private list: Array<string> = [];
   @Input() type = '';
   @Input() topTitle = '';
   @Input() serisesData: Array<any> = [];
   @Input() echartsStyle: any = { 'width': '100%', 'height': '400px' };
   @Input() name: string = '测试';
   @Input() imageSrc: string = "xxx";
+  @Input() cid: string = '';
+  @Input() dateTime: any;
   @ViewChild('tt') el: ElementRef;
-  constructor() { }
+  constructor(private echartAssess2Service: EchartAssess2Service) { }
   dataAxis = ['09/20', '09/21', '09/22', '09/23', '09/24', '09/25', '09/26'];
   data = [70, 123, 100, 30, 150, 92, 86];
   yMax = 500;
   dataShadow = [];
   ngOnInit() {
-    this.option = {
-      // title: {
-      //     text: '特性示例：渐变色 阴影 点击缩放',
-      //     subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
-      // },
+
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.cid !== '') {
+      this.getServiceList()
+    }
+  }
+
+  getServiceList() {
+    let data = {
+      customerId: this.cid
+    }
+    this.echartAssess2Service.getList(data).subscribe((res) => {
+      if (res.success) {
+        this.list = res.data
+        this.list = this.list.reverse()
+        this.data = [];
+        this.dataAxis = [];
+        for (let i = 0; i < this.list.length; i++) {
+          if (this.type == 'PSQI') {
+            this.data.push(this.list[i]['psqivalue'])
+          } else if (this.type == 'GAD7') {
+            this.data.push(this.list[i]['gad7Value'])
+          } else if (this.type == 'PHQ9') {
+            this.data.push(this.list[i]['phq9Value'])
+          }
+          this.dataAxis.push(moment(this.list[i]['evaluateTime']).format('YYYY-MM-DD'))
+        }
+        this.option = this.getOption()
+      }
+    })
+  }
+
+  getOption() {
+    const opt = {
       legend: {
         show: true
       },
       xAxis: {
-          data: this.dataAxis,
-          axisLabel: {
-              inside: false,
-              textStyle: {
-                  color: '#888'
-              }
-          },
-          axisTick: {
-              show: false
-          },
-          axisLine: {
-              show: false
-          },
-          z: 10
+        data: this.dataAxis,
+        axisLabel: {
+          inside: false,
+          textStyle: {
+            color: '#888'
+          }
+        },
+        axisTick: {
+          show: false
+        },
+        axisLine: {
+          show: false
+        },
+        z: 10
       },
       yAxis: {
-          min: 0,
-          max: 'dataMax',
-          axisLine: {
-              show: false
-          },
-          axisTick: {
-              show: false
-          },
-          axisLabel: {
-              textStyle: {
-                  color: '#a5a5a5'
-              }
-          },
-          splitLine: {
-            lineStyle: {
-                color: ['#ccc'],
-                type: 'dashed'
-              }
+        min: 0,
+        max: 'dataMax',
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          textStyle: {
+            color: '#a5a5a5'
           }
-      },
-    //   dataZoom: [
-    //       {
-    //           type: 'inside'
-    //       }
-    //   ],
-      series: [
-          { // For shadow
-              type: 'bar',
-              itemStyle: {
-                  normal: {color: 'rgba(0,0,0,0.5)'}
-              },
-              barGap:'-100%',
-              barCategoryGap:'40%',
-              data: this.dataShadow,
-              animation: false
-          },
-          {
-              type: 'bar',
-              itemStyle: {
-                  normal: {
-                      color: '#7ACC5A',
-                      barBorderRadius: [30, 30, 0, 0]
-                  },
-                  // emphasis: {
-                  //     color: new echarts.graphic.LinearGradient(
-                  //         0, 0, 0, 1,
-                  //         [
-                  //             {offset: 0, color: '#2378f7'},
-                  //             {offset: 0.7, color: '#2378f7'},
-                  //             {offset: 1, color: '#83bff6'}
-                  //         ]
-                  //     )
-                  // }
-              },
-              label: {
-                normal: {
-                    show: true,
-                    position: 'top',
-                    color: '#6F7B91'
-                }
-                },  
-              data: this.data
+        },
+        splitLine: {
+          lineStyle: {
+            color: ['#ccc'],
+            type: 'dashed'
           }
-      ]
-  }
-  }
-  //
-  // ngAfterContentChecked() {
-  //   if (this.serisesData.length > 0) {
-  //     this.option = this.getOption();
-  //     this.el.nativeElement.className = 'lines';
-  //     this.nothingFlag = true;
-  //   } else {
-  //     this.el.nativeElement.className = 'lines black-hole';
-  //     this.nothingFlag = false;
-  //   }
-  // }
-
-  getOption() {
-    const opt = {
-      title: {
-        text: this.topTitle,
-        x: 'center',
-        textStyle: {
-          color: '#686868'
         }
       },
-      tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b} : {c} ({d}%)'
-      },
-
       series: [
-        {
-          name: this.topTitle,
-          type: 'pie',
-          radius: '70%',
-          center: ['50%', '60%'],
-          data: this.serisesData,
+        { // For shadow
+          type: 'bar',
           itemStyle: {
-            emphasis: {
-              shadowBlur: 10,
-              shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            normal: { color: 'rgba(0,0,0,0.5)' }
+          },
+          barGap: '-100%',
+          barCategoryGap: '40%',
+          data: this.dataShadow,
+          animation: false
+        },
+        {
+          type: 'bar',
+          itemStyle: {
+            normal: {
+              color: '#7ACC5A',
+              barBorderRadius: [30, 30, 0, 0]
+            },
+          },
+          label: {
+            normal: {
+              show: true,
+              position: 'top',
+              color: '#6F7B91'
             }
-          }
+          },
+          data: this.data
         }
       ]
     };

@@ -14,7 +14,7 @@ export class EchartAssessService extends BaseService {
   }
 
   getList(data) {
-    return this.postInfo('api/sleepReport/SleepReportDetailListByPage', storage.serialize(data));
+    return this.postInfo('api/sleepReport/getSleepReportDetailByDate', storage.serialize(data));
   }
 
 }

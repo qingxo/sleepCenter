@@ -1,7 +1,8 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DialogEvaluationComponent } from '../dialog-evaluation';
+import { DialogAssessComponent } from '../dialog-assess';
 import { SleepAssessmentService } from './sleep-assessment.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-sleep-assessment',
@@ -11,7 +12,8 @@ import { SleepAssessmentService } from './sleep-assessment.service';
 })
 export class SleepAssessmentComponent implements OnInit {
   customerId: String = '';
-  list: any = '';
+  list: any = [];
+  query: any = {};
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef, private sleepAssessmentService: SleepAssessmentService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,14 +21,24 @@ export class SleepAssessmentComponent implements OnInit {
   }
 
   getList() {
-    this.sleepAssessmentService.getList({}).subscribe((res) => {
+    let query = {};
+    Object.assign(query, this.query);
+
+    if (query['startDate']) {
+      query['startDate'] = moment(query['startDate']).format('YYYY-MM-DD');
+    }
+    if (query['endDate']) {
+      query['endDate'] = moment(query['endDate']).format('YYYY-MM-DD');
+    }
+    this.sleepAssessmentService.getList(query).subscribe((res) => {
       this.list = res.data;
     });
   }
+
   showModal() {
-    const componentFatory = this.componentFactoryResolver.resolveComponentFactory(DialogEvaluationComponent);
+    const componentFatory = this.componentFactoryResolver.resolveComponentFactory(DialogAssessComponent);
     const containerRef = this.viewContainerRef;
     containerRef.clear();
-    const dd = <DialogEvaluationComponent>containerRef.createComponent(componentFatory).instance;
+    const dd = <DialogAssessComponent>containerRef.createComponent(componentFatory).instance;
   }
 }

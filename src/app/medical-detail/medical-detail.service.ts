@@ -17,6 +17,10 @@ export class MedicalDetailService extends BaseService {
     return this.postInfo('api/v1/cust/getAdviceTemplate', '');
   }
 
+  saveRecord(data) {
+    return this.postInfo('api/v1/cust/createDiagnosticRecords', storage.serialize(data))
+  }
+
   getPdf(data) {
     return this.postInfo('api/v1/cust/getSleepMonitorReportList', storage.serialize(data))
   }

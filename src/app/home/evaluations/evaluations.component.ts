@@ -1,5 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
-import { DialogEvaluationComponent } from '../dialog-evaluation'
+import { DialogAssessComponent } from '../dialog-assess'
 
 @Component({
   selector: 'app-evaluations',
@@ -14,9 +14,9 @@ export class EvaluationsComponent implements OnInit {
   }
 
   showModal() {
-    const componentFatory = this.componentFactoryResolver.resolveComponentFactory(DialogEvaluationComponent);
+    const componentFatory = this.componentFactoryResolver.resolveComponentFactory(DialogAssessComponent);
     const containerRef = this.viewContainerRef;
     containerRef.clear();
-    const dd = <DialogEvaluationComponent>containerRef.createComponent(componentFatory).instance;
+    const dd = <DialogAssessComponent>containerRef.createComponent(componentFatory).instance;
   }
 }
