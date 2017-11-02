@@ -6,7 +6,7 @@ import storage from '../shared/storage';
 export class BloodOxygenService extends BaseService {
 
   constructor(public http: Http) {
-    super(http)
+    super(http);
   }
 
   oxygenList(data) {

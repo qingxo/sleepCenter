@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Http, HttpModule, XHRBackend, RequestOptions } from '@angular/http';
 import { HomeModule } from './home';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared'
+import { SharedModule } from './shared';
 import { EchartsNg2Module } from 'echarts-ng2';
 import { SwiperModule, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 

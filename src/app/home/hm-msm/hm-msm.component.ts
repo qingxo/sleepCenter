@@ -29,7 +29,7 @@ export class HmMsmComponent implements OnInit {
     this.getList();
   }
   getList() {
-    let query = {};
+    const query = {};
     Object.assign(query, this.query);
     if (query['startDate']) {
       query['startDate'] = moment(query['startDate']).format('YYYY-MM-DD');
@@ -41,7 +41,7 @@ export class HmMsmComponent implements OnInit {
     if (this.mItemOption) {
       query['signType'] = this.mItemOption['value'];
     }
-    
+
     this.hmMsmService.getList(query)
       .subscribe(res => {
         this.list = res.data;

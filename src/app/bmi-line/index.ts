@@ -1,1 +1,1 @@
-export * from './bmi-line.component'
+export * from './bmi-line.component';

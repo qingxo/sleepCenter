@@ -9,6 +9,6 @@ const Infos = {
     { 'name': '权限管理', 'url': '/home/privileges' }
   ],
   killUrl: ''
-}
+};
 
 export default Infos;

@@ -22,11 +22,11 @@ export class ViewQuestionnaireComponent implements OnInit {
 
   viewQuestionnaire() {
     this.viewQuestionnaireService.viewQuestionnaire({
-      customerId: this.customerId,//1710241455276577998傅月昆
+      customerId: this.customerId, //1710241455276577998傅月昆
       startTime: '2017-10-31'
     }).subscribe(res => {
       this.list = res.success;
     });
   }
-  
+
 }

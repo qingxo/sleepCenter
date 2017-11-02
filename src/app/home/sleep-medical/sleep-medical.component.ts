@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
   SleepMedicalService
-} from './sleep-medical.service'
+} from './sleep-medical.service';
 @Component({
   selector: 'app-sleep-medical',
   templateUrl: './sleep-medical.component.html',
@@ -10,24 +10,24 @@ import {
 })
 export class SleepMedicalComponent implements OnInit {
 
-  list: Array<any> = []
+  list: Array<any> = [];
   constructor(private sleepMedicalService: SleepMedicalService) { }
 
   ngOnInit() {
-    this.showList()
+    this.showList();
   }
 
   showList() {
-    let data = {}
+    const data = {};
     this.sleepMedicalService.getList(data).subscribe((res) => {
       if (res.success) {
-        this.list = res.data
+        this.list = res.data;
       }
-    })
+    });
   }
 
   makePaper() {
-    console.log("make paper")
+    console.log('make paper');
   }
 
 }

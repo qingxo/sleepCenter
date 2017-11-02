@@ -25,7 +25,7 @@ export class CirclesComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.title.length > 0 && this.radios.length > 0) {
-      this.averagePic()
+      this.averagePic();
       this.el.nativeElement.className = 'lines';
       this.nothingFlag = true;
     } else {
@@ -46,7 +46,7 @@ export class CirclesComponent implements OnInit, OnChanges {
       this.legendData.push({
         name: this.title[i],
         icon: 'circle'
-      })
+      });
     }
 
 

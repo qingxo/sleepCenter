@@ -1,1 +1,1 @@
-export * from './hm-msm.component'
+export * from './hm-msm.component';

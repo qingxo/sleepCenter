@@ -1,1 +1,1 @@
-export * from './nothing.component'
+export * from './nothing.component';

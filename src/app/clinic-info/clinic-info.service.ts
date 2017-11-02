@@ -10,10 +10,10 @@ import storage from '../shared/storage';
 @Injectable()
 export class ClinicInfoService extends BaseService {
   constructor(public http: Http) {
-    super(http)
+    super(http);
   }
   getClinicInfo(data) {
-    return this.postInfo('api/v1/cust/patientDetails/medicalInformation', storage.serialize(data))
+    return this.postInfo('api/v1/cust/patientDetails/medicalInformation', storage.serialize(data));
   }
 
 }

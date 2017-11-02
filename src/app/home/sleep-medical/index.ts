@@ -1,1 +1,1 @@
-export * from './sleep-medical.component'
+export * from './sleep-medical.component';

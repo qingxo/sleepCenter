@@ -10,10 +10,10 @@ import * as moment from 'moment';
 })
 export class PatientsComponent implements OnInit {
 
-  hospitalInfo: number = 0;
+  hospitalInfo = 0;
   list: any = [];
   moreInfo: any = null;
-  patientName: string = '';
+  patientName = '';
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef, private patientsService: PatientsService) { }
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class PatientsComponent implements OnInit {
   }
 
   refreshList() {
-    let data = {}
+    const data = {};
     if (this.moreInfo !== null) {
       Object.assign(data, this.moreInfo);
       if (data['startDate']) {
@@ -37,23 +37,23 @@ export class PatientsComponent implements OnInit {
       }
     }
     if (this.patientName != '') {
-      data['name'] = this.patientName
+      data['name'] = this.patientName;
     }
 
     data['status'] = this.hospitalInfo;
 
     this.patientsService.getList(data).subscribe((res) => {
       if (res.success) {
-        this.list = res.data
+        this.list = res.data;
       } else {
-        this.list = []
+        this.list = [];
       }
-    })
+    });
   }
 
   firedInfo(num) {
     this.hospitalInfo = num;
-    this.refreshList()
+    this.refreshList();
   }
 
   showModal() {
@@ -61,11 +61,11 @@ export class PatientsComponent implements OnInit {
     const containerRef = this.viewContainerRef;
     containerRef.clear();
     const dd = <DialogConditionComponent>containerRef.createComponent(componentFatory).instance;
-    dd.initMoreInfo(this.moreInfo)
+    dd.initMoreInfo(this.moreInfo);
     dd.fired.subscribe((res) => {
       this.moreInfo = res;
-      this.refreshList()
-    })
+      this.refreshList();
+    });
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
-import { DialogAssessComponent } from '../dialog-assess'
+import { DialogAssessComponent } from '../dialog-assess';
 
 @Component({
   selector: 'app-evaluations',

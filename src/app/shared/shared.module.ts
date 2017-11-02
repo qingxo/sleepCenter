@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { PipeBirthPipe } from './pipes/pipe-birth.pipe';
-import { LineBtnComponent } from "./line-btn";
+import { LineBtnComponent } from './line-btn';
 import { SearchLineComponent } from './search-line';
 import { HeadLayoutComponent } from './head-layout';
 import { TimesComponent } from './times/times.component';

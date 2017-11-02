@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 import { Router } from '@angular/router';
 import * as md5 from 'md5';
 import storage from '../shared/storage';
-import { User } from './user'
+import { User } from './user';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +13,7 @@ import { User } from './user'
 })
 export class LoginComponent implements OnInit {
 
-  user = new User('', '', true)
+  user = new User('', '', true);
   constructor(private loginService: LoginService, private router: Router) {
   }
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginConfirm() {
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
   }
 
 }

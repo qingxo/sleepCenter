@@ -11,8 +11,8 @@ import { AssessmentResultService } from './assessment-result.service';
 export class AssessmentResultComponent implements OnInit {
   customerId: String = '';
   evaluateTime: String = '';
-  tabs: Array<any> = [{ name: '基本信息' }, { name: '诊疗信息' }, { name: '体征监测' }, { name: '睡眠监测' }, { name: '睡眠报告' }]
-  showIndex: number = 0;
+  tabs: Array<any> = [{ name: '基本信息' }, { name: '诊疗信息' }, { name: '体征监测' }, { name: '睡眠监测' }, { name: '睡眠报告' }];
+  showIndex = 0;
   constructor(private route: ActivatedRoute, private assessmentResultService: AssessmentResultService) { }
 
   ngOnInit() {
@@ -21,14 +21,14 @@ export class AssessmentResultComponent implements OnInit {
     const data = {
       customerId: '1710241455273782625',
       evaluateTime: '2017-10-18'
-    }
+    };
     this.getReportDetail(data);
   }
 
   getReportDetail(data) {
     this.assessmentResultService.getReportDetail(data).subscribe(res => {
 
-    })
+    });
   }
-  
+
 }

@@ -1,1 +1,1 @@
-export * from './heart-line.component'
+export * from './heart-line.component';

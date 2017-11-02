@@ -47,10 +47,10 @@ export class BloodPressureComponent implements OnInit, OnChanges {
     this.bloodPressureHigh = [];
     this.bloodPressureLower = [];
     this.nothingFlag = false;
-    let data = {
+    const data = {
       signType: 'bp',
       customerId: this.userId
-    }
+    };
     this.bloodPressureService.getBloodPressList(data).subscribe((res) => {
       if (res.success) {
         this.bloodPressureList = res.data;
@@ -66,14 +66,14 @@ export class BloodPressureComponent implements OnInit, OnChanges {
           }
         }
         // }
-      
+
         if (this.bloodPressureList.length > 0) {
           this.nothingFlag = true;
           this.el.nativeElement.className = '';
         } else {
           this.nothingFlag = false;
           this.el.nativeElement.className = 'black-hole';
-      
+
         }
         this.startEchartPress();
       }

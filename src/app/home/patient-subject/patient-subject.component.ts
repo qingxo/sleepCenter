@@ -10,77 +10,77 @@ import * as swal from 'sweetalert';
 })
 export class PatientSubjectComponent implements OnInit {
 
-  customerName: string = '';
-  cardId: string = '';
-  mobile: string = '';
+  customerName = '';
+  cardId = '';
+  mobile = '';
   list: Array<any> = [];
   childList: Array<any> = [];
   constructor(private patientSubjectService: PatientSubjectService) { }
 
   ngOnInit() {
-    this.showList()
+    this.showList();
   }
 
   searchInfo(e) {
-    this.showList()
+    this.showList();
   }
 
   showList() {
-    let data = { name: this.customerName, moible: this.mobile, cardId: this.cardId }
+    const data = { name: this.customerName, moible: this.mobile, cardId: this.cardId };
     this.patientSubjectService.getList(data).subscribe((res) => {
       if (res.data) {
         this.list = res.data;
       }
-    })
+    });
   }
 
   showDetail(e, name) {
-    let tmp = e.target.className
-    let [a, b] = tmp.toString().split(' ')
-    this.showInnerTable(true, e.target)
+    const tmp = e.target.className;
+    const [a, b] = tmp.toString().split(' ');
+    this.showInnerTable(true, e.target);
     if (b == 'icons-plus') {
-      $(e.target).removeClass('icons-plus').addClass('icons-minus')
-      this.showChildDetail(name, e.target)
+      $(e.target).removeClass('icons-plus').addClass('icons-minus');
+      this.showChildDetail(name, e.target);
     } else {
-      $(e.target).addClass('icons-plus').removeClass('icons-minus')
+      $(e.target).addClass('icons-plus').removeClass('icons-minus');
     }
   }
 
   showChildDetail(name, target) {
     this.patientSubjectService.getDetailList({ name: name }).subscribe((res) => {
       if (res.data) {
-        this.childList = []
-        this.childList = res.data
+        this.childList = [];
+        this.childList = res.data;
         if (this.childList.length > 0) {
           for (let i = 0; i < this.childList.length; i++) {
             this.childList[i]['isCk'] = false;
           }
-          this.showInnerTable(false, target)
+          this.showInnerTable(false, target);
         }
       }
-    })
+    });
   }
 
   makePullDown(num) {
     let cusId = '';
     for (let i = 0; i < this.childList.length; i++) {
       if (this.childList[i]['isCk']) {
-        cusId = this.childList[i].customerId
+        cusId = this.childList[i].customerId;
       }
     }
     if (cusId == '') {
-      swal("请选择用户", '', 'warning');
-      return
+      swal('请选择用户', '', 'warning');
+      return;
     }
 
-    let data = {
+    const data = {
       customerId: cusId
-    }
+    };
     this.patientSubjectService.pullDownData(data).subscribe((res) => {
       if (res) {
-        swal("成功", '', 'success')
+        swal('成功', '', 'success');
       }
-    })
+    });
   }
 
   showInnerTable(flag, target) {

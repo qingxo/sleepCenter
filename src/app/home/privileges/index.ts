@@ -1,1 +1,1 @@
-export * from './privileges.component'
+export * from './privileges.component';

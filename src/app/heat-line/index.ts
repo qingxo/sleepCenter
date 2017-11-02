@@ -1,1 +1,1 @@
-export * from './heat-line.component'
+export * from './heat-line.component';

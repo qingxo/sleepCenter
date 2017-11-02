@@ -7,10 +7,10 @@ import * as moment from 'moment';
 })
 export class TimesComponent implements OnInit {
 
-  @Input() name: string = "";
-  @Input() timeFormat: string = 'YYYY-MM-DD';
-  @Output() fired: EventEmitter<any> = new EventEmitter<any>()
-  chooseDate: any = new Date()
+  @Input() name = '';
+  @Input() timeFormat = 'YYYY-MM-DD';
+  @Output() fired: EventEmitter<any> = new EventEmitter<any>();
+  chooseDate: any = new Date();
 
   constructor() { }
 
@@ -18,9 +18,9 @@ export class TimesComponent implements OnInit {
   }
 
   dateChange() {
-    console.log()
-    let tmp = moment(this.chooseDate).format('YYYY-MM-DD')
-    this.fired.emit(tmp)
+    console.log();
+    const tmp = moment(this.chooseDate).format('YYYY-MM-DD');
+    this.fired.emit(tmp);
   }
 
 }

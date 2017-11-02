@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
-import { DialogHmmsmComponent } from "../home/dialog-hmmsm";
+import { DialogHmmsmComponent } from '../home/dialog-hmmsm';
 import { ActivatedRoute } from '@angular/router';
 import { SignMonitorService } from './sign-monitor.service';
 
@@ -17,13 +17,13 @@ export class SignMonitorComponent implements OnInit {
 
   ngOnInit() {
     // this.customerId = this.route.snapshot.params['customerId']
-    this.getAbnormalList()
+    this.getAbnormalList();
   }
   getAbnormalList() {
     this.signMonitorService.getAbnormalList({
       customerId: this.customerId
     }).subscribe(res => {
-      this.list = res.data
+      this.list = res.data;
     });
   }
   showModalEx() {

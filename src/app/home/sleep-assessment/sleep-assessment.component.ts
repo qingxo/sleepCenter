@@ -21,7 +21,7 @@ export class SleepAssessmentComponent implements OnInit {
   }
 
   getList() {
-    let query = {};
+    const query = {};
     Object.assign(query, this.query);
 
     if (query['startDate']) {

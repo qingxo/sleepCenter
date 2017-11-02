@@ -1,6 +1,6 @@
 import { RouteReuseStrategy } from '@angular/router';
 import { ActivatedRouteSnapshot, DetachedRouteHandle } from '@angular/router';
-import Infos from './Infos'
+import Infos from './Infos';
 // This impl. bases upon one that can be found in the router's test cases.
 export class CustomReuseStrategy implements RouteReuseStrategy {
 
@@ -35,7 +35,7 @@ export class CustomReuseStrategy implements RouteReuseStrategy {
    */
   shouldAttach(route: ActivatedRouteSnapshot): boolean {
     if (route.routeConfig.path === Infos['killUrl']) {
-      Infos['killUrl'] = ''
+      Infos['killUrl'] = '';
       return false;
     }
     return !!route.routeConfig && !!this.handlers[route.routeConfig.path];

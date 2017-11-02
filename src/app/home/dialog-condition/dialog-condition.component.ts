@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import * as moment from 'moment';
-import Conditions from './condition.model'
+import Conditions from './condition.model';
 // import { DialogCondition } from './conditions';
 @Component({
   selector: 'app-dialog-condition',
@@ -12,12 +12,12 @@ export class DialogConditionComponent implements OnInit {
 
   isVisible = false;
   @Output() fired = new EventEmitter<any>();
-  cond = new Conditions('', '', '', '', '', '', '')
+  cond = new Conditions('', '', '', '', '', '', '');
 
 
   constructor() { }
   ngOnInit() {
-    this.showModal()
+    this.showModal();
   }
 
   showModal = () => {
@@ -36,9 +36,9 @@ export class DialogConditionComponent implements OnInit {
   }
 
   initMoreInfo(val) {
-    console.log(val)
+    console.log(val);
     if (val !== null) {
-      this.cond = val
+      this.cond = val;
     }
   }
 
@@ -51,32 +51,32 @@ export class DialogConditionComponent implements OnInit {
       result.push(i);
     }
     return result;
-  };
+  }
   _startValueChange = () => {
-    console.log(this._startDate)
+    console.log(this._startDate);
     if (this._startDate > this._endDate) {
       this._endDate = null;
     }
-  };
+  }
   _endValueChange = () => {
     if (this._startDate > this._endDate) {
       this._startDate = null;
     }
-  };
+  }
   _disabledStartDate = (startValue) => {
     if (!startValue || !this._endDate) {
       return false;
     }
     return startValue.getTime() >= this._endDate.getTime();
-  };
+  }
   _disabledEndDate = (endValue) => {
     if (!endValue || !this._startDate) {
       return false;
     }
     return endValue.getTime() <= this._startDate.getTime();
-  };
+  }
   get _isSameDay() {
-    return this._startDate && this._endDate && moment(this._startDate).isSame(this._endDate, 'day')
+    return this._startDate && this._endDate && moment(this._startDate).isSame(this._endDate, 'day');
   }
   get _endTime() {
     return {
@@ -96,6 +96,6 @@ export class DialogConditionComponent implements OnInit {
         }
         return [];
       }
-    }
+    };
   }
 }

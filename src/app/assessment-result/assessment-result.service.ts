@@ -9,12 +9,12 @@ import storage from '../shared/storage';
 @Injectable()
 export class AssessmentResultService extends BaseService {
   constructor(public http: Http) {
-    super(http)
+    super(http);
   }
 
 
   getReportDetail(data) {
-    return this.postInfo('api/sleepReport/SleepReportListByPage', storage.serialize(data))
+    return this.postInfo('api/sleepReport/SleepReportListByPage', storage.serialize(data));
   }
 
 }

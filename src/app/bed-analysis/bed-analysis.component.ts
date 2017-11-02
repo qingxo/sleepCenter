@@ -11,14 +11,14 @@ import * as moment from 'moment';
 })
 export class BedAnalysisComponent implements OnInit, OnChanges {
 
-  @Input() equipNo: string = '';
+  @Input() equipNo = '';
   @Input() echartsStyle: any = { 'height': '350px' };
   @Input() title: any = '睡眠分析';
   @Input() yAxisData: Array<string> = ['离床', '在床', '设备异常'];
   @ViewChild('tt') el: ElementRef;
   @Input() bedAwayAnalysis: Array<any> = [];
   @Input() bedAwayTime: Array<any> = [];
-  @Input() isOpen: boolean = false;
+  @Input() isOpen = false;
   private nothingFlag = false;
   private option: EChartOption;
   private focusDay: any = moment(new Date()).format('YYYY-MM-DD');

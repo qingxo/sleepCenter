@@ -8,11 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HmbedDetailComponent implements OnInit {
 
-  customerId: string = ''
+  customerId = '';
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.customerId = this.route.snapshot.params['customerId']
+    this.customerId = this.route.snapshot.params['customerId'];
   }
 
 }

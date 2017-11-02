@@ -6,8 +6,8 @@ import { PatientDetailComponent } from './patient-detail';
 import { MedicalDetailComponent } from './medical-detail';
 import { EvaluateQuestionnaireComponent } from './evaluate-questionnaire';
 import { AssessmentResultComponent } from './assessment-result';
-import { HmbedDetailComponent } from "./hmbed-detail";
-import { HmmsmDetailComponent } from "./hmmsm-detail";
+import { HmbedDetailComponent } from './hmbed-detail';
+import { HmmsmDetailComponent } from './hmmsm-detail';
 import { ViewQuestionnaireComponent } from './view-questionnaire';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },

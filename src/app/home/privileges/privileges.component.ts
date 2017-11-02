@@ -1,5 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
-import { DialogAccountComponent } from '../dialog-account'
+import { DialogAccountComponent } from '../dialog-account';
 import * as $ from 'jquery';
 
 @Component({
@@ -138,7 +138,7 @@ export class PrivilegesComponent implements OnInit {
         }
       ]
     }
-  ]
+  ];
   showModal() {
     const componentFatory = this.componentFactoryResolver.resolveComponentFactory(DialogAccountComponent);
     const containerRef = this.viewContainerRef;
@@ -157,15 +157,15 @@ export class PrivilegesComponent implements OnInit {
   changeCheckItem(item){
     console.log(item.checked);
     const child = item.children;
-    for(let i=0,len=child.length;i<len;i++){
+    for (let i = 0, len = child.length; i < len; i++){
       child[i].checked = item.checked;
 
       const grandChild = child[i].children;
       if (grandChild) {
-        for(let j=0,len=grandChild.length;j<len;j++){
+        for (let j = 0, len = grandChild.length; j < len; j++){
           grandChild[j].checked = item.checked;
         }
-      }   
+      }
     }
   }
 }

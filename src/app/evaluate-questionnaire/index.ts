@@ -1,1 +1,1 @@
-export * from './evaluate-questionnaire.component'
+export * from './evaluate-questionnaire.component';

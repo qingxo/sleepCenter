@@ -6,7 +6,7 @@ import storage from '../shared/storage';
 export class BmiLineService extends BaseService {
 
   constructor(public http: Http) {
-    super(http)
+    super(http);
   }
 
   bmiList(data) {

@@ -11,8 +11,8 @@ export class BarLineComponent implements OnInit, OnChanges {
   @Input() topTitle = '';
   @Input() serisesData: Array<any> = [];
   @Input() echartsStyle: any = { 'height': '230px' };
-  @Input() name: string = '测试';
-  @Input() imageSrc: string = "/assets/images/evaluate.png";
+  @Input() name = '测试';
+  @Input() imageSrc = '/assets/images/evaluate.png';
   @ViewChild('tt') el: ElementRef;
   @Input() normalList: Array<any> = [];
   @Input() abNormalList: Array<any> = [];
@@ -23,7 +23,7 @@ export class BarLineComponent implements OnInit, OnChanges {
   }
   ngOnChanges(change: SimpleChanges) {
     if (this.normalList.length > 0 && this.abNormalList.length > 0) {
-      this.initEcharts()
+      this.initEcharts();
     }
   }
 
@@ -40,7 +40,7 @@ export class BarLineComponent implements OnInit, OnChanges {
       color: ['#3D70E4', '#9879FF'],
       legend: {
         orient: 'veritcal',
-        right: '10%',
+        right: '13.5%',
         top: '45%',
         data: ['正常', '异常']
       },
@@ -94,7 +94,6 @@ export class BarLineComponent implements OnInit, OnChanges {
         }, {
           name: '异常',
           type: 'bar',
-
           data: this.abNormalList,
           label: {
             normal: {
@@ -114,7 +113,7 @@ export class BarLineComponent implements OnInit, OnChanges {
           barCategoryGap: '70%'
         }
       ]
-    }
+    };
   }
 
 }

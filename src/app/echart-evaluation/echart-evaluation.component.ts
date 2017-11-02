@@ -13,8 +13,8 @@ export class EchartEvaluationComponent implements OnInit {
   @Input() topTitle = '';
   @Input() serisesData: Array<any> = [];
   @Input() echartsStyle: any = { 'width': '100%', 'height': '400px' };
-  @Input() name: string = '测试';
-  @Input() imageSrc: string = "xxx";
+  @Input() name = '测试';
+  @Input() imageSrc = 'xxx';
   @ViewChild('tt') el: ElementRef;
   constructor() { }
   dataAxis = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
@@ -78,8 +78,8 @@ export class EchartEvaluationComponent implements OnInit {
               itemStyle: {
                   normal: {color: 'rgba(0,0,0,0.5)'}
               },
-              barGap:'-100%',
-              barCategoryGap:'40%',
+              barGap: '-100%',
+              barCategoryGap: '40%',
               data: this.dataShadow,
               animation: false
           },
@@ -104,7 +104,7 @@ export class EchartEvaluationComponent implements OnInit {
               data: this.data
           }
       ]
-  }
+  };
   }
   //
   // ngAfterContentChecked() {

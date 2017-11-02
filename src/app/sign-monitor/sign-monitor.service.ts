@@ -11,10 +11,10 @@ import storage from '../shared/storage';
 export class SignMonitorService extends BaseService {
 
   constructor(public http: Http) {
-    super(http)
+    super(http);
   }
   getAbnormalList(data) {
-    return this.postInfo('api/v1/cust/getAbnormalList', storage.serialize(data))
+    return this.postInfo('api/v1/cust/getAbnormalList', storage.serialize(data));
   }
 
 }

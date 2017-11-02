@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 export class PatientDetailComponent implements OnInit {
   customerId: String = '';
   personInfo: any = {};
-  tabs: Array<any> = [{ name: '基本信息' }, { name: '诊疗信息' }, { name: '体征监测' }, { name: '睡眠监测' }, { name: '睡眠报告' }]
-  showIndex: number = 0;
+  tabs: Array<any> = [{ name: '基本信息' }, { name: '诊疗信息' }, { name: '体征监测' }, { name: '睡眠监测' }, { name: '睡眠报告' }];
+  showIndex = 0;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {

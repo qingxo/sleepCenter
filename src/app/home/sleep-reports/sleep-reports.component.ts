@@ -18,13 +18,13 @@ export class SleepReportsComponent implements OnInit {
   }
 
   getList() {
-    let data = { };
+    const data = { };
     if (this.customerId) {
       data['customerId'] = this.customerId;
     }
-    this.sleepReportsService.getList(data).subscribe((res)=>{
+    this.sleepReportsService.getList(data).subscribe((res) => {
       this.list = res.data;
-    })
+    });
   }
 
   showModal() {

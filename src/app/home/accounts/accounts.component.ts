@@ -1,5 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
-import { DialogAccountComponent } from '../dialog-account'
+import { DialogAccountComponent } from '../dialog-account';
 
 @Component({
   selector: 'app-accounts',

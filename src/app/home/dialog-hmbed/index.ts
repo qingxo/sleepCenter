@@ -1,1 +1,1 @@
-export * from './dialog-hmbed.component'
+export * from './dialog-hmbed.component';

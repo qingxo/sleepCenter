@@ -10,12 +10,12 @@ import * as moment from 'moment';
 })
 export class SleepMonitorComponent implements OnInit, OnChanges {
 
-  @Input() dateShow: boolean = false;
-  @Input() reportDay: string = moment(new Date()).format('YYYY-MM-DD')
-  heartLegendList: Array<any> = ['心率']
-  moveLegendList: Array<any> = ['体动值']
-  private customerId: string = '';
-  private equipNo: string = '';
+  @Input() dateShow = false;
+  @Input() reportDay: string = moment(new Date()).format('YYYY-MM-DD');
+  heartLegendList: Array<any> = ['心率'];
+  moveLegendList: Array<any> = ['体动值'];
+  private customerId = '';
+  private equipNo = '';
   private maxDay: string = moment(new Date()).format('YYYY-MM-DD');
   private list: any = {};
   private heartList: Array<any> = [];
@@ -24,9 +24,9 @@ export class SleepMonitorComponent implements OnInit, OnChanges {
   private timeList: Array<any> = [];
   private sleepListTime: Array<any> = [];
   private sleepListStatus: Array<any> = [];
-  private sleepDeep: string = '0';
-  private sleepLower: string = '0';
-  private sleepNo: string = '0';
+  private sleepDeep = '0';
+  private sleepLower = '0';
+  private sleepNo = '0';
   private circleRadios: Array<any> = [];
   private bedListTime: Array<any> = [];
 
@@ -40,48 +40,48 @@ export class SleepMonitorComponent implements OnInit, OnChanges {
 
   ngOnChanges(change: SimpleChanges) {
     if (this.equipNo !== '') {
-      this.callService()
+      this.callService();
 
     }
   }
 
   timeFired(num) {
     this.reportDay = num;
-    this.callService()
+    this.callService();
   }
 
   callService() {
     this.sleepMonitorService.reportDetail(this.equipNo, this.reportDay).subscribe((res) => {
       this.list = res.json;
 
-      this.initSleepRadio()
-      this.bedAnalysisInit(res.sleep)
-    })
-    this.callReportSleepHeart()
-    this.callReportSleepOnBed()
+      this.initSleepRadio();
+      this.bedAnalysisInit(res.sleep);
+    });
+    this.callReportSleepHeart();
+    this.callReportSleepOnBed();
   }
 
   bedAnalysisInit(obj) {
-    this.sleepListTime = []
-    this.sleepListStatus = []
-    let { status, time } = obj
-    for (let item of status) {
-      this.sleepListStatus.push(parseInt(item, 10))
+    this.sleepListTime = [];
+    this.sleepListStatus = [];
+    const { status, time } = obj;
+    for (const item of status) {
+      this.sleepListStatus.push(parseInt(item, 10));
     }
-    this.sleepListTime = Array.from(time)
-    this.sleepListStatus = Array.from(this.sleepListStatus)
+    this.sleepListTime = Array.from(time);
+    this.sleepListStatus = Array.from(this.sleepListStatus);
   }
 
   initSleepRadio() {
-    let [deep, lower, nos] = [this.list.deepminutes, this.list.lightminutes, this.list.wakeminutes]
-    let sum = parseInt(deep, 10) + parseInt(lower, 10) + parseInt(nos, 10)
-    this.sleepDeep = "" + Math.round((deep / sum) * 100);
-    this.sleepLower = "" + Math.round((lower / sum) * 100);
-    this.sleepNo = "" + Math.round((nos / sum) * 100);
+    const [deep, lower, nos] = [this.list.deepminutes, this.list.lightminutes, this.list.wakeminutes];
+    const sum = parseInt(deep, 10) + parseInt(lower, 10) + parseInt(nos, 10);
+    this.sleepDeep = '' + Math.round((deep / sum) * 100);
+    this.sleepLower = '' + Math.round((lower / sum) * 100);
+    this.sleepNo = '' + Math.round((nos / sum) * 100);
     if (this.sleepDeep !== 'NaN' || this.sleepLower !== 'NaN' || this.sleepNo !== 'NaN') {
-      this.circleRadios = [this.sleepDeep, this.sleepLower, this.sleepNo]
+      this.circleRadios = [this.sleepDeep, this.sleepLower, this.sleepNo];
     } else {
-      this.circleRadios = []
+      this.circleRadios = [];
     }
   }
 
@@ -93,15 +93,15 @@ export class SleepMonitorComponent implements OnInit, OnChanges {
       this.timeList = [];
       if (res.success && res.data) {
         for (let i = 0; i < res.data.length; i++) {
-          this.heartList.push(res.data[i]['avghr'])
-          this.moveList.push(res.data[i]['avgmv'])
-          this.timeList.push(res.data[i]['hour'])
+          this.heartList.push(res.data[i]['avghr']);
+          this.moveList.push(res.data[i]['avgmv']);
+          this.timeList.push(res.data[i]['hour']);
         }
         this.heartList = Array.from(this.heartList);
         this.moveList = Array.from(this.moveList);
         this.timeList = Array.from(this.timeList);
       }
-    })
+    });
   }
 
   callReportSleepOnBed() {
@@ -112,7 +112,7 @@ export class SleepMonitorComponent implements OnInit, OnChanges {
         this.bedList.push(parseInt(res.data[i]['status'], 10) - 1);
         this.bedListTime.push(res.data[i]['timespan']);
       }
-    })
+    });
   }
 
 }

@@ -11,8 +11,8 @@ export class CirclesComponent implements OnInit, OnChanges {
   private nothingFlag = false;
   @Input() topTitle = ['正常', '异常'];
   @Input() echartsStyle: any = { 'height': '180px' };
-  @Input() name: string = '测试';
-  @Input() imageSrc: string = "/assets/images/evaluate.png";
+  @Input() name = '测试';
+  @Input() imageSrc = '/assets/images/evaluate.png';
   @Input() dataSeries: Array<any> = [];
   @ViewChild('tt') el: ElementRef;
   constructor() { }
@@ -23,24 +23,24 @@ export class CirclesComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.topTitle.length > 0 && this.dataSeries.length > 0) {
-      this.finishOptionData()
+      this.finishOptionData();
     }
   }
 
   finishOptionData() {
-    let tmp = this.getOption()
+    const tmp = this.getOption();
     for (let i = 0; i < this.topTitle.length; i++) {
       tmp.series[0]['data'].push({ value: this.dataSeries[i], name: this.topTitle[i] });
     }
-    tmp.legend.top = 45 - tmp.series[0]['data'].length * 6 + '%'
-    this.option = tmp
+    tmp.legend.top = 45 - tmp.series[0]['data'].length * 6 + '%';
+    this.option = tmp;
   }
 
   getOption() {
     return {
       tooltip: {
         trigger: 'item',
-        formatter: "{a} <br/>{b}: {c} ({d}%)"
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
       },
       color: ['#3D70E4', '#9879FF', '#00C7FE', '#FF955F'],
       legend: {
@@ -76,7 +76,7 @@ export class CirclesComponent implements OnInit, OnChanges {
           }, data: []
         }
       ]
-    }
+    };
   }
 
 

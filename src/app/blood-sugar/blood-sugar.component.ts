@@ -33,10 +33,10 @@ export class BloodSugarComponent implements OnInit, OnChanges {
 
 
   bloodDataInit() {
-    let data = {
+    const data = {
       signType: 'bg',
       customerId: this.userId
-    }
+    };
     this.bloodSugarService.getBloodSugarList(data).subscribe((res) => {
       if (res.success) {
         const arr = res.data;

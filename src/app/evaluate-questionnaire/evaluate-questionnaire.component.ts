@@ -25,48 +25,48 @@ export class EvaluateQuestionnaireComponent implements OnInit {
         // 处理文本题的题目——“几”换成“___”
         // console.log(res);
         res.forEach((item, index) => {
-          if(item.optionsList.length==1 && item.optionsList[0].itemType==3) {
+          if (item.optionsList.length == 1 && item.optionsList[0].itemType == 3) {
             // console.log(item.question.itemTitle.replace(/几/g, '___'));
             // console.log(item);
-            item.question.itemTitle = item.question.itemTitle.replace(/几/g, ' ___ ')
+            item.question.itemTitle = item.question.itemTitle.replace(/几/g, ' ___ ');
           }
-        })
+        });
         this.list = res;
         // 填充数组
         this.answersArr = new Array(this.list.length);
         this.answersArr.fill('');
         this.calPercentage(1);
         $('.swiper-slide-active .ipt input').focus();
-      })
+      });
   }
   saveAnswer() {
-    var answersObj = {};
+    const answersObj = {};
     answersObj['startTime'] = moment().format('YYYY-MM-DD hh:mm:ss');
     const copyAnswersArr = this.answersArr.concat();
     answersObj['answersArr'] = copyAnswersArr;
 
     this.list.forEach((item, index) => {
-      if(item.optionsList.length==1 && item.optionsList[0].itemType==3) {
-        var data = {
+      if (item.optionsList.length == 1 && item.optionsList[0].itemType == 3) {
+        const data = {
           surveyId: item.question.surveyId,
           questionId: item.question.id,
           itemVal: this.answersArr[index],
           iseqId: item.question.iseq,
           itemType: item.question.itemType,
           userId: this.customerId
-        }
+        };
         answersObj['answersArr'][index] = data;
-      } 
-    })
+      }
+    });
     console.log(this.answersArr);
-    
+
     const answersString = JSON.stringify(answersObj);
-    
+
     // 保存试题
     this.evaluateQuestionnaireService.saveAnswer({
       answersObj: answersString
     }).subscribe(res => {
-        
+
       });
   }
   chooseOption(questionInfo, option, index, event) {
@@ -92,30 +92,30 @@ export class EvaluateQuestionnaireComponent implements OnInit {
       $('.btns-wrap .btn').show();
     }
   }
-  
-    public type: string = 'component';
-  
+
+    public type = 'component';
+
     public config: SwiperConfigInterface = {
       scrollbar: null,
       direction: 'horizontal',
       loop: false,
       nextButton: '.next',
       prevButton: '.prev',
-      observer:true,//修改swiper自己或子元素时，自动初始化swiper
-      observeParents:true,//修改swiper的父元素时，自动初始化swiper
+      observer: true, //修改swiper自己或子元素时，自动初始化swiper
+      observeParents: true, //修改swiper的父元素时，自动初始化swiper
     };
-  
+
     @ViewChild(SwiperComponent) componentRef: SwiperComponent;
     @ViewChild(SwiperDirective) directiveRef: SwiperDirective;
-  
+
     // toggleType() {
     //   this.type = this.type == 'component' ? 'directive' : 'component';
     // }
-  
+
     // toggleDirection() {
     //   this.config.direction = (this.config.direction == 'horizontal') ? 'vertical' : 'horizontal';
     // }
-  
+
     // toggleSlidesPerView() {
     //   if (this.config.slidesPerView != 1) {
     //     this.config.slidesPerView = 1;
@@ -123,7 +123,7 @@ export class EvaluateQuestionnaireComponent implements OnInit {
     //     this.config.slidesPerView = +this.config.slidesPerView + 1;
     //   }
     // }
-  
+
     // toggleOverlayControls() {
     //   if (this.config.pagination) {
     //     this.config.scrollbar = '.swiper-scrollbar';
@@ -138,19 +138,19 @@ export class EvaluateQuestionnaireComponent implements OnInit {
     //     this.config.prevButton = '.swiper-button-prev';
     //   }
     // }
-  
+
     // toggleKeyboardControl() {
     //   this.config.keyboardControl = !this.config.keyboardControl;
     // }
-  
+
     // toggleMouseWheelControl() {
     //   this.config.mousewheelControl = !this.config.mousewheelControl;
     // }
-  
+
     onIndexChange(index: number) {
-      if(index == 0) {
+      if (index == 0) {
         // 第一页
-        $('.prev').hide();    
+        $('.prev').hide();
       } else if (index == (this.list.length - 1)) {
         // 末页
         $('.next').hide();

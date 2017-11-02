@@ -10,8 +10,8 @@ import * as moment from 'moment';
 export class DialogAccountComponent implements OnInit {
 
   isVisible = false;
-  role = '0'
-  sex = 'F'
+  role = '0';
+  sex = 'F';
   showModal = () => {
     this.isVisible = true;
   }
@@ -19,7 +19,7 @@ export class DialogAccountComponent implements OnInit {
   handleOk = (e) => {
     console.log('点击了确定');
     this.isVisible = false;
-    console.log(this.role)
+    console.log(this.role);
   }
 
   handleCancel = (e) => {
@@ -30,6 +30,6 @@ export class DialogAccountComponent implements OnInit {
 
   constructor() { }
   ngOnInit() {
-    this.showModal()
+    this.showModal();
   }
 }

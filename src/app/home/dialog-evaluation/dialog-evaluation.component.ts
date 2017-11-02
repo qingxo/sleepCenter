@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class DialogEvaluationComponent implements OnInit {
 
   isVisible = false;
-  role = '0'
-  sex = 'F'
+  role = '0';
+  sex = 'F';
   showModal = () => {
     this.isVisible = true;
   }
@@ -18,7 +18,7 @@ export class DialogEvaluationComponent implements OnInit {
     console.log('点击了确定');
     this.isVisible = false;
     window.open('/evaluatequestionnaire');
-    console.log(this.role)
+    console.log(this.role);
   }
 
   handleCancel = (e) => {
@@ -29,6 +29,6 @@ export class DialogEvaluationComponent implements OnInit {
 
   constructor() { }
   ngOnInit() {
-    this.showModal()
+    this.showModal();
   }
 }

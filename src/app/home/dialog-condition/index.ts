@@ -1,1 +1,1 @@
-export * from './dialog-condition.component'
+export * from './dialog-condition.component';

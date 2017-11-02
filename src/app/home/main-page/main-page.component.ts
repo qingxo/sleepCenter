@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MainPageService } from "./main-page.service";
+import { MainPageService } from './main-page.service';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -8,7 +8,7 @@ import { MainPageService } from "./main-page.service";
 })
 export class MainPageComponent implements OnInit {
 
-  type: number = 0;
+  type = 0;
   data: any = {};
   newPatients: Array<any> = [];
   visitor: Array<any> = [];
@@ -20,18 +20,18 @@ export class MainPageComponent implements OnInit {
   constructor(private mainPageService: MainPageService) { }
 
   ngOnInit() {
-    this.getDataList()
+    this.getDataList();
   }
 
   firedInfo(num) {
-    this.type = num
-    this.getDataList()
+    this.type = num;
+    this.getDataList();
   }
 
   getDataList() {
-    let data = {
+    const data = {
       type: this.type
-    }
+    };
     this.mainPageService.getList(data).subscribe((res) => {
       if (res) {
         this.data = res.data;
@@ -42,42 +42,42 @@ export class MainPageComponent implements OnInit {
         this.bedMonitor = [];
         this.normalList = [];
         this.abNormalList = [];
-        this.newPatients.push(res.data.onVisit)
-        this.newPatients.push(res.data.countOn)
-        this.newPatients.push(res.data.countOut)
-        this.visitor.push(res.data.followVisit1)
-        this.visitor.push(res.data.followVisit1)
-        this.visitor.push(res.data.followVisit1)
-        this.sleepAboutReport.push(res.data.sleepReport1)
-        this.sleepAboutReport.push(res.data.sleepReport2)
-        this.psgReport.push(res.data.psg1)
-        this.psgReport.push(res.data.psg2)
-        this.bedMonitor.push(res.data.bedMonitor1)
-        this.bedMonitor.push(res.data.bedMonitor2)
-        this.bedMonitor.push(res.data.bedMonitor3)
-        this.bedMonitor.push(res.data.bedMonitor4)
+        this.newPatients.push(res.data.onVisit);
+        this.newPatients.push(res.data.countOn);
+        this.newPatients.push(res.data.countOut);
+        this.visitor.push(res.data.followVisit1);
+        this.visitor.push(res.data.followVisit1);
+        this.visitor.push(res.data.followVisit1);
+        this.sleepAboutReport.push(res.data.sleepReport1);
+        this.sleepAboutReport.push(res.data.sleepReport2);
+        this.psgReport.push(res.data.psg1);
+        this.psgReport.push(res.data.psg2);
+        this.bedMonitor.push(res.data.bedMonitor1);
+        this.bedMonitor.push(res.data.bedMonitor2);
+        this.bedMonitor.push(res.data.bedMonitor3);
+        this.bedMonitor.push(res.data.bedMonitor4);
 
-        this.normalList.push(res.data.bp1)
-        this.abNormalList.push(res.data.bp1)
-        this.normalList.push(res.data.bs1)
-        this.abNormalList.push(res.data.bs2)
+        this.normalList.push(res.data.bp1);
+        this.abNormalList.push(res.data.bp1);
+        this.normalList.push(res.data.bs1);
+        this.abNormalList.push(res.data.bs2);
 
-        this.normalList.push(res.data.heart1)
-        this.abNormalList.push(res.data.heart2)
+        this.normalList.push(res.data.heart1);
+        this.abNormalList.push(res.data.heart2);
 
-        this.normalList.push(res.data.spo1)
-        this.abNormalList.push(res.data.spo2)
+        this.normalList.push(res.data.spo1);
+        this.abNormalList.push(res.data.spo2);
 
-        this.normalList.push(res.data.temp1)
-        this.abNormalList.push(res.data.temp2)
+        this.normalList.push(res.data.temp1);
+        this.abNormalList.push(res.data.temp2);
 
-        this.normalList.push(res.data.bmi1)
-        this.abNormalList.push(res.data.bmi2)
+        this.normalList.push(res.data.bmi1);
+        this.abNormalList.push(res.data.bmi2);
 
 
 
       }
-    })
+    });
   }
 
 }

@@ -10,14 +10,14 @@ import storage from '../shared/storage';
 @Injectable()
 export class EvaluateQuestionnaireService extends BaseService {
   constructor(public http: Http) {
-    super(http)
+    super(http);
   }
   getQuestionList(data) {
-    return this.postInfo('api/sleepEvaluation/evaluatingQuestionnaire', storage.serialize(data))
+    return this.postInfo('api/sleepEvaluation/evaluatingQuestionnaire', storage.serialize(data));
   }
 
   saveAnswer(data) {
-    return this.postInfo('api/sleepEvaluation/saveAnswer', storage.serialize(data))    
+    return this.postInfo('api/sleepEvaluation/saveAnswer', storage.serialize(data));
   }
 
 }

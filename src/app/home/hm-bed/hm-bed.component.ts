@@ -1,5 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
-import { DialogHmbedComponent } from "../dialog-hmbed";
+import { DialogHmbedComponent } from '../dialog-hmbed';
 import { HmBedService } from './hm-bed.service';
 
 @Component({

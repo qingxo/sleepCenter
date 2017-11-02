@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MedicalDetailService } from "./medical-detail.service";
+import { MedicalDetailService } from './medical-detail.service';
 import * as moment from 'moment';
 import * as $ from 'jquery';
 import * as swal from 'sweetalert';
@@ -12,28 +12,28 @@ import * as swal from 'sweetalert';
 })
 export class MedicalDetailComponent implements OnInit {
 
-  tabsIndex: number = 0;
-  tabs: Array<any> = [{ name: '床用体征监测' }, { name: '睡眠障碍评估' }, { name: 'PSG睡眠监测' }]
-  pdfSrc: string = '/assets/pdf/test.pdf';
-  customerId: string = '';
+  tabsIndex = 0;
+  tabs: Array<any> = [{ name: '床用体征监测' }, { name: '睡眠障碍评估' }, { name: 'PSG睡眠监测' }];
+  pdfSrc = '/assets/pdf/test.pdf';
+  customerId = '';
   time: string = moment(new Date()).format('YYYY-MM-DD');
   recordTime: string = moment(new Date()).format('YYYY-MM-DD');
-  type: number = 0;
+  type = 0;
   tplList: Array<string> = [];
-  sleepDisordersAssessmentId: string = '';
-  sleepMonitorId: string = '';
-  syndrome: string = '0';
-  typeId: string = '0';
-  orderOfSeverity: string = '0';
-  lowBloodOxygen: string = '0';
-  sleepStatus: string = '0';
-  sleepPosition: string = '0';
-  remark: string = "";
+  sleepDisordersAssessmentId = '';
+  sleepMonitorId = '';
+  syndrome = '0';
+  typeId = '0';
+  orderOfSeverity = '0';
+  lowBloodOxygen = '0';
+  sleepStatus = '0';
+  sleepPosition = '0';
+  remark = '';
   constructor(private route: ActivatedRoute, private medicalDetailService: MedicalDetailService) { }
 
   ngOnInit() {
     this.customerId = this.route.snapshot.params['customerId'];
-    this.initRecords()
+    this.initRecords();
   }
 
   initRecords() {
@@ -41,7 +41,7 @@ export class MedicalDetailComponent implements OnInit {
       if (res.data) {
         this.tplList = res.data;
       }
-    })
+    });
   }
 
   typeChange(num) {
@@ -52,21 +52,21 @@ export class MedicalDetailComponent implements OnInit {
   showTpl(index) {
     this.tabsIndex = index;
     if (this.tabsIndex === 2) {
-      this.getPDF()
+      this.getPDF();
     }
   }
 
   getPDF() {
-    let data = {
+    const data = {
       customerId: this.customerId,
       simple: 'simple',
       startDate: this.time,
       endDate: this.time
 
-    }
+    };
     this.medicalDetailService.getPdf(data).subscribe((res) => {
 
-    })
+    });
   }
 
   getReportTime(time) {
@@ -78,7 +78,7 @@ export class MedicalDetailComponent implements OnInit {
   }
 
   saveRecord() {
-    let data = {
+    const data = {
       customerId: this.customerId,
       bedMonitorTime: this.time,
       syndrome: this.syndrome,
@@ -89,16 +89,16 @@ export class MedicalDetailComponent implements OnInit {
       sleepPosition: this.sleepPosition,
       remark: this.remark,
       docName: '赵医生'
-    }
+    };
     this.medicalDetailService.saveRecord(data).subscribe((res) => {
       if (res.success) {
+        this.remark = '';
         swal('保存成功', '', 'success');
       }
-    })
+    });
   }
 
   hasClick(e) {
-    this.remark += $(e.target).siblings('span').text()
+    this.remark += ($(e.target).siblings('span').text() + '\n')
   }
-
 }

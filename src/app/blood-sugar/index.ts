@@ -1,1 +1,1 @@
-export * from './blood-sugar.component'
+export * from './blood-sugar.component';

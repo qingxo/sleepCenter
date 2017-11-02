@@ -1,40 +1,25 @@
 <div class="hmmsm-info">
   <div class="top-line">
     <div class="lf">
-      <!-- <nz-datepicker style="width: 160px;" 
-        (ngModelChange)="_startDate=$event;_startValueChange()" 
-        [ngModel]="_startDate" 
-        [nzDisabledDate]="_disabledStartDate" 
-        [nzShowTime]="true" 
-        [nzFormat]="'YYYY-MM-DD'" 
+      <!-- <nz-datepicker style="width: 160px;"
+        (ngModelChange)="_startDate=$event;_startValueChange()"
+        [ngModel]="_startDate"
+        [nzDisabledDate]="_disabledStartDate"
+        [nzShowTime]="true"
+        [nzFormat]="'YYYY-MM-DD'"
         [nzPlaceHolder]="'开始日期'"></nz-datepicker>
       至
-      <nz-datepicker style="width: 160px;" 
-        (ngModelChange)="_endDate=$event;_endValueChange()" 
-        [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" 
-        [nzShowTime]="_endTime" 
-        [nzFormat]="'YYYY-MM-DD'" 
+      <nz-datepicker style="width: 160px;"
+        (ngModelChange)="_endDate=$event;_endValueChange()"
+        [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate"
+        [nzShowTime]="_endTime"
+        [nzFormat]="'YYYY-MM-DD'"
         [nzPlaceHolder]="'结束日期'"></nz-datepicker> -->
-      <nz-datepicker style="width: 160px;" 
-        [(ngModel)]="query.startDate" 
-        [nzFormat]="'YYYY-MM-DD'" 
-        [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+      <nz-datepicker style="width: 160px;" [(ngModel)]="query.startDate" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
       至
-      <nz-datepicker style="width: 160px;" 
-        [(ngModel)]="query.endDate" 
-        [nzFormat]="'YYYY-MM-DD'" 
-        [nzPlaceHolder]="'结束日期'"></nz-datepicker>
-      <nz-select
-        style="width: 160px;"
-        nzAllowClear
-        [nzPlaceHolder]="'全部项目'"
-        [(ngModel)]="mItemOption"
-        [nzNotFoundContent]="'无法找到'"
-        [nzShowSearch]="true">
-        <nz-option
-          *ngFor="let option of itemOptions"
-          [nzLabel]="option.label"
-          [nzValue]="option">
+      <nz-datepicker style="width: 160px;" [(ngModel)]="query.endDate" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+      <nz-select style="width: 160px;" nzAllowClear [nzPlaceHolder]="'全部项目'" [(ngModel)]="mItemOption" [nzNotFoundContent]="'无法找到'" [nzShowSearch]="true">
+        <nz-option *ngFor="let option of itemOptions" [nzLabel]="option.label" [nzValue]="option">
         </nz-option>
       </nz-select>
 
@@ -91,6 +76,7 @@
             <span class="ex-warning">
               <i *ngIf="item.extBizNo==1" class="anticon anticon-arrow-up"></i>
               <i *ngIf="item.extBizNo==2" class="anticon anticon-arrow-down"></i>
+              <i *ngIf="item.extBizNo!=1&&item.extBizNo!=2" style="color:#666666">-</i>
             </span>
           </td>
           <td><span>{{item.occurDtStr}}</span></td>

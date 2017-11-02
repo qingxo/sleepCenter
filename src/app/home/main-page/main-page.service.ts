@@ -10,10 +10,11 @@ import storage from '../../shared/storage';
 @Injectable()
 export class MainPageService extends BaseService {
   constructor(public http: Http) {
-    super(http)
+    super(http);
   }
   getList(data) {
-    return this.postInfo('api/v1/cust/countOfCustomer', storage.serialize(data))
+    return this.postInfo('api/v1/cust/countOfCustomer', storage.serialize(data));
+
   }
 
 

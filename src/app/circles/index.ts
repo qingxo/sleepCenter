@@ -1,1 +1,1 @@
-export * from './circles.component'
+export * from './circles.component';

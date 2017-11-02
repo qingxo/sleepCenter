@@ -1,1 +1,1 @@
-export * from './echart-arealine.component'
+export * from './echart-arealine.component';

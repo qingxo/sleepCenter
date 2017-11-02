@@ -1,1 +1,1 @@
-export * from './dialog-hmmsm.component'
+export * from './dialog-hmmsm.component';

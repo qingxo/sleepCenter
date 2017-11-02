@@ -1,1 +1,1 @@
-export * from './hmbed-detail.component'
+export * from './hmbed-detail.component';

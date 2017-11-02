@@ -9,17 +9,17 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
 
-  homeShow: boolean = true;
+  homeShow = true;
   otherShow: any;
-  activePageName: string = '';
-  activePageUrl: string = '';
-  tabLength: number = 1;
+  activePageName = '';
+  activePageUrl = '';
+  tabLength = 1;
   constructor(public route: ActivatedRoute, public router: Router) { }
 
   ngOnInit() {
     setTimeout(() => {
-      this.menuChange({ url: this.router['url'] })
-    }, 1)
+      this.menuChange({ url: this.router['url'] });
+    }, 1);
   }
 
   toggleChoose(num, ev) {
@@ -33,22 +33,22 @@ export class HomeComponent implements OnInit {
 
     this.activePageName = ev.target.innerText;
     setTimeout(() => {
-      this.activePageUrl = this.route['_futureSnapshot']['_routerState'].url
-    }, 1)
+      this.activePageUrl = this.route['_futureSnapshot']['_routerState'].url;
+    }, 1);
 
   }
 
   menuChange(info) {
-    $(".ant-menu-item").removeClass('ant-menu-item-selected');
+    $('.ant-menu-item').removeClass('ant-menu-item-selected');
     $('.ant-menu-item').each((index, el) => {
       if ($(el).attr('routerlink') === info.url) {
         $(el).addClass('ant-menu-item-selected');
         this.activePageName = $(el).text().trim();
         this.activePageUrl = info.url;
       }
-    })
+    });
     $('.ant-menu-submenu').each((index, el) => {
-      $(el).click()
+      $(el).click();
     });
     // $('.ant-menu-submenu').removeClass('ant-menu-submenu-open');
     // $('ul.ant-menu-sub').remove();
@@ -60,6 +60,6 @@ export class HomeComponent implements OnInit {
     this.tabLength = data.len;
     this.activePageName = data.name;
     this.activePageUrl = data.url;
-    this.menuChange({ url: this.activePageUrl, name: this.activePageName })
+    this.menuChange({ url: this.activePageUrl, name: this.activePageName });
   }
 }

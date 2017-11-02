@@ -30,10 +30,10 @@ export class BmiLineComponent implements OnInit, OnChanges {
 
 
   initBMILine() {
-    let data = {
+    const data = {
       customerId: this.userId,
       signType: 'bmi'
-    }
+    };
     this.bmiLineService.bmiList(data).subscribe((res) => {
       if (res.success) {
         this.bmiList = [];

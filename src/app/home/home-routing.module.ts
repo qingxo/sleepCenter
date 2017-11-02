@@ -4,7 +4,7 @@ import { DemoComponent } from './demo';
 import { HomeComponent } from './home.component';
 import { TabsComponent } from './tabs';
 import { PatientsComponent } from './patients';
-import { MainPageComponent } from './main-page'
+import { MainPageComponent } from './main-page';
 import { SleepMedicalComponent } from './sleep-medical';
 import { PatientSubjectComponent } from './patient-subject';
 import { AccountsComponent } from './accounts';

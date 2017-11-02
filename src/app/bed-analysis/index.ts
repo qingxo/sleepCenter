@@ -1,1 +1,1 @@
-export * from './bed-analysis.component'
+export * from './bed-analysis.component';

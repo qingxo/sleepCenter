@@ -1,1 +1,1 @@
-export * from './blood-pressure.component'
+export * from './blood-pressure.component';

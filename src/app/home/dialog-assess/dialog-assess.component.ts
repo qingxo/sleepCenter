@@ -11,8 +11,8 @@ import * as $ from 'jquery';
 export class DialogAssessComponent implements OnInit {
   patientList: any = [];
   isVisible = false;
-  role = '0'
-  sex = 'F'
+  role = '0';
+  sex = 'F';
   query: String = '';
   showModal = () => {
     this.isVisible = true;
@@ -22,7 +22,7 @@ export class DialogAssessComponent implements OnInit {
     console.log('点击了确定');
     this.isVisible = false;
     const customerId = $('input[name="check"]:checked').val();
-    window.open('/evaluatequestionnaire/'+customerId);
+    window.open('/evaluatequestionnaire/' + customerId);
     // console.log(this.role)
   }
 
@@ -40,13 +40,13 @@ export class DialogAssessComponent implements OnInit {
 
   // 住院病人
   getList() {
-    let data = {status: 1};
+    const data = {status: 1};
     if (this.query) {
       data['name'] = this.query;
     }
     this.patientsService.getList(data).subscribe(res => {
       this.patientList =  res.data;
-    })
+    });
   }
 
   searchInfo(info) {

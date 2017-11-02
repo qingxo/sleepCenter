@@ -1,1 +1,1 @@
-export * from './move-action.component'
+export * from './move-action.component';

@@ -1,1 +1,1 @@
-export * from './patient-subject.component'
+export * from './patient-subject.component';

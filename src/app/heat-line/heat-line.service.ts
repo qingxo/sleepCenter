@@ -6,7 +6,7 @@ import storage from '../shared/storage';
 export class HeatLineService extends BaseService {
 
   constructor(public http: Http) {
-    super(http)
+    super(http);
   }
   heatList(data) {
     return this.postInfo('api/v1/cust/getHealthExamDataByParams', storage.serialize(data));

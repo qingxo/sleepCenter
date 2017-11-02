@@ -10,7 +10,7 @@ import storage from '../shared/storage';
 @Injectable()
 export class SleepMonitorService extends BaseService {
   constructor(public http: Http) {
-    super(http)
+    super(http);
   }
   reportDetail(equipmentNo: string, date: string) {
     return this.postInfo(`api/bedSignDetection/getSleepReport/${equipmentNo}/${date}`, '');

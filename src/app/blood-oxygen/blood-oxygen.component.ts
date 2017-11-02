@@ -30,10 +30,10 @@ export class BloodOxygenComponent implements OnInit, OnChanges {
   }
 
   oxygenDataInit() {
-    let data = {
+    const data = {
       signType: 'spo2',
       customerId: this.userId
-    }
+    };
     this.bloodOxygenService.oxygenList(data).subscribe((res) => {
       if (res.success) {
         this.oxygenList = [];

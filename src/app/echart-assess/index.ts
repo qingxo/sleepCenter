@@ -1,1 +1,1 @@
-export * from './echart-assess.component'
+export * from './echart-assess.component';

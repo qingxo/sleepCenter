@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, SimpleChanges, Renderer, ElementRef, ViewChild, OnChanges } from '@angular/core';
 import { EChartOption } from 'echarts-ng2';
-import { EchartAssess2Service } from './echart-assess2.service'
+import { EchartAssess2Service } from './echart-assess2.service';
 import * as moment from 'moment';
 @Component({
   selector: 'app-echart-assess2',
@@ -17,9 +17,9 @@ export class EchartAssess2Component implements OnInit, OnChanges {
   @Input() topTitle = '';
   @Input() serisesData: Array<any> = [];
   @Input() echartsStyle: any = { 'width': '100%', 'height': '400px' };
-  @Input() name: string = '测试';
-  @Input() imageSrc: string = "xxx";
-  @Input() cid: string = '';
+  @Input() name = '测试';
+  @Input() imageSrc = 'xxx';
+  @Input() cid = '';
   @Input() dateTime: any;
   @ViewChild('tt') el: ElementRef;
   constructor(private echartAssess2Service: EchartAssess2Service) { }
@@ -32,33 +32,33 @@ export class EchartAssess2Component implements OnInit, OnChanges {
   }
   ngOnChanges(changes: SimpleChanges) {
     if (this.cid !== '') {
-      this.getServiceList()
+      this.getServiceList();
     }
   }
 
   getServiceList() {
-    let data = {
+    const data = {
       customerId: this.cid
-    }
+    };
     this.echartAssess2Service.getList(data).subscribe((res) => {
       if (res.success) {
-        this.list = res.data
-        this.list = this.list.reverse()
+        this.list = res.data;
+        this.list = this.list.reverse();
         this.data = [];
         this.dataAxis = [];
         for (let i = 0; i < this.list.length; i++) {
           if (this.type == 'PSQI') {
-            this.data.push(this.list[i]['psqivalue'])
+            this.data.push(this.list[i]['psqivalue']);
           } else if (this.type == 'GAD7') {
-            this.data.push(this.list[i]['gad7Value'])
+            this.data.push(this.list[i]['gad7Value']);
           } else if (this.type == 'PHQ9') {
-            this.data.push(this.list[i]['phq9Value'])
+            this.data.push(this.list[i]['phq9Value']);
           }
-          this.dataAxis.push(moment(this.list[i]['evaluateTime']).format('YYYY-MM-DD'))
+          this.dataAxis.push(moment(this.list[i]['evaluateTime']).format('YYYY-MM-DD'));
         }
-        this.option = this.getOption()
+        this.option = this.getOption();
       }
-    })
+    });
   }
 
   getOption() {

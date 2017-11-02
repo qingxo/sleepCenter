@@ -11,16 +11,16 @@ export class EchartAssessComponent implements OnInit, OnChanges {
 
   private option: EChartOption;
   private nothingFlag = false;
-  private level: string = '';
-  private suggesting: string = '';
-  @Input() type: string = '';
+  private level = '';
+  private suggesting = '';
+  @Input() type = '';
   @Input() topTitle = '';
   @Input() serisesData: Array<any> = [];
   @Input() echartsStyle: any = { 'width': '100%', 'height': '400px' };
-  @Input() name: string = '测试';
-  @Input() imageSrc: string = "xxx";
+  @Input() name = '测试';
+  @Input() imageSrc = 'xxx';
   @Input() chooseDay: any = '';
-  @Input() cId: string = '1710241455273782625';
+  @Input() cId = '1710241455273782625';
   @ViewChild('tt') el: ElementRef;
   constructor(private echartAssessService: EchartAssessService) { }
   dataAxis = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
@@ -29,7 +29,7 @@ export class EchartAssessComponent implements OnInit, OnChanges {
   dataShadow = [];
   ngOnChanges(changes: SimpleChanges) {
     if (changes['chooseDay']['currentValue'] != undefined) {
-      this.getServiceList()
+      this.getServiceList();
     }
   }
   ngOnInit() {
@@ -37,67 +37,67 @@ export class EchartAssessComponent implements OnInit, OnChanges {
 
 
   getServiceList() {
-    let data = {
+    const data = {
       evaluateDate: this.chooseDay,
       customerId: this.cId
-    }
+    };
     this.echartAssessService.getList(data).subscribe((res) => {
       if (res.success && res.data.length > 0) {
-        this.data = []
+        this.data = [];
         if (this.type == 'PSQI') {
-          this.data.push(res.data[0]['psqia'])
-          this.data.push(res.data[0]['psqib'])
-          this.data.push(res.data[0]['psqic'])
-          this.data.push(res.data[0]['psqid'])
-          this.data.push(res.data[0]['psqie'])
-          this.data.push(res.data[0]['psqig'])
-          this.data.push(res.data[0]['psqif'])
-          this.level = res.data[0]['psqi']
-          this.suggesting = res.data[0]['sleepSuggest']
-          this.option = this.getOption()
+          this.data.push(res.data[0]['psqia']);
+          this.data.push(res.data[0]['psqib']);
+          this.data.push(res.data[0]['psqic']);
+          this.data.push(res.data[0]['psqid']);
+          this.data.push(res.data[0]['psqie']);
+          this.data.push(res.data[0]['psqig']);
+          this.data.push(res.data[0]['psqif']);
+          this.level = res.data[0]['psqi'];
+          this.suggesting = res.data[0]['sleepSuggest'];
+          this.option = this.getOption();
         }
-        else if (this.type == "GAD7") {
-          this.data.push(res.data[0]['gad71'])
-          this.data.push(res.data[0]['gad72'])
-          this.data.push(res.data[0]['gad73'])
-          this.data.push(res.data[0]['gad74'])
-          this.data.push(res.data[0]['gad75'])
-          this.data.push(res.data[0]['gad76'])
-          this.data.push(res.data[0]['gad77'])
-          this.level = res.data[0]['gad7']
-          this.suggesting = res.data[0]['anietySuggest']
+        else if (this.type == 'GAD7') {
+          this.data.push(res.data[0]['gad71']);
+          this.data.push(res.data[0]['gad72']);
+          this.data.push(res.data[0]['gad73']);
+          this.data.push(res.data[0]['gad74']);
+          this.data.push(res.data[0]['gad75']);
+          this.data.push(res.data[0]['gad76']);
+          this.data.push(res.data[0]['gad77']);
+          this.level = res.data[0]['gad7'];
+          this.suggesting = res.data[0]['anietySuggest'];
 
-          this.option = this.getOption()
+          this.option = this.getOption();
         }
-        else if (this.type == "PHQ9") {
-          this.data.push(res.data[0]['phq91'])
-          this.data.push(res.data[0]['phq92'])
-          this.data.push(res.data[0]['phq93'])
-          this.data.push(res.data[0]['phq94'])
-          this.data.push(res.data[0]['phq95'])
-          this.data.push(res.data[0]['phq96'])
-          this.data.push(res.data[0]['phq97'])
-          this.data.push(res.data[0]['phq98'])
-          this.data.push(res.data[0]['phq99'])
-          this.level = res.data[0]['phq9']
-          this.suggesting = res.data[0]['depressSuggest']
+        else if (this.type == 'PHQ9') {
+          this.data.push(res.data[0]['phq91']);
+          this.data.push(res.data[0]['phq92']);
+          this.data.push(res.data[0]['phq93']);
+          this.data.push(res.data[0]['phq94']);
+          this.data.push(res.data[0]['phq95']);
+          this.data.push(res.data[0]['phq96']);
+          this.data.push(res.data[0]['phq97']);
+          this.data.push(res.data[0]['phq98']);
+          this.data.push(res.data[0]['phq99']);
+          this.level = res.data[0]['phq9'];
+          this.suggesting = res.data[0]['depressSuggest'];
 
 
-          this.option = this.getOption()
+          this.option = this.getOption();
         }
       } else {
-        this.data = []
-        this.data.push(0)
-        this.data.push(0)
-        this.data.push(0)
-        this.data.push(0)
-        this.data.push(0)
-        this.data.push(0)
-        this.data.push(0)
-        this.option = this.getOption()
+        this.data = [];
+        this.data.push(0);
+        this.data.push(0);
+        this.data.push(0);
+        this.data.push(0);
+        this.data.push(0);
+        this.data.push(0);
+        this.data.push(0);
+        this.option = this.getOption();
 
       }
-    })
+    });
   }
 
   getOption() {
@@ -164,7 +164,7 @@ export class EchartAssessComponent implements OnInit, OnChanges {
           data: this.data
         }
       ]
-    }
+    };
 
     return opt;
 
