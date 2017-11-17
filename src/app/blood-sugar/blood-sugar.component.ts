@@ -10,12 +10,12 @@ import * as moment from 'moment';
 })
 export class BloodSugarComponent implements OnInit, OnChanges {
 
-  private bloodSugarListAfter: Array<any> = [];
-  private bloodSugarListBefore: Array<any> = [];
-  private nothingFlag = false;
-  private bloodSugarDateBefore: Array<any> = [];
-  private bloodSugarDateAfter: Array<any> = [];
-  private option: EChartOption;
+  bloodSugarListAfter: Array<any> = [];
+  bloodSugarListBefore: Array<any> = [];
+  nothingFlag = false;
+  bloodSugarDateBefore: Array<any> = [];
+  bloodSugarDateAfter: Array<any> = [];
+  option: EChartOption;
   @Input() userId = '';
   @Input() periodDay = 1;
   @Input() echartsStyle: any = { 'height': '350px' };
@@ -47,7 +47,7 @@ export class BloodSugarComponent implements OnInit, OnChanges {
 
         if (arr instanceof Array) {
           for (let i = 0; i < arr.length; i++) {
-            if (arr[i].bgPeriod.trim() == 0){
+            if (arr[i].bgPeriod.trim() == 0) {
               // 餐前
               this.bloodSugarListBefore.push(arr[i].bg);
               if (this.periodDay === 1) {

@@ -15,6 +15,7 @@ export class HmBedComponent implements OnInit {
   selectedWard;
   wardOptions = [];
   list: any = [];
+  pName = null;
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef, private hmBedService: HmBedService) { }
 
   searchDept(searchText) {

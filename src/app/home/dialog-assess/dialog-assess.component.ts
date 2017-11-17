@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PatientsService } from '../patients/patients.service';
 import * as $ from 'jquery';
 
@@ -14,6 +14,9 @@ export class DialogAssessComponent implements OnInit {
   role = '0';
   sex = 'F';
   query: String = '';
+  @Input() tplTitle: string = '新增评估';
+  @Output() fired = new EventEmitter<any>();
+  jumpType: number = 0;
   showModal = () => {
     this.isVisible = true;
   }
@@ -22,8 +25,12 @@ export class DialogAssessComponent implements OnInit {
     console.log('点击了确定');
     this.isVisible = false;
     const customerId = $('input[name="check"]:checked').val();
-    window.open('/evaluatequestionnaire/' + customerId);
-    // console.log(this.role)
+    if (this.jumpType === 0) {
+      window.open('/evaluatequestionnaire/' + customerId);
+    } else if (this.jumpType === 1) {
+      window.open('/medicaldetail/' + customerId);
+
+    }
   }
 
   handleCancel = (e) => {
@@ -40,12 +47,12 @@ export class DialogAssessComponent implements OnInit {
 
   // 住院病人
   getList() {
-    const data = {status: 1};
+    const data = { status: 1 };
     if (this.query) {
       data['name'] = this.query;
     }
     this.patientsService.getList(data).subscribe(res => {
-      this.patientList =  res.data;
+      this.patientList = res.data;
     });
   }
 

@@ -1,6 +1,17 @@
 <div class="clinic-list-info">
   <nz-timeline>
-    <nz-timeline-item class="my-lines">
+    <nz-timeline-item class="my-lines" *ngFor="let item of list">
+      <div class="time-block">
+        <div class="times">
+          {{item.visitDate | date:'yyyy-MM-dd'}}
+        </div>
+        <div class="details" style="cursor:pointer" (click)="fired(item.visitId)">
+          <span class="info">{{item.visitDeptName}}:</span>
+          <span class="content">{{item.diagName}}</span>
+        </div>
+      </div>
+    </nz-timeline-item>
+    <!-- <nz-timeline-item class="my-lines">
       <div class="time-block">
         <div class="times">2014-09-08</div>
         <div class="details">
@@ -31,6 +42,6 @@
           <span class="info">门诊：</span><span class="content">经营性项目</span>
         </div>
       </div>
-    </nz-timeline-item>
+    </nz-timeline-item> -->
   </nz-timeline>
 </div>

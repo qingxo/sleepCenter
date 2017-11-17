@@ -63,8 +63,10 @@ export class PatientSubjectComponent implements OnInit {
 
   makePullDown(num) {
     let cusId = '';
+    let arr = [];
     for (let i = 0; i < this.childList.length; i++) {
       if (this.childList[i]['isCk']) {
+        arr.push(i)
         cusId = this.childList[i].customerId;
       }
     }
@@ -78,6 +80,14 @@ export class PatientSubjectComponent implements OnInit {
     };
     this.patientSubjectService.pullDownData(data).subscribe((res) => {
       if (res) {
+        for (let i = 0; i < arr.length; i++) {
+          this.childList.splice(arr[i], 1);
+        }
+        if (this.childList.length == 0) {
+          $('.chr').addClass('no-show');
+          $('.dot').removeClass('icons-minus').addClass('icons-plus');
+
+        }
         swal('成功', '', 'success');
       }
     });

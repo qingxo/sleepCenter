@@ -1,9 +1,9 @@
 <div class="page-system">
   <div class="top-line clearfix">
     <div class="date-zoom">
-      <nz-datepicker style="width: 130px" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+      <nz-datepicker style="width: 130px" [nzShowTime]="_startDate" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
       至
-      <nz-datepicker style="width: 130px" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+      <nz-datepicker style="width: 130px" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
     </div>
     <div class="search-wrap">
       <app-search-line></app-search-line>
@@ -32,7 +32,7 @@
           <td><span>{{item.mobile}}</span></td>
           <td><span>{{item.generateTime | date:'yyyy-MM-dd'}}</span></td>
           <td><span>于丹</span></td>
-          <td><a href={{item.reportUrl}} target="_blank">查看</a></td>
+          <td><a href="/tsreport/{{item.customerId}}" target="_blank">查看</a></td>
         </tr>
       </tbody>
     </table>

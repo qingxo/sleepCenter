@@ -9,6 +9,7 @@ import { ClinicInfoService } from './clinic-info.service';
 })
 export class ClinicInfoComponent implements OnInit {
   @Input() customerId: String = '';
+  id: string = '';
   clinicInfo: any = {};
   constructor(private clinicInfoService: ClinicInfoService) { }
 
@@ -16,11 +17,21 @@ export class ClinicInfoComponent implements OnInit {
     this.getClinicInfo();
   }
 
+  catchId(num) {
+    if (num != this.id) {
+      this.id = num;
+      this.getClinicInfo()
+    }
+  }
+
   getClinicInfo() {
-    this.clinicInfoService.getClinicInfo({
-      //customerId: this.customerId
-      customerId: '1705101137488803263' // 测试
-    }).subscribe(res => {
+    let data = {
+      customerId: this.customerId,
+      visitId: this.id
+    }
+    this.clinicInfoService.getClinicInfo(
+      data
+    ).subscribe(res => {
       this.clinicInfo = res.data;
     });
   }

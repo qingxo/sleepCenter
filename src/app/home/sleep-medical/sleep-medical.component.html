@@ -31,8 +31,8 @@
           <td><span>{{item.sex=='1'?'男':'女'}}</span></td>
           <td><span>{{item.birthday | pipeBirth}}</span></td>
           <td><span>{{item.mobile}}</span></td>
-          <td><span>{{item.create_time}}</span></td>
-          <td><span>{{item.doc_name}}</span></td>
+          <td><span>{{item.createTime | date:'yyyy-MM-dd'}}</span></td>
+          <td><span>{{item.docName}}</span></td>
           <td class="opt"><a [routerLink]="['/medicaldetail',item.customerId]" target="_blank">查看诊断报告</a></td>
         </tr>
 

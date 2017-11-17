@@ -10,10 +10,10 @@ export class CirclesComponent implements OnInit, OnChanges {
 
   @Input() title: Array<string> = [];
   @Input() radios: Array<string> = [];
-  private focusData: Array<any> = [];
-  private legendData: Array<any> = [];
-  private option: EChartOption;
-  private nothingFlag = false;
+  focusData: Array<any> = [];
+  legendData: Array<any> = [];
+  option: EChartOption;
+  nothingFlag = false;
   @ViewChild('tt') el: ElementRef;
 
 

@@ -1,31 +1,30 @@
 <app-head-layout>
-  </app-head-layout>
-  <div class="view-questionnaire">
-    <div class="person-info">
-      <app-person-info [customerId]="customerId"></app-person-info>
-    </div>
-    <div class="container">
-      <ul class="question-list">
-        <li *ngFor="let item of list; let index = index">
-          <h3>{{index+1}}. {{item.question.itemTitle}}</h3>
-          <div class="answers" *ngIf="item.optionsList.length>1">
-            <div class="item" *ngFor="let option of item.optionsList">
-              <div class="beauty-radio">
-                <input type="radio" [checked]="item.answer.itemVal==option.id"/>
-                <span class="radio-icon"></span>
-                <span>{{option.itemVal}}</span>
-              </div>       
+</app-head-layout>
+<div class="view-questionnaire">
+  <div class="person-info">
+    <app-person-info [customerId]="customerId"></app-person-info>
+  </div>
+  <div class="container">
+    <ul class="question-list">
+      <li *ngFor="let item of list; let index = index">
+        <h3>{{index+1}}. {{item.question.itemTitle}}</h3>
+        <div class="answers" *ngIf="item.optionsList.length>1">
+          <div class="item" *ngFor="let option of item.optionsList">
+            <div class="beauty-radio">
+              <input type="radio" [checked]="item.answer?.itemVal==option.id" />
+              <span class="radio-icon"></span>
+              <span>{{option?.itemVal}}</span>
             </div>
           </div>
-          <div class="answers" *ngIf="item.optionsList.length==1">
-            <div class="item">
-              <p>{{item.answer.itemVal}}</p>     
-            </div>
+        </div>
+        <div class="answers" *ngIf="item.optionsList.length==1">
+          <div class="item">
+            <p>{{item.answer?.itemVal}}</p>
           </div>
-        </li>
+        </div>
+      </li>
 
-        
-      </ul>
-    </div>
-  </div> 
-  
+
+    </ul>
+  </div>
+</div>

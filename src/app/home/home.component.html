@@ -36,6 +36,17 @@
           </ul>
         </li>
 
+        <li nz-submenu nzOpen=true>
+          <span title> <i class="anticon  icon-zhenduan "></i>科研分析</span>
+          <ul>
+            <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/arealdistribution">就诊人群区域分布</li>
+            <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/sexdistribution">就诊人群性别区域分布</li>
+            <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/agedistribution">就诊人群年龄分布</li>
+            <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/d">睡眠障碍疾病发病率</li>
+            <li nz-menu-item (click)="toggleChoose(2,$event)" routerLink="/home/e">各类睡眠睡眠障碍疾病性别分布</li>
+          </ul>
+        </li>
+
         <!-- <li nz-submenu nzOpen=true>
           <span title><i class="anticon icon-huatong"></i>随访管理</span>
           <ul>

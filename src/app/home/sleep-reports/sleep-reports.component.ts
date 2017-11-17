@@ -11,6 +11,9 @@ import { SleepReportsService } from './sleep-reports.service';
 export class SleepReportsComponent implements OnInit {
   customerId: String = '';
   list: any = '';
+  _startDate = '';
+  _endDate = '';
+  _endTime = null;
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef, private sleepReportsService: SleepReportsService) { }
 
   ngOnInit() {
@@ -18,7 +21,7 @@ export class SleepReportsComponent implements OnInit {
   }
 
   getList() {
-    const data = { };
+    const data = {};
     if (this.customerId) {
       data['customerId'] = this.customerId;
     }
@@ -33,4 +36,15 @@ export class SleepReportsComponent implements OnInit {
     containerRef.clear();
     const dd = <DialogAssessComponent>containerRef.createComponent(componentFatory).instance;
   }
+
+  _endValueChange() {
+
+  }
+
+  _disabledStartDate = (startValue) => {
+
+  };
+  _disabledEndDate = (endValue) => {
+
+  };
 }

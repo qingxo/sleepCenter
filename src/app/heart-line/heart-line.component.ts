@@ -7,9 +7,9 @@ import { EChartOption } from 'echarts-ng2';
   styleUrls: ['./heart-line.component.scss']
 })
 export class HeartLineComponent implements OnInit, OnChanges {
-  private sources = '';
-  private option: EChartOption;
-  private nothingFlag = false;
+  sources = '';
+  option: EChartOption;
+  nothingFlag = false;
   @Input() chartTitleText = '';
   @Input('legendDataList') legendDataList: Array<any> = [];
   @Input('dataList') heartList: Array<any> = [];

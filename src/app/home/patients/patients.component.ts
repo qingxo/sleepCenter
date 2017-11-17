@@ -26,7 +26,7 @@ export class PatientsComponent implements OnInit {
   }
 
   refreshList() {
-    const data = {};
+    const data = { distinct: 'distinct' };
     if (this.moreInfo !== null) {
       Object.assign(data, this.moreInfo);
       if (data['startDate']) {

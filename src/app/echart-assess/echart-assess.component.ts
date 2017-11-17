@@ -9,10 +9,10 @@ import { EchartAssessService } from './echart-assess.service';
 })
 export class EchartAssessComponent implements OnInit, OnChanges {
 
-  private option: EChartOption;
-  private nothingFlag = false;
-  private level = '';
-  private suggesting = '';
+  option: EChartOption;
+  nothingFlag = false;
+  level = '';
+  suggesting = '';
   @Input() type = '';
   @Input() topTitle = '';
   @Input() serisesData: Array<any> = [];

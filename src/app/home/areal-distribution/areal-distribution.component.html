@@ -1,0 +1,19 @@
+<div class="index-page">
+  <div class="circle">
+    <app-circle-distribution title="睡眠障碍就诊人群省内省外分布" [dataTitle]="['省内', '省外']" [data]="[16768, 3456]"></app-circle-distribution>
+  </div>
+  <div class="circle">
+    <app-circle-distribution 
+      title="就诊人群省内地区分布" 
+      [dataTitle]="['杭州', '宁波', '温州', '绍兴', '嘉兴', '湖州', '台州', '金华', '衢州', '丽水', '义务', '东阳']" 
+      [data]="[6456, 6078, 4658, 2098, 2509, 1345, 1342, 1008, 987, 765, 1435, 767]">
+    </app-circle-distribution>
+  </div>
+  <div class="circle">
+    <app-circle-distribution 
+      title="就诊人群本市区域分布" 
+      [dataTitle]="['上城区', '下城区', '江干区', '滨江区', '拱墅区', '余杭区', '萧山区', '富阳区', '临安', '建德', '桐庐' ]" 
+      [data]="['1209', '1009', '1390', '898', '787', '768', '829', '564', '205', '298', '198' ]">
+    </app-circle-distribution>
+  </div>
+</div>

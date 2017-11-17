@@ -10,9 +10,9 @@ import * as moment from 'moment';
 })
 export class EchartAssess2Component implements OnInit, OnChanges {
 
-  private option: EChartOption;
-  private nothingFlag = false;
-  private list: Array<string> = [];
+  option: EChartOption;
+  nothingFlag = false;
+  list: Array<string> = [];
   @Input() type = '';
   @Input() topTitle = '';
   @Input() serisesData: Array<any> = [];

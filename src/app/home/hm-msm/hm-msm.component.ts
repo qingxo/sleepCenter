@@ -19,7 +19,7 @@ export class HmMsmComponent implements OnInit {
     { value: 'bmi', label: 'BMI' },
     { value: 'spo2', label: '血氧' }
   ];
-  mItemOption = [ this.itemOptions[ 0 ] ];
+  mItemOption = [this.itemOptions[0]];
 
   query: any = {};
   list: any = [];
@@ -42,7 +42,7 @@ export class HmMsmComponent implements OnInit {
       query['signType'] = this.mItemOption['value'];
     }
 
-    this.hmMsmService.getList(query)
+    this.hmMsmService.getListService(query)
       .subscribe(res => {
         this.list = res.data;
       });

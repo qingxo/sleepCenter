@@ -7,10 +7,10 @@ import { EChartOption } from 'echarts-ng2';
 })
 export class CirclesComponent implements OnInit, OnChanges {
 
-  private option: EChartOption;
-  private nothingFlag = false;
+  option: EChartOption;
+  nothingFlag = false;
+  echartsStyle: Object = { 'height': '180px' };
   @Input() topTitle = ['正常', '异常'];
-  @Input() echartsStyle: any = { 'height': '180px' };
   @Input() name = '测试';
   @Input() imageSrc = '/assets/images/evaluate.png';
   @Input() dataSeries: Array<any> = [];

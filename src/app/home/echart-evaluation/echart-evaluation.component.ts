@@ -8,8 +8,8 @@ import { EChartOption } from 'echarts-ng2';
 })
 export class EchartEvaluationComponent implements OnInit {
 
-  private option: EChartOption;
-  private nothingFlag = false;
+  option: EChartOption;
+  nothingFlag = false;
   @Input() topTitle = '';
   @Input() serisesData: Array<any> = [];
   @Input() echartsStyle: any = { 'width': '100%', 'height': '400px' };
@@ -28,73 +28,73 @@ export class EchartEvaluationComponent implements OnInit {
       //     subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
       // },
       xAxis: {
-          data: this.dataAxis,
-          axisLabel: {
-              inside: true,
-              textStyle: {
-                  color: '#fff'
-              }
-          },
-          axisTick: {
-              show: false
-          },
-          axisLine: {
-              show: false
-          },
-          z: 10
+        data: this.dataAxis,
+        axisLabel: {
+          inside: true,
+          textStyle: {
+            color: '#fff'
+          }
+        },
+        axisTick: {
+          show: false
+        },
+        axisLine: {
+          show: false
+        },
+        z: 10
       },
       yAxis: {
-          min: 0,
-          axisLine: {
-              show: false
-          },
-          axisTick: {
-              show: false
-          },
-          axisLabel: {
-              textStyle: {
-                  color: '#999'
-              }
+        min: 0,
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          textStyle: {
+            color: '#999'
           }
+        }
       },
       dataZoom: [
-          {
-              type: 'inside'
-          }
+        {
+          type: 'inside'
+        }
       ],
       series: [
-          { // For shadow
-              type: 'bar',
-              itemStyle: {
-                  normal: {color: 'rgba(0,0,0,0.05)'}
-              },
-              barGap: '-100%',
-              barCategoryGap: '40%',
-              data: this.dataShadow,
-              animation: false
+        { // For shadow
+          type: 'bar',
+          itemStyle: {
+            normal: { color: 'rgba(0,0,0,0.05)' }
           },
-          {
-              type: 'bar',
-              itemStyle: {
-                  normal: {
-                      color: '#7ACC5A',
-                      barBorderRadius: [30, 30, 0, 0]
-                  },
-                  emphasis: {
-                      // color: new echarts.graphic.LinearGradient(
-                      //     0, 0, 0, 1,
-                      //     [
-                      //         {offset: 0, color: '#2378f7'},
-                      //         {offset: 0.7, color: '#2378f7'},
-                      //         {offset: 1, color: '#83bff6'}
-                      //     ]
-                      // )
-                  }
-              },
-              data: this.data
-          }
+          barGap: '-100%',
+          barCategoryGap: '40%',
+          data: this.dataShadow,
+          animation: false
+        },
+        {
+          type: 'bar',
+          itemStyle: {
+            normal: {
+              color: '#7ACC5A',
+              barBorderRadius: [30, 30, 0, 0]
+            },
+            emphasis: {
+              // color: new echarts.graphic.LinearGradient(
+              //     0, 0, 0, 1,
+              //     [
+              //         {offset: 0, color: '#2378f7'},
+              //         {offset: 0.7, color: '#2378f7'},
+              //         {offset: 1, color: '#83bff6'}
+              //     ]
+              // )
+            }
+          },
+          data: this.data
+        }
       ]
-  };
+    };
   }
   //
   // ngAfterContentChecked() {

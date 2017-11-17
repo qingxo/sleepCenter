@@ -14,21 +14,26 @@ export class SleepMonitorComponent implements OnInit, OnChanges {
   @Input() reportDay: string = moment(new Date()).format('YYYY-MM-DD');
   heartLegendList: Array<any> = ['心率'];
   moveLegendList: Array<any> = ['体动值'];
-  private customerId = '';
-  private equipNo = '';
-  private maxDay: string = moment(new Date()).format('YYYY-MM-DD');
-  private list: any = {};
-  private heartList: Array<any> = [];
-  private moveList: Array<any> = [];
-  private bedList: Array<any> = [];
-  private timeList: Array<any> = [];
-  private sleepListTime: Array<any> = [];
-  private sleepListStatus: Array<any> = [];
-  private sleepDeep = '0';
-  private sleepLower = '0';
-  private sleepNo = '0';
-  private circleRadios: Array<any> = [];
-  private bedListTime: Array<any> = [];
+  customerId = '';
+  equipNo = '';
+  maxDay: string = moment(new Date()).format('YYYY-MM-DD');
+  list: any = {
+    'signinfo': {},
+    'onbedbegintime': '',
+    'sleepminutes': '',
+    'sleeptimespan': '',
+  };
+  heartList: Array<any> = [];
+  moveList: Array<any> = [];
+  bedList: Array<any> = [];
+  timeList: Array<any> = [];
+  sleepListTime: Array<any> = [];
+  sleepListStatus: Array<any> = [];
+  sleepDeep = '0';
+  sleepLower = '0';
+  sleepNo = '0';
+  circleRadios: Array<any> = [];
+  bedListTime: Array<any> = [];
 
   constructor(private sleepMonitorService: SleepMonitorService, private route: ActivatedRoute) { }
 
@@ -52,10 +57,12 @@ export class SleepMonitorComponent implements OnInit, OnChanges {
 
   callService() {
     this.sleepMonitorService.reportDetail(this.equipNo, this.reportDay).subscribe((res) => {
-      this.list = res.json;
-
+      // this.list = res.json;
+      Object.assign(this.list, res.json)
       this.initSleepRadio();
-      this.bedAnalysisInit(res.sleep);
+      let opt = { status: '', time: '' }
+      Object.assign(opt, res.sleep);
+      this.bedAnalysisInit(opt);
     });
     this.callReportSleepHeart();
     this.callReportSleepOnBed();

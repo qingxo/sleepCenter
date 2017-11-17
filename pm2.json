@@ -1,5 +1,5 @@
 {
-  "name": "smart-raise",
+  "name": "sleepCenter",
   "script": "server.js",
   "env": {
     "NODE_ENV": "production"

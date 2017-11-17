@@ -46,6 +46,7 @@ import { HmbedDetailComponent } from './hmbed-detail/hmbed-detail.component';
 import { BedMonitorComponent } from './bed-monitor/bed-monitor.component';
 import { ViewQuestionnaireComponent } from './view-questionnaire';
 import { EchartArealineComponent } from './echart-arealine';
+import { TestReportComponent } from './test-report/test-report.component';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   threshold: 50,
@@ -88,7 +89,8 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     HmbedDetailComponent,
     BedMonitorComponent,
     ViewQuestionnaireComponent,
-    EchartArealineComponent
+    EchartArealineComponent,
+    TestReportComponent
   ],
   imports: [
     FormsModule,

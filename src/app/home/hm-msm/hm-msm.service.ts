@@ -12,7 +12,7 @@ export class HmMsmService extends BaseService {
   constructor(public http: Http) {
     super(http);
   }
-  getList(data) {
+  getListService(data) {
     return this.postInfo('api/v1/cust/getHealthExamDataByParams', storage.serialize(data));
   }
 

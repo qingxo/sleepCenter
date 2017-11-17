@@ -1,3 +1,8 @@
 <div class="line-btn" #kk>
-  <span *ngFor="let item of totalBtn;let index=index" [ngClass]="{true:'tips',false:'choosed'}[index!=0]" (click)="btnFired(index)">{{item}}</span>
+  <ng-container *ngFor="let item of totalBtn;let num=index">
+    <span *ngIf="num==0" [ngClass]="['choosed']" (click)="btnFired(num)">{{item}}</span>
+    <span *ngIf="num!=0" [ngClass]="['tips']" (click)="btnFired(num)">{{item}}</span>
+
+  </ng-container>
+  <!-- <span  [ngClass]="{true:'tips',false:'choosed'}[1]" (click)="btnFired(num)">{{item}}</span> -->
 </div>

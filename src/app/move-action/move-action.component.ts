@@ -7,9 +7,9 @@ import { EChartOption } from 'echarts-ng2';
   styleUrls: ['./move-action.component.scss']
 })
 export class MoveActionComponent implements OnInit, OnChanges {
-  private sources = '';
-  private option: EChartOption;
-  private nothingFlag = false;
+  sources = '';
+  option: EChartOption;
+  nothingFlag = false;
   @Input() chartTitleText = '';
   @Input('legendDataList') legendDataList: Array<any> = [];
   @Input('dataList') moveList: Array<any> = [];

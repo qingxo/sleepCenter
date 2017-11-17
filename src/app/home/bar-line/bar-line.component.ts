@@ -6,8 +6,8 @@ import { EChartOption } from 'echarts-ng2';
   styleUrls: ['./bar-line.component.scss']
 })
 export class BarLineComponent implements OnInit, OnChanges {
-  private option: EChartOption;
-  private nothingFlag = false;
+  option: EChartOption;
+  nothingFlag = false;
   @Input() topTitle = '';
   @Input() serisesData: Array<any> = [];
   @Input() echartsStyle: any = { 'height': '230px' };

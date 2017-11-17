@@ -9,6 +9,7 @@ import { AssessmentResultComponent } from './assessment-result';
 import { HmbedDetailComponent } from './hmbed-detail';
 import { HmmsmDetailComponent } from './hmmsm-detail';
 import { ViewQuestionnaireComponent } from './view-questionnaire';
+import { TestReportComponent } from './test-report'
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   { path: 'evaluatequestionnaire/:customerId', component: EvaluateQuestionnaireComponent },
   { path: 'assessmentresult/:customerId/:evaluateTime', component: AssessmentResultComponent },
   { path: 'viewquestionnaire/:customerId', component: ViewQuestionnaireComponent },
+  { path: 'tsreport/:customerId', component: TestReportComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];

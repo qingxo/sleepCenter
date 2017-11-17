@@ -15,7 +15,11 @@ import { HmMsmComponent } from './hm-msm';
 import { SleepReportsComponent } from './sleep-reports';
 import { EchartEvaluationComponent } from './echart-evaluation';
 import { HmBedComponent } from './hm-bed';
-
+import { ArealDistributionComponent } from './areal-distribution';
+import { AgeDistributionComponent } from './age-distribution';
+import { SexDistributionComponent } from './sex-distribution';
+import { Test5Component } from './test5';
+import { Test4Component } from './test4';
 const homeRoutes: Routes = [
   {
     path: '', component: HomeComponent,
@@ -33,7 +37,13 @@ const homeRoutes: Routes = [
       { path: 'sleepreports', component: SleepReportsComponent },
       { path: 'echartevaluation', component: EchartEvaluationComponent },
       { path: 'hmmsm', component: HmMsmComponent },
-      { path: 'hmbed', component: HmBedComponent }
+      { path: 'hmbed', component: HmBedComponent },
+      { path: 'arealdistribution', component: ArealDistributionComponent},
+      { path: 'sexdistribution', component: SexDistributionComponent},
+      { path: 'agedistribution', component: AgeDistributionComponent},
+      { path: 'hmbed', component: HmBedComponent },
+      { path: 'e', component: Test5Component },
+      { path: 'd', component: Test4Component }
     ]
   },
 

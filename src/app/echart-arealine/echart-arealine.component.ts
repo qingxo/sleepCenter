@@ -8,9 +8,9 @@ import { EChartOption } from 'echarts-ng2';
 })
 export class EchartArealineComponent implements OnInit, OnChanges {
 
-  private sources = '';
-  private option: EChartOption;
-  private nothingFlag = false;
+  sources = '';
+  option: EChartOption;
+  nothingFlag = false;
   @Input() chartTitleText = '';
   @Input() seriesItemStyleColor = '#3D86E4';
   @Input('seriesAreaStyleList') seriesAreaStyleList: Array<any> = [{ offset: 0, color: '#D6DFF9' }, { offset: 1, color: '#FDFDFF' }];

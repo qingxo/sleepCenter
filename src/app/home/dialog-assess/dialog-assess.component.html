@@ -1,10 +1,10 @@
-<nz-modal [nzWidth]="800" [nzVisible]="isVisible" [nzTitle]="'新增评估'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)" class="d-condition">
+<nz-modal [nzWidth]="800" [nzVisible]="isVisible" [nzTitle]="tplTitle" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)" class="d-condition">
   <ng-template #modalContent>
     <div class="page-dialog-evaluation">
       <div class="search-wrap">
         <app-search-line [placeHolderValue]="['姓名/联系方式/门诊号/住院号']" (search)="searchInfo($event)"></app-search-line>
       </div>
-    
+
       <div class="table-info">
         <table cellpadding="0" cellspacing="0" border="0">
           <thead>
@@ -45,8 +45,7 @@
 
           </tbody>
         </table>
-      </div>   
-    </div>       
+      </div>
+    </div>
   </ng-template>
 </nz-modal>
-  

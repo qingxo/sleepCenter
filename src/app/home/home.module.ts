@@ -29,7 +29,13 @@ import { EchartEvaluationComponent } from './echart-evaluation';
 import { DialogHmmsmComponent } from './dialog-hmmsm';
 import { HmBedComponent } from './hm-bed/hm-bed.component';
 import { DialogHmbedComponent } from './dialog-hmbed';
-
+import { ArealDistributionComponent } from './areal-distribution';
+import { CircleDistributionComponent } from './circle-distribution';
+import { BarDistributionComponent } from './bar-distribution';
+import { AgeDistributionComponent } from './age-distribution';
+import { SexDistributionComponent } from './sex-distribution';
+import { Test5Component } from './test5/test5.component';
+import { Test4Component } from './test4/test4.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -65,7 +71,15 @@ import { DialogHmbedComponent } from './dialog-hmbed';
     EchartEvaluationComponent,
     DialogHmmsmComponent,
     HmBedComponent,
-    DialogHmbedComponent
+    DialogHmbedComponent,
+    ArealDistributionComponent,
+    CircleDistributionComponent,
+    AgeDistributionComponent,
+    SexDistributionComponent,
+    BarDistributionComponent,
+    DialogHmbedComponent,
+    Test5Component,
+    Test4Component
   ]
 })
 export class HomeModule { }

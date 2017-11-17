@@ -18,7 +18,7 @@ export class PatientSubjectService extends BaseService {
 
 
   getDetailList(data) {
-    return this.postInfo('api/v1/cust/getCustomerByParams', storage.serialize(data));
+    return this.postInfo('api/v1/cust/getCustomerByMIndex', storage.serialize(data));
   }
 
   pullDownData(data) {

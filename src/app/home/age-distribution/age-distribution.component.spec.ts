@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogEvaluationComponent } from './dialog-evaluation.component';
+import { AgeDistributionComponent } from './age-distribution.component';
 
-describe('DialogConditionComponent', () => {
-  let component: DialogEvaluationComponent;
-  let fixture: ComponentFixture<DialogEvaluationComponent>;
+describe('MainPageComponent', () => {
+  let component: AgeDistributionComponent;
+  let fixture: ComponentFixture<AgeDistributionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DialogEvaluationComponent ]
+      declarations: [ AgeDistributionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DialogEvaluationComponent);
+    fixture = TestBed.createComponent(AgeDistributionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -19,9 +19,9 @@ export class BedAnalysisComponent implements OnInit, OnChanges {
   @Input() bedAwayAnalysis: Array<any> = [];
   @Input() bedAwayTime: Array<any> = [];
   @Input() isOpen = false;
-  private nothingFlag = false;
-  private option: EChartOption;
-  private focusDay: any = moment(new Date()).format('YYYY-MM-DD');
+  nothingFlag = false;
+  option: EChartOption;
+  focusDay: any = moment(new Date()).format('YYYY-MM-DD');
 
   constructor(private bedAnalysisService: BedAnalysisService) { }
 

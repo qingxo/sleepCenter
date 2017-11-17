@@ -10,35 +10,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span>2015-09-09</span></td>
-          <td><span>迪康PSG</span></td>
+        <tr *ngFor="let item of list">
+          <td><span>{{item.generateTime | date:'yyyy-MM-dd'}}</span></td>
+          <td><span>康迪PSG</span></td>
           <td><span>金融</span></td>
-          <td class="opt"><span>查看</span></td>
-        </tr>
-        <tr>
-          <td><span>2015-09-09</span></td>
-          <td><span>迪康PSG</span></td>
-          <td><span>金融</span></td>
-          <td class="opt"><span>查看</span></td>
-        </tr>
-        <tr>
-          <td><span>2015-09-09</span></td>
-          <td><span>迪康PSG</span></td>
-          <td><span>金融</span></td>
-          <td class="opt"><span>查看</span></td>
-        </tr>
-        <tr>
-          <td><span>2015-09-09</span></td>
-          <td><span>迪康PSG</span></td>
-          <td><span>金融</span></td>
-          <td class="opt"><span>查看</span></td>
-        </tr>
-        <tr>
-          <td><span>2015-09-09</span></td>
-          <td><span>迪康PSG</span></td>
-          <td><span>金融</span></td>
-          <td><span class="opt">查看</span></td>
+          <td class="opt"><a target="_blank" href="/tsreport/{{item.customerId}}">查看</a></td>
         </tr>
       </tbody>
     </table>

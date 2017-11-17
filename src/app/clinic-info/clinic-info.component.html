@@ -1,6 +1,6 @@
 <div class="clinic-info">
   <div class="left-content">
-    <app-clinic-list></app-clinic-list>
+    <app-clinic-list [customerId]="customerId" (visitId)="catchId($event)"></app-clinic-list>
   </div>
   <div class="right-content">
     <app-clinic-detail [clinicInfo]="clinicInfo"></app-clinic-detail>

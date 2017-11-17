@@ -14,6 +14,7 @@ export class SleepAssessmentComponent implements OnInit {
   customerId: String = '';
   list: any = [];
   query: any = {};
+  _endTime = null;
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef, private sleepAssessmentService: SleepAssessmentService, private route: ActivatedRoute) { }
 
   ngOnInit() {
